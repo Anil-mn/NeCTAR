@@ -11,7 +11,6 @@ include('pages/firstPage.php');
 echo $head
     .$header
     .$firstPage_1;
-
     test();
 
 
