@@ -8,13 +8,28 @@ include('Components/header.php');
 include('pages/firstPage.php');
 
 
-echo $head;
-echo $header;
+echo $head
+    .$header
+    .$firstPage_1;
 
-echo $firstPage;
+    test();
 
 
+echo $firstPage_2
+    .$firstPage_3;
 
-echo $footer;
-echo $connection;
+    News();
+echo $firstPage_4;
+
+upComing();
+
+echo $firstPage_5;
+
+Message();
+
+ 
+ echo $firstPage_6
+    .$footer
+    .$connection;
+
  ?>

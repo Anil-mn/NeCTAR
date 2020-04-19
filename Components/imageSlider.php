@@ -1,4 +1,7 @@
 <?php
+
+$titles = ['Nehru E-Conference On Technologies Annexing Reality','B','C'];
+
 $Slider = '<!-- Slider 1 Area Start Here -->
 <div class="slider1-area overlay-default index1">
            <div class="bend niceties preview-1">
@@ -10,7 +13,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                <div id="slider-direction-1" class="t-cn slider-direction">
                    <div class="slider-content s-tb slide-1">
                        <div class="title-container s-tb-c">
-                           <div class="title1">Nehru E-Conference On Technologies Annexing Reality</div>
+                           <div class="title1">'.$titles[0].'</div>
                            <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industry s standard
                                <br>dummy text ever sinceprinting and typesetting industry. </p>
                            <div class="slider-btn-area">
