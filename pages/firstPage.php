@@ -13,18 +13,7 @@ $firstPage_1 = $Slider
               .$about 
               .$whyThis
               .$start;
-
-
-            function test ()
-                 {
-                    for ($x = 0; $x <= 5; $x++) {
-                        echo $GLOBALS['feat'];
-                    }
-                    
-                }
-                    
-                
-                
+ 
                 $firstPage_2= $end.$counter;
 
                 $firstPage_3= $Heading;
