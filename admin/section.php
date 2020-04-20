@@ -10,7 +10,7 @@ include('model/section.php');
 echo $head.$menus.$mainHead.$row;
 
 
-formHead('Sections','');
+formHead('Sections','model/section.php');
 input('Name','text');
 Button('InserSection');
 echo $formEnd;
