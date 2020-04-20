@@ -59,20 +59,45 @@ $about = '<!-- About Page 2 Area Start Here -->
     </div>
 </div>
 <!-- About Page 2 Area End Here -->';
+
+
+
 $images='img/banner/5.jpg';
-$about3head = '  <!-- Inner Page Banner Area Start Here -->
-<div class="inner-page-banner-area" style="background-image: url('.$images.');">
+
+$about1Head =' <div class="inner-page-banner-area" style="background-image: url('.$images.');">
+<div class="container">
+    <div class="pagination-area">
+        <h1>About us - 01</h1>
+        <ul>
+            <li><a href="#">Home</a> -</li>
+            <li>About</li>
+        </ul>
+    </div>
+</div>
+</div>';
+
+
+
+
+
+function about3Head($name){
+echo'  <!-- Inner Page Banner Area Start Here -->
+<div class="inner-page-banner-area" style="background-image: url('.$GLOBALS ['images'].');">
     <div class="container">
         <div class="pagination-area">
-            <h1>About us</h1>
+            <h1>'.$name.'</h1>
             <ul>
                 <li><a href="#">Home</a> -</li>
-                <li>About</li>
+                <li>'.$name.'</li>
             </ul>
         </div>
     </div>
 </div>
 <!-- Inner Page Banner Area End Here -->';
+}
+
+
+
 
 $about3 = '<!-- About Page 3 Area Start Here -->
 <div class="about-page3-area">
@@ -100,6 +125,10 @@ $about3 = '<!-- About Page 3 Area Start Here -->
     </div>
 </div>
 <!-- About Page 3 Area End Here -->';
+
+
+
+
 
 $whyThis = '<!-- Why Choose Area Start Here -->
 <div class="why-choose-area">

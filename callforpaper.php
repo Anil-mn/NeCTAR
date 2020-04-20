@@ -9,11 +9,12 @@ include('pages/firstPage.php');
 
 echo $head
     .$header;
+  
     
-about();
+    
+paper();
 
-echo $footer
+ echo $footer
     .$connection;
-
 
 

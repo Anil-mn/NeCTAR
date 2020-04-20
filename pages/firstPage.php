@@ -7,7 +7,7 @@ include('components/Featured.php');
 include('components/Counter.php');
 include('components/Message.php');
 include('components/News/newsMain.php');
-
+include('components/News/faq.php');
 
 $firstPage_1 = $Slider
               .$about 
@@ -38,9 +38,33 @@ $firstPage_1 = $Slider
                 $firstPage_6=$messageEnd;
                 
 
-$secoundPage = $about3head.$about3;  
+ 
+
+function about(){
+    about3Head('AboutUs');
+    echo $GLOBALS['about3'];
+}
+
+function paper(){
+    
+    about3Head('Call For papers');
+    echo $GLOBALS['about3'];
+    echo $GLOBALS['faqHead'];
+    faq('Demo','1','One','dem');
+    faq('Demo','1','Two','dem');
+    faq('Demo','1','Three','dem');
+    echo '</div>';
+    echo ' <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
+    faq('Demo','1','Four','dem');
+    faq('Demo','1','Five','dem');
+    faq('Demo','1','Six','dem');
+    echo $GLOBALS ['faqEnd'];
+
+   
+   
 
 
+}
 
    
 
