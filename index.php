@@ -11,19 +11,19 @@ include('pages/firstPage.php');
 echo $head
     .$header
     .$firstPage_1;
+   
+   
     test1();
-
-
 echo $firstPage_2
     .$firstPage_3;
 
     News();
-echo $firstPage_4;
 
+
+echo $firstPage_4;
 upComing();
 
 echo $firstPage_5;
-
 Message();
 
  
