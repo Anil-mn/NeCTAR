@@ -10,10 +10,8 @@ include('pages/firstPage.php');
 echo $head
     .$header;
     
-about();
+
+    webdet();
 
 echo $footer
     .$connection;
-
-
-

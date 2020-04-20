@@ -10,10 +10,9 @@ include('pages/firstPage.php');
 echo $head
     .$header;
     
-about();
+
+    webinar();
+
 
 echo $footer
     .$connection;
-
-
-
