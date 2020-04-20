@@ -28,6 +28,11 @@ function textArea($name){
       echo ' <button type="submit" name="'.$name.'" class="btn btn-success mr-2">Submit</button>
   <button  type="reset" class="btn btn-light">Cancel</button>';
   }
+  function DeleteButton($name)
+  {
+      echo '<button type="submit" name="'.$name.'" class="btn btn-danger mr-2">Delete</button>';
+
+  }
   function upload($name)
 {
   echo '<div class="form-group">
