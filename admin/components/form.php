@@ -28,6 +28,13 @@ function textArea($name){
       echo ' <button type="submit" name="'.$name.'" class="btn btn-success mr-2">Submit</button>
   <button  type="reset" class="btn btn-light">Cancel</button>';
   }
+  function upload($name)
+{
+  echo '<div class="form-group">
+     <label for="exampleTextarea1">upload</label>
+     <input class="form-control" type="file" name="'.$name.'">
+     </div>';
+}
   $formEnd = '</form>
 </div>
 </div>
