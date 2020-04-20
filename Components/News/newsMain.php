@@ -27,7 +27,13 @@ $NewsEnd = '<div class="news-btn-holder">
 $UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area">
                   <h2 class="title-default-left">Upcoming Events</h2>
                           <ul class="event-wrapper">';
-$upComing   ='<li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay=".1s">
+
+
+                          function upcoming(){
+                              $i=.1;
+                            for ($x = 0; $x <= 1; $x++) {
+                               $i=$i+$i+$i;
+        echo '<li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay="'.$i.'s">
                 <div class="event-calender-wrapper">
                     <div class="event-calender-holder">
                         <h3>26</h3>
@@ -44,7 +50,8 @@ $upComing   ='<li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay="
                     </ul>
                 </div>
                 </li>';
-
+            }
+                          }
  $upComingEnd =' </ul>
                     <div class="event-btn-holder">
                         <a href="#" class="view-all-primary-btn">View All</a>

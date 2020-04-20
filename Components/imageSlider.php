@@ -60,7 +60,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                                <p>Eimply dummy text printing ypese tting industry.</p>
                            </div>
                            <div class="service-box-icon">
-                               <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                               <i class="fa fa-youtube" aria-hidden="true"></i>
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
@@ -69,7 +69,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                                <p>Eimply dummy text printing ypese tting industry.</p>
                            </div>
                            <div class="service-box-icon">
-                               <i class="fa fa-user" aria-hidden="true"></i>
+                               <i class="fa fa-instagram" aria-hidden="true"></i>
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">

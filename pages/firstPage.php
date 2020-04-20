@@ -12,9 +12,9 @@ include('components/News/newsMain.php');
 $firstPage_1 = $Slider
               .$about 
               .$whyThis
-              .$start;
+              .$start2;
  
-                $firstPage_2= $end.$counter;
+                $firstPage_2= $end2.$counter;
 
                 $firstPage_3= $Heading;
                 function News()
@@ -27,23 +27,8 @@ $firstPage_1 = $Slider
                 
                 
                 $firstPage_4=$NewsEnd.$UpcomingHead;
-
-                
-
-                
-                function upComing()
-                 {
-                    for ($x = 0; $x <= 1; $x++) {
-                        echo $GLOBALS['upComing'];
-                    }
-                    
-                }
-                
-                
                 $firstPage_5=$upComingEnd.$messageHead;
-
-
-                function Message()
+ function Message()
                  {
                     for ($x = 0; $x <= 5; $x++) {
                         echo $GLOBALS['message'];
@@ -53,7 +38,7 @@ $firstPage_1 = $Slider
                 $firstPage_6=$messageEnd;
                 
 
-
+$secoundPage = $about3head.$about3;  
 
 
 
