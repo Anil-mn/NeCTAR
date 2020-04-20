@@ -8,6 +8,9 @@ include('components/Counter.php');
 include('components/Message.php');
 include('components/News/newsMain.php');
 include('components/News/faq.php');
+include('components/filter.php');
+include('components/webnar.php');
+
 
 $firstPage_1 = $Slider
               .$about 
@@ -40,6 +43,7 @@ $firstPage_1 = $Slider
 
  
 
+
 function about(){
     about3Head('AboutUs');
     echo $GLOBALS['about3'];
@@ -60,15 +64,32 @@ function paper(){
     faq('Demo','1','Six','dem');
     echo $GLOBALS ['faqEnd'];
 
-   
+   }
+
+   Function webinar(){
+    about3Head('webinars');
+    echo $GLOBALS ['webHead'];
+    echo $GLOBALS ['filterHead'];
+    filter('All');
+    filter('Demo');
+    echo $GLOBALS ['filterEnd'];
+    echo $GLOBALS ['webHead'];
+    echo $GLOBALS['weba'];
+    web('All','demo dfsdf sdfsdf sdfsdfsdf sedfsdfdsf sdfsdfds fdsf asdasd asda sd dasdasd');
+    web('Demo','demo');
+    echo $GLOBALS['webaEnd'];
+    echo $GLOBALS ['webEnd'];
+   }
    
 
-
+Function webdet(){
+    about3Head('webinarDetails');
+    echo $GLOBALS['webDetailsHead'];
+    webDetails();
+    echo $GLOBALS['rightDet'];
+    echo $GLOBALS['related'];
+    echo $GLOBALS['webDetailsEnd'];
 }
-
-   
-
-
 
 
 ?>

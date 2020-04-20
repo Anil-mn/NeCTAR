@@ -7,28 +7,12 @@ include('Components/head.php');
 include('Components/header.php');
 include('pages/firstPage.php');
 
-
 echo $head
-    .$header
-    .$firstPage_1;
-    test1();
+    .$header;
+    
+
+    webinar();
 
 
-echo $firstPage_2
-    .$firstPage_3;
-
-    News();
-echo $firstPage_4;
-
-upComing();
-
-echo $firstPage_5;
-
-Message();
-
- 
- echo $firstPage_6
-    .$footer
+echo $footer
     .$connection;
-
- ?>
