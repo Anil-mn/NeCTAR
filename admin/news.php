@@ -12,13 +12,15 @@ formHead('news','model/newsInsertion.php');
 input('Heading','text'); 
 textArea('Description1');
 textArea('Description2');
-
+upload('FileUpload');
 Button('name');
 echo $formEnd;
+
+
+
 formHead('delete','#');
 input('id','number');
-Button('name1');
-echo $formEnd;
+Button('name1');echo $formEnd;
 
 echo $rowEnd;
 echo $row;
