@@ -40,10 +40,23 @@ function textArea($name){
      <input class="form-control" type="file" name="'.$name.'">
      </div>';
 }
+
+function select($name){
+  echo ' 
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">'.$name.'</label>
+    <select class="form-control form-control-lg" name='.$name.' id="exampleFormControlSelect1">
+    ';
+
+}
+
+$selectEnd ='</select>
+</div>';
   $formEnd = '</form>
 </div>
 </div>
 </div>'  ;
+
 
   
 ?>
