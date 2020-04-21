@@ -7,7 +7,7 @@ echo '<div class="col-md-6 grid-margin stretch-card">
     <p class="card-description">
       
     </p>
-    <form class="forms-sample" action="'.$action.'" Method="Post">';
+    <form class="forms-sample" action="'.$action.'" Method="Post" enctype="multipart/form-data">';
 
 }
 function input($name,$type){
@@ -36,14 +36,31 @@ function textArea($name){
   function upload($name)
 {
   echo '<div class="form-group">
-     <label for="exampleTextarea1">upload</label>
+     <label for="exampleTextarea1">'.$name.'</label>
      <input class="form-control" type="file" name="'.$name.'">
      </div>';
 }
+
+function select($name){
+  echo ' 
+  <div class="form-group">
+    <label for="exampleFormControlSelect1">'.$name.'</label>
+    <select class="form-control form-control-lg" name='.$name.' id="exampleFormControlSelect1">
+    ';
+
+}
+
+function alertMsg($message){
+  echo '<script> confirm("'.$message.',window.location="../userinfo.php")</script>';
+}
+
+$selectEnd ='</select>
+</div>';
   $formEnd = '</form>
 </div>
 </div>
 </div>'  ;
+
 
   
 ?>
