@@ -25,10 +25,26 @@ while($row = mysqli_fetch_array($query))
    $designation=$row2[2];
    $message=$row2[3];
   }
+$paperdetails=mysqli_query($con,"SELECT * from `paper`");
+while($row = mysqli_fetch_array($paperdetails))
+{
+ $paperid = $row[0];
+ $haeding = $row[1];
+ $descpt = $row[2];
+ $sectionid = $row[3];
+ $userid = $row[4];
+ $linkid = $row[5];
 
+}
 
-
-
-
-
+$userdetails = mysqli_query($con,"SELECT * from `user_info`");
+while($row = mysqli_fetch_array($userdetails))
+{
+ $userid = $row[0];
+ $name = $row[1];
+ $designation = $row[2];
+ $phno = $row[5];
+ $email = $row[3];
+ $quali = $row[4];
+}
 ?>
