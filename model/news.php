@@ -53,4 +53,14 @@ while($row = mysqli_fetch_array($userdetails))
  $email = $row[3];
  $quali = $row[4];
 }
+
+$eventdetails = mysqli_query($con,"SELECT * from `event`");
+while($row = mysqli_fetch_array($eventdetails))
+{
+ $eventid = $row[0];
+ $heading = $row[1];
+ $date = $row[2];
+ $time = $row[3];
+ $descpn = $row[4];
+}
 ?>
