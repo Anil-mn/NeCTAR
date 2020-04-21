@@ -13,11 +13,11 @@ if(isset($_POST['name']))
   $newsInsertion=mysqli_query($con,"INSERT INTO `news`( `Headline`, `Description`, `Description1`, `Date`) VALUES ('$head','$description1','$description2','$date')");
   if($newsInsertion==true)
    {
-      $innsertphoto=mysqli_query($con,"SELECT * from `news` order by  `News_ID` desc lim 1");
+      $innsertphoto=mysqli_query($con,"SELECT * from `news` order by  `News_ID` desc limit 1");
       while($row=mysqli_fetch_array($innsertphoto))
       {
           $NewsId=$row[0];
-
+       
       }
       $target_dir = "..\Images/";
  $target_file = $target_dir . basename($_FILES["News"]["name"]);
@@ -25,7 +25,7 @@ if(isset($_POST['name']))
  $name = $NewsId;
 
  $newfilename=$name ;
- echo $newfilename;
+ //echo $newfilename;
  $uploadOk = 1;
  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
  // Check if image file is a actual image or fake image
@@ -63,7 +63,7 @@ if(isset($_POST['name']))
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         if(move_uploaded_file($_FILES["News"]["tmp_name"], "../../Images/News/" . $newfilename.'.jpg')){
          echo "The file ". basename( $_FILES["News"]["name"]). " has been uploaded.";
-         header('Location:../Shop_CategorieInsertion.php');
+         //header('Location:../Shop_CategorieInsertion.php');
      } else {
          echo "Sorry, there was an error uploading your file.";
      }
@@ -90,23 +90,73 @@ if(isset($_POST['dele']))
     }
 
 }
-
+//-----------------------------------------------
 
 if(isset($_POST['event']))
 {
     $head=$_POST['heading'];
     $description=$_POST['Description1'];
     $EventInsertion=mysqli_query($con,"INSERT INTO `event`( `Heading`, `Date`, `Time`, `Description`) VALUES ('$head','$date','$time','$description')");
-    // if($EventInsertion==true)
-    //  {
-    //   $event=mysqli_query($con,"SELECT * from `event` order by  `Event_ID` desc lim 1");
-    //   while($row=mysqli_fetch_array($event))
-    //   {
-    //       $EventId=$row[0];
+    if($EventInsertion==true)
+     {
+      $event=mysqli_query($con,"SELECT * from `event` order by  `Event_ID` desc limit 1");
+      while($row=mysqli_fetch_array($event))
+      {
+          $EventId=$row[0];
 
-    //   }
-    // }
+      }
+      $target_dir = "..\Images/";
+ $target_file = $target_dir . basename($_FILES["event"]["name"]);
+ 
+ $name = $EventId;
+
+ $newfilename=$name ;
+ //echo $newfilename;
+ $uploadOk = 1;
+ $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+ // Check if image file is a actual image or fake image
+ //if(isset($_POST["submit"])) {
+     $check = getimagesize($_FILES["event"]["tmp_name"]);
+     if($check !== false) {
+         echo "File is an image - " . $check["mime"] . ".";
+         $uploadOk = 1;
+     } else {
+         echo "File is not an image.";
+         $uploadOk = 0;
+     }
+ }
+ // Check if file already exists
+ if (file_exists($target_file)) {
+     echo "Sorry, file already exists.";
+     $uploadOk = 0;
+ }
+ // Check file size
+ if ($_FILES["event"]["size"] > 5000000) {
+     echo "Sorry, your file is too large.";
+     $uploadOk = 0;
+ }
+ // Allow certain file formats
+ if( $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+ && $imageFileType != "gif" ) {
+     echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+     $uploadOk = 0;
+ }
+ // Check if $uploadOk is set to 0 by an error
+ if ($uploadOk == 0) {
+     echo "Sorry, your file was not uploaded.";
+ // if everything is ok, try to upload file
+ } else {
+     //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        if(move_uploaded_file($_FILES["event"]["tmp_name"], "../../Images/Event/" . $newfilename.'.jpg')){
+         echo "The file ". basename( $_FILES["event"]["name"]). " has been uploaded.";
+         //header('Location:../Shop_CategorieInsertion.php');
+     } else {
+         echo "Sorry, there was an error uploading your file.";
+     }
+   }
 }
+    //}
+//}
 
  function Disp()
  {
@@ -122,7 +172,7 @@ if(isset($_POST['event']))
 if(isset($_POST['delete']))
         {
             $delet=$_POST['id'];
-            echo $delet;
+           
        
             $deletesect=mysqli_query($con,"DELETE from `event` where `Event_ID`='$delet'");
 
