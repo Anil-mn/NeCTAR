@@ -35,7 +35,7 @@ $paperdetails=mysqli_query($con,"SELECT * from `papers`");
 while($row = mysqli_fetch_array($paperdetails))
 {
  $paperid = $row[0];
- $haeding = $row[1];
+ $heading = $row[1];
  $descpt = $row[2];
  $sectionid = $row[3];
  $userid = $row[4];
@@ -52,6 +52,9 @@ while($row = mysqli_fetch_array($userdetails))
  $phno = $row[5];
  $email = $row[3];
  $quali = $row[4];
+ 
+ //$UserInsertion = mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$designation','$quali','$email','$phno')");
+
 }
 
 $eventdetails = mysqli_query($con,"SELECT * from `event`");
