@@ -12,6 +12,72 @@ include('components/filter.php');
 include('components/webnar.php');
 
 
+// function index(){
+//     echo $GLOBALS['Slider'];
+//     echo $GLOBALS['about'];
+//     echo $GLOBALS['whyThis'];
+//     echo $GLOBALS['start2'];
+    
+ 
+//     echo $GLOBALS['end2'];
+//     echo $GLOBALS['counter'];
+//     echo $GLOBALS['Heading'];
+// }
+//     function Featured()
+//      {
+//        $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
+//        while($row = mysqli_fetch_array($query))
+//          {
+//           $id =$row[0];
+//           $Name=$row[1];
+//           test1($Name);
+//           //echo $id.$Name;
+//          }
+//          echo $GLOBALS['NewsEnd'];
+         
+//       }
+     
+
+//     function headlines()
+//     {
+//         echo $GLOBALS['UpcomingHead'];
+//         $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news`");
+//         while($row1 = mysqli_fetch_array($newsQuery))
+//         {
+//          $newsid =$row1[0];
+//          $newshead=$row1[1];
+//          $des1=$row1[2];
+//          $des2=$row1[3];
+//          $date=$row1[4];
+//          News($newshead,$des1,$date);
+//         // echo $newsid.$newshead.$des1.$des2.$date;
+//         }
+//         echo $GLOBALS['upComingEnd'];
+//     }
+   
+   
+    
+
+//     function Message()
+//                  {
+//                     echo $GLOBALS['messageHead'];
+//                     $MessageQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `message`");
+//                     while($row2 = mysqli_fetch_array($MessageQuery))
+//                     {
+//                      $Messageid =$row2[0];
+//                      $name1=$row2[1];
+//                      $designation=$row2[2];
+//                      $message=$row2[3];
+//                      Mesg($name1,$designation,$message);
+//                     }
+//                     echo $GLOBALS['messageEnd'];
+//                 }
+               
+
+
+
+
+
 $firstPage_1 = $Slider
               .$about 
               .$whyThis
@@ -20,21 +86,52 @@ $firstPage_1 = $Slider
                 $firstPage_2= $end2.$counter;
 
                 $firstPage_3= $Heading;
-                function News()
+                
+               
+                 
+                // echo $id.$Name;
+                      
+                 function Featured()
                  {
-                    for ($x = 0; $x <= 2; $x++) {
-                        echo $GLOBALS['News'];
-                    }
-                    
-                }
+                   $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
+                   while($row = mysqli_fetch_array($query))
+                     {
+                      $id =$row[0];
+                      $Name=$row[1];
+                      test1($Name);
+                      //echo $id.$Name;
+                     }
+                 }
+
+
+function headlines(){
+             $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news`");
+             while($row1 = mysqli_fetch_array($newsQuery))
+             {
+              $newsid =$row1[0];
+              $newshead=$row1[1];
+              $des1=$row1[2];
+              $des2=$row1[3];
+              $date=$row1[4];
+              News($newshead,$des1,$date);
+             // echo $newsid.$newshead.$des1.$des2.$date;
+             }
+}
                 
                 
                 $firstPage_4=$NewsEnd.$UpcomingHead;
                 $firstPage_5=$upComingEnd.$messageHead;
+                
  function Message()
                  {
-                    for ($x = 0; $x <= 5; $x++) {
-                        echo $GLOBALS['message'];
+                    $MessageQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `message`");
+                    while($row2 = mysqli_fetch_array($MessageQuery))
+                    {
+                     $Messageid =$row2[0];
+                     $name1=$row2[1];
+                     $designation=$row2[2];
+                     $message=$row2[3];
+                     Mesg($name1,$designation,$message);
                     }
                     
                 }
