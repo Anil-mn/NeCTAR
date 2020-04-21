@@ -1,4 +1,6 @@
 <?php
+
+
 include('connection.php');
 $date=date('Y-m-d');
 if(isset($_POST['name']))
@@ -93,8 +95,8 @@ function Display()
         echo '<tr><form method="POST"><td><input  value="'.$id.'" name="id" hidden> '.$row[0].'</td><td>'.$row[1].'</td><td><button type="submit" name="dele" class="btn btn-danger mr-2">Delete</button></td></form></tr>';
     }
 
-    
-     if(isset($_POST['dele']))
+
+if(isset($_POST['dele']))
         {
             $delet=$_POST['id'];
             $deletesect=mysqli_query($con,"DELETE from `news` where `news_ID`=' $delet'");
