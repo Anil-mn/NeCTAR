@@ -5,13 +5,19 @@
 <?php
 include('Components/head.php');
 include('Components/header.php');
-include('pages/firstPage.php');
+//include('pages/firstPage.php');
+include('pages/registrationPage.php');
+
 
 echo $head
     .$header;
-    
-
+    if($ok==0){
     regi();
+}
 
+
+else {
+
+}
 echo $footer
     .$connection;

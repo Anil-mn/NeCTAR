@@ -2,16 +2,16 @@
 include('admin/model/connection.php');
 
 
-
+//function set(){
 $query = mysqli_query($con,"SELECT * from `Sections`");
 while($row = mysqli_fetch_array($query))
   {
    $id =$row[0];
    $Name=$row[1];
-  
+   echo '<option>'.$row[1].'<option>';
    //echo $id.$Name;
   }
-
+//}
  $newsQuery = mysqli_query($con,"SELECT * from `news`");
   while($row1 = mysqli_fetch_array($newsQuery))
   {

@@ -11,6 +11,8 @@ include('components/News/faq.php');
 include('components/filter.php');
 include('components/webnar.php');
 include('components/Registration.php');
+include('admin/model/connection.php');
+//include('model/demo.php');
 
 
 // function index(){
@@ -168,13 +170,15 @@ function paper(){
     about3Head('webinars');
     echo $GLOBALS ['webHead'];
     echo $GLOBALS ['filterHead'];
-    filter('All');
+    filterActive('All');
     filter('Demo');
     echo $GLOBALS ['filterEnd'];
     echo $GLOBALS ['webHead'];
     echo $GLOBALS['weba'];
-    web('All','demo dfsdf sdfsdf sdfsdfsdf sedfsdfdsf sdfsdfds fdsf asdasd asda sd dasdasd');
-    web('Demo','demo');
+    web('All','sf asdasd asda sd dasdasd');
+    web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');
+    
+    
     echo $GLOBALS['webaEnd'];
     echo $GLOBALS ['webEnd'];
    }
@@ -194,21 +198,7 @@ Function webdet(){
 
 
 
-function regi()
-{    
-    about3Head('Submit Paper');
-    echo $GLOBALS['REGHEAD'];
-    echo $GLOBALS['rowStart'];
-    input('name','text');
-    input('Designation','text');
-    input('Qualification','text');
-    input('Email','email');
-    input('PhoneNumber','Number');
-    upload('Pdf');
-    upload('News');
-    button('Submit');
-    echo $GLOBALS['rowEnd'];
-    echo $GLOBALS['RegEnd'];
-    
-}
+
+
+
 ?>
