@@ -10,6 +10,7 @@ include('components/News/newsMain.php');
 include('components/News/faq.php');
 include('components/filter.php');
 include('components/webnar.php');
+include('components/Registration.php');
 
 
 // function index(){
@@ -189,4 +190,25 @@ Function webdet(){
 }
 
 
+
+
+
+
+function regi()
+{    
+    about3Head('Submit Paper');
+    echo $GLOBALS['REGHEAD'];
+    echo $GLOBALS['rowStart'];
+    input('name','text');
+    input('Designation','text');
+    input('Qualification','text');
+    input('Email','email');
+    input('PhoneNumber','Number');
+    upload('Pdf');
+    upload('News');
+    button('Submit');
+    echo $GLOBALS['rowEnd'];
+    echo $GLOBALS['RegEnd'];
+    
+}
 ?>
