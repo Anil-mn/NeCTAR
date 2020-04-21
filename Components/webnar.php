@@ -8,10 +8,10 @@ function web($name,$discri){
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.'">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <iframe width="320" height="215" src="https://www.youtube.com/embed/fKopy74weus" frameborder="0" allowfullscreen></iframe>
+       <iframe width="320" height="215" src="Videos/Demo.mp4" frameborder="0" allowfullscreen></iframe>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
-                <a href="#">UI-UX Web Design<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="#">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </div>
         <p>'.$discri.'</p>
