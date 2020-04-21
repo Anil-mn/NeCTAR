@@ -6,7 +6,7 @@
 include('Components/head.php');
 include('Components/header.php');
 include('pages/firstPage.php');
-include('model/news.php');
+//include('model/news.php');
 
 
 echo $head

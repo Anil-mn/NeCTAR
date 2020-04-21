@@ -4,8 +4,8 @@ $webHead = ' <!-- Research Page 2 Area Start Here -->
 <div class="container" id="inner-isotope">
     <div class="row ">';
 $weba = '<div class="row featuredContainer">';
-function web($name,$discri){
-    echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.'">
+function web($name,$discri,$id){
+    echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' id='.$id.'">
     <div class="research-box2">
         <div class="research-img-holder"> 
        <iframe width="320" height="215" src="https://www.youtube.com/embed/fKopy74weus" frameborder="0" allowfullscreen></iframe>
@@ -21,10 +21,10 @@ function web($name,$discri){
 $webaEnd = '</div></div>';
  $webEnd =' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
  <ul class="pagination-center">
-     <li class="active"><a href="#">1</a></li>
-     <li><a href="#">2</a></li>
-     <li><a href="#">3</a></li>
-     <li><a href="#">4</a></li>
+     <li class="active"><a href="#1">1</a></li>
+     <li><a href="#2">2</a></li>
+     <li><a href="#3">3</a></li>
+     <li><a href="#4">4</a></li>
  </ul>
 </div>
 </div>
