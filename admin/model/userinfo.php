@@ -8,11 +8,7 @@ if(isset($_POST['user']))
     $email=$_POST['Email'];
     $phno=$_POST['PhoneNumber'];
 
-
-
-      
-
-  $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$Designation','$Qualification','$email','$phno')");
+    $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$Designation','$Qualification','$email','$phno')");
 
 
 
@@ -68,16 +64,6 @@ if(isset($_POST['user']))
      
 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -149,3 +135,4 @@ if(isset($_POST['paper']))
      }
     }}
 
+?>

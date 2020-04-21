@@ -12,6 +12,7 @@ formHead('news','model/messageInsertion.php');
 input('name','text'); 
 input('designation','text'); 
 textArea('message');
+upload('msg');
 Button('submit');
 echo $formEnd;
 
