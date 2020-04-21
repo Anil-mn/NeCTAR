@@ -3,6 +3,8 @@
 
 include('connection.php');
 $date=date('Y-m-d');
+$timezone=date_default_timezone_set('Asia/Kolkata');
+$time =  date("h:i", time());
 if(isset($_POST['name']))
 {
     $head=$_POST['Heading'];
@@ -70,22 +72,6 @@ if(isset($_POST['name']))
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function Display()
 {
     include('connection.php');
@@ -104,5 +90,46 @@ if(isset($_POST['dele']))
     }
 
 }
+
+
+if(isset($_POST['event']))
+{
+    $head=$_POST['heading'];
+    $description=$_POST['Description1'];
+    $EventInsertion=mysqli_query($con,"INSERT INTO `event`( `Heading`, `Date`, `Time`, `Description`) VALUES ('$head','$date','$time','$description')");
+    // if($EventInsertion==true)
+    //  {
+    //   $event=mysqli_query($con,"SELECT * from `event` order by  `Event_ID` desc lim 1");
+    //   while($row=mysqli_fetch_array($event))
+    //   {
+    //       $EventId=$row[0];
+
+    //   }
+    // }
+}
+
+ function Disp()
+ {
+    include('connection.php');
+    $query1 = mysqli_query($con,"SELECT * from `event`");
+    while($row1 = mysqli_fetch_array($query1))
+    {
+       $id =$row1[0];
+        echo '<tr><form method="POST"><td><input  value="'.$id.'" name="id" hidden> '.$row1[0].'</td><td>'.$row1[1].'</td><td><button type="submit" name="delete" class="btn btn-danger mr-2">Delete</button></td></form></tr>';
+    }
+
+ }
+if(isset($_POST['delete']))
+        {
+            $delet=$_POST['id'];
+            echo $delet;
+       
+            $deletesect=mysqli_query($con,"DELETE from `event` where `Event_ID`='$delet'");
+
+    }
+    
+   
+
+
 
 ?>

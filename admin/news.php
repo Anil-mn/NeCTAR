@@ -26,24 +26,24 @@ TabelEnd();
 echo $rowEnd;
 
 echo $row;
-formHead('event','');
+formHead('event','model/newsInsertion.php');
 input('heading','text');
 input('date','date');
 input('time','time');
 upload('event');
 textArea('Description1');
+Button('event');
+ 
+echo $formEnd;
 
-
-
-Table('news');
+Table('events');
 tableHead('id');
 tableHead('event');
 tableHead('delete');
+Disp();
 TabelEnd();
 echo $rowEnd;
 
-
-echo $rowEnd;
 
 
 echo $footer.$connection;
