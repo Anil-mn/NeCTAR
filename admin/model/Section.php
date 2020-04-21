@@ -4,17 +4,20 @@ if(isset($_POST['InserSection']))
 {
     $name=$_POST['Name'];
     $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`) VALUES ('$name')");
-    $query = mysqli_query($con,"SELECT * from `Sections` order by `Section_ID` DESC limit 1");
-    while($row = mysqli_fetch_array($query))
+    if($sectionInsertion==true)
     {
-       $id =$row[0];
-    }
+       $innsertphoto=mysqli_query($con,"SELECT * from `sections` order by  `Section_ID` desc limit 1");
+       while($row=mysqli_fetch_array($innsertphoto))
+       {
+           $Id=$row[0];
+        
+       }
 
 
     $target_dir = "..\Images/";
-    $target_file = $target_dir . basename($_FILES["News"]["name"]);
+    $target_file = $target_dir . basename($_FILES["photo"]["name"]);
     
-    $name = $NewsId;
+    $name = $Id;
    
     $newfilename=$name ;
     echo $newfilename;
@@ -22,7 +25,7 @@ if(isset($_POST['InserSection']))
     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
     // Check if image file is a actual image or fake image
     //if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["News"]["tmp_name"]);
+        $check = getimagesize($_FILES["photo"]["tmp_name"]);
         if($check !== false) {
             echo "File is an image - " . $check["mime"] . ".";
             $uploadOk = 1;
@@ -37,7 +40,7 @@ if(isset($_POST['InserSection']))
         $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["News"]["size"] > 5000000) {
+    if ($_FILES["photo"]["size"] > 5000000) {
         echo "Sorry, your file is too large.";
         $uploadOk = 0;
     }
@@ -53,14 +56,14 @@ if(isset($_POST['InserSection']))
     // if everything is ok, try to upload file
     } else {
         //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-           if(move_uploaded_file($_FILES["News"]["tmp_name"], "../../Images/section/" . $newfilename.'.jpg')){
-            echo "The file ". basename( $_FILES["News"]["name"]). " has been uploaded.";
-            header('Location:../Shop_CategorieInsertion.php');
+           if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../Images/section/" . $newfilename.'.jpg')){
+            echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
+            //header('Location:../Shop_CategorieInsertion.php');
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
       }
-
+    }
 
 
 
@@ -80,4 +83,5 @@ function display()
     }
 
 }
+
 ?>

@@ -6,7 +6,7 @@ include('components/sidemenus.php');
 include('components/main.php');
 include('components/form.php');
 include('components/table.php');
-include('model/section.php');
+include('model/Section.php');
 echo $head.$menus.$mainHead.$row;
 
 
