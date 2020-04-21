@@ -19,7 +19,8 @@ input('Name','text');
 input('Designation','text'); 
 input('Qualification','text'); 
 input('Email','email'); 
-input('PhoneNumber','number'); 
+input('PhoneNumber','number');
+upload('photo'); 
 Button('user');
 echo $formEnd;
 

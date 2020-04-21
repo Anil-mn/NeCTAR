@@ -12,8 +12,8 @@ echo $head.$menus.$mainHead.$row;
 formHead('news','model/newsInsertion.php');
 input('Heading','text'); 
 textArea('Description1');
-textArea('Description2');
-upload('FileUpload');
+textArea('Description2'); 
+upload('News');
 Button('name');
 echo $formEnd;
 
