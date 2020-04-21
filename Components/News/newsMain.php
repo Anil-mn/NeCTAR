@@ -7,17 +7,18 @@ $Heading = ' <div class="news-event-area">
             <h2 class="title-default-left">Latest News</h2>
             <ul class="news-wrapper">';
 
-
-$News ='<li>
+function News($newshead,$des1,$date){
+            echo '<li>
 <div class="news-img-holder">
     <a href="#"><img src="img/news/1.jpg" class="img-responsive" alt="news"></a>
 </div>
 <div class="news-content-holder">
-    <h3><a href="single-news.html">Summer Course Start From 1st June</a></h3>
-    <div class="post-date">June 15, 2017</div>
-    <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge.</p>
+    <h3><a href="single-news.html">'.$newshead.'</a></h3>
+    <div class="post-date">'.$date.'</div>
+    <p>'.$des1.'</p>
 </div>
 </li>';
+}
 
 $NewsEnd = '<div class="news-btn-holder">
 <a href="#" class="view-all-accent-btn">View All</a>

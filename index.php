@@ -6,25 +6,27 @@
 include('Components/head.php');
 include('Components/header.php');
 include('pages/firstPage.php');
+include('model/news.php');
 
 
 echo $head
-    .$header
+     .$header
     .$firstPage_1;
+    Featured();
+   //echo $query;
    
-   
-    test1();
+  
 echo $firstPage_2
     .$firstPage_3;
 
-    News();
-
+    headlines();
 
 echo $firstPage_4;
 upComing();
 
 echo $firstPage_5;
 Message();
+
 
  
  echo $firstPage_6

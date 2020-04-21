@@ -1,13 +1,18 @@
 <?php
-include('../admin/model/connection.php');
+include('admin/model/connection.php');
+
+
+
 $query = mysqli_query($con,"SELECT * from `Sections`");
 while($row = mysqli_fetch_array($query))
   {
    $id =$row[0];
    $Name=$row[1];
+  
    //echo $id.$Name;
   }
-  $newsQuery = mysqli_query($con,"SELECT * from `news`");
+
+ $newsQuery = mysqli_query($con,"SELECT * from `news`");
   while($row1 = mysqli_fetch_array($newsQuery))
   {
    $newsid =$row1[0];
@@ -15,6 +20,7 @@ while($row = mysqli_fetch_array($query))
    $des1=$row1[2];
    $des2=$row1[3];
    $date=$row1[4];
+   
   // echo $newsid.$newshead.$des1.$des2.$date;
   }
   $MessageQuery = mysqli_query($con,"SELECT * from `message`");
@@ -25,7 +31,7 @@ while($row = mysqli_fetch_array($query))
    $designation=$row2[2];
    $message=$row2[3];
   }
-$paperdetails=mysqli_query($con,"SELECT * from `paper`");
+$paperdetails=mysqli_query($con,"SELECT * from `papers`");
 while($row = mysqli_fetch_array($paperdetails))
 {
  $paperid = $row[0];
