@@ -1,14 +1,14 @@
 <?php
 $webHead = ' <!-- Research Page 2 Area Start Here -->
-<div class="courses-page-area2">
+<div class="courses-page-area2" >
 <div class="container" id="inner-isotope">
-    <div class="row ">';
-$weba = '<div class="row featuredContainer">';
-function web($name,$discri,$id){
-    echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' id='.$id.'">
+    <div class="row " >';
+$weba = '<div class="row featuredContainer" >';
+function web($name,$discri){
+    echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <iframe width="320" height="215" src="https://www.youtube.com/embed/fKopy74weus" frameborder="0" allowfullscreen></iframe>
+       <iframe width="320" height="215" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
                 <a href="#">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -17,8 +17,11 @@ function web($name,$discri,$id){
         <p>'.$discri.'</p>
     </div>
 </div>';
+
 } 
+
 $webaEnd = '</div></div>';
+
  $webEnd =' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
  <ul class="pagination-center">
      <li class="active"><a href="#1">1</a></li>
@@ -40,7 +43,7 @@ function webDetails(){
     echo '<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div class="row research-details-inner">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-        <iframe width="800" height="475" src="https://www.youtube.com/embed/fKopy74weus" frameborder="0" allowfullscreen></iframe>
+        <iframe width="800" height="475" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
             <!--   <img src="img/research/16.jpg" class="img-responsive" alt="research"> -->
             <h2 class="title-default-left-bold title-bar-high"><a href="#">Future UX Design Tecnique</a></h2>
             <p>Bimply dummy text of the printing and typesetting istryrem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer.when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchangedwhen an unknown printer took a galley of type and scrambled.when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged</p>

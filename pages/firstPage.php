@@ -175,8 +175,8 @@ function paper(){
     echo $GLOBALS ['filterEnd'];
     echo $GLOBALS ['webHead'];
     echo $GLOBALS['weba'];
-    web('All','sf asdasd asda sd dasdasd','1');
-    web('Demo','demo','1');web('Demo','demo','2');web('Demo','demo','3');
+    web('All','sf asdasd asda sd dasdasd');
+    web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');
     
     
     echo $GLOBALS['webaEnd'];
