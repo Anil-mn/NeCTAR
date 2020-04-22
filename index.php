@@ -22,7 +22,7 @@ echo $firstPage_2
     headlines();
 
 echo $firstPage_4;
-upComing();
+event();
 
 echo $firstPage_5;
 Message();

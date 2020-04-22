@@ -4,14 +4,14 @@ $webHead = ' <!-- Research Page 2 Area Start Here -->
 <div class="container" id="inner-isotope">
     <div class="row " >';
 $weba = '<div class="row featuredContainer" >';
-function web($name,$discri){
+function web($id,$name,$discri,$videoname){
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <iframe width="320" height="215" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+       <iframe width="320" height="215" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></iframe>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
-                <a href="#">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </div>
         <p>'.$discri.'</p>
@@ -61,65 +61,180 @@ $webDetailsEnd = '</div></div</div></div></div>';
 
 
 
-$rightDet = '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+function rightDet($papername) {
+    echo  '<div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
 <div class="sidebar">
     <div class="sidebar-box">
         <div class="sidebar-box-inner">
-            <h3 class="sidebar-title">Course Price</h3>
+            <h3 class="sidebar-title">Article</h3>
             <div class="sidebar-course-price">
-                <span>$400.00</span>
-                <a href="#" class="enroll-btn">Enroll THis Course</a>
-                <a href="#" class="download-btn">Download PDF</a>
+                <span>Download paper</span>
+                <a href="viewpdf.php?download_file='.$papername.'" target="_blank" class="enroll-btn">View Pdf</a>
+                <a href="/papers/'.$papername.'" class="download-btn" download>Download PDF</a>
             </div>
         </div>
     </div>
     ';
+}
 
-
-$related ='<div class="sidebar-box">
+function related($id,$name,$videoName){
+echo '<div class="sidebar-box">
 <div class="sidebar-box-inner">
     <h3 class="sidebar-title">Related Courses</h3>
     <div class="sidebar-related-area">
         <ul>
+           
             <li>
                 <div class="related-img">
-                    <a href="#"><img src="img/sidebar/4.jpg" class="img-responsive" alt="related"></a>
+                    <a href="#"><iframe width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></iframe></a>
                 </div>
                 <div class="related-content">
-                    <h4><a href="#">GMAT Class</a></h4>
-                    <p>$159</p>
-                </div>
-            </li>
-            <li>
-                <div class="related-img">
-                    <a href="#"><img src="img/sidebar/5.jpg" class="img-responsive" alt="related"></a>
-                </div>
-                <div class="related-content">
-                    <h4><a href="#">IELTS Class</a></h4>
-                    <p>$200</p>
-                </div>
-            </li>
-            <li>
-                <div class="related-img">
-                    <a href="#"><img src="img/sidebar/6.jpg" class="img-responsive" alt="related"></a>
-                </div>
-                <div class="related-content">
-                    <h4><a href="#">Joomla Class</a></h4>
-                    <p>$120</p>
-                </div>
-            </li>
-            <li>
-                <div class="related-img">
-                    <a href="#"><img src="img/sidebar/7.jpg" class="img-responsive" alt="related"></a>
-                </div>
-                <div class="related-content">
-                    <h4><a href="#">Graphic Desing</a></h4>
-                    <p>$300</p>
+                    <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
+                    <p></p>
                 </div>
             </li>
         </ul>
     </div>
 </div>
-</div></div></div>';
+</div>';
+}
+
+
+
+$courseAreadHead =' <div class="courses-page-area3">
+<div class="container">
+    <div class="row">
+        <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+            ';
+            
+   function VideoArea($videoName,$name,$discri){
+       echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+       <!--<img src="img/course/15.jpg" class="img-responsive" alt="course">-->
+       <iframe width="818" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen></iframe>
+       <div class="course-details-inner">
+           <h2 class="title-default-left title-bar-high">'.$name.'</h2>
+           <p>'.$discri.'</p>';
+   }     
+   function details($sectionid,$name,$designation){
+       echo '<h3 class="sidebar-title">Course Features</h3>
+       <ul class="course-feature">
+           <li>Section:'.$sectionid.'</li>
+           <li>Author :'.$name.'</li>
+           <li>Designation: '.$designation.'</li>
+           
+       </ul>
+   </div>';
     
+    }   
+    $commentHead ='<div class="section-divider"></div>
+    <div class="course-details-inner">
+        <div class="course-details-comments">
+            <h3 class="sidebar-title">Comments</h3>';
+    function comments(){
+        echo '<div class="media">
+        <a href="#" class="pull-left">
+            <img alt="Comments" src="img/course/16.jpg" class="media-object">
+        </a>
+        <div class="media-body">
+            <h3><a href="#">Greg Christman</a></h3>
+            <h4>Excellent course!</h4>
+            <p>Rimply dummy text of the printinwhen an unknown printer took eype and scramb relofeletog and typesetting industry. Lorem </p>
+            <div class="replay-area">
+                <ul>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div>';
+    } 
+
+    function YourComment(){
+        echo '<div class="leave-comments">
+        <h3 class="sidebar-title">Leave A Comment</h3>
+        <div class="row">
+            <div class="contact-form" id="review-form">
+                <form>
+                    <fieldset>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="text" placeholder="Name" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="form-group">
+                                <input type="email" placeholder="Email" class="form-control">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <div class="rate-wrapper">
+                                    <div class="rate-label">Your Rating:</div>
+                                    <div class="rate">
+                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <textarea placeholder="Comment" class="textarea form-control" id="form-message" rows="8" cols="20"></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <button type="submit" class="view-all-accent-btn">Post Comment</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
+</div>';
+    }
+
+
+  function feedback(){
+      echo '       <div class="sidebar-box">
+      <div class="sidebar-box-inner">
+          <h3 class="sidebar-title">Your FeedBack</h3>
+          <div class="sidebar-question-form">
+              <form id="question-form">
+                  <fieldset>
+                      <div class="form-group">
+                          <input type="text" placeholder="Name*" class="form-control" name="name" id="form-name" data-error="Name field is required" required>
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                          <input type="email" placeholder="Email*" class="form-control" name="email" id="form-email" data-error="Email field is required" required>
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                          <textarea placeholder="Message*" class="textarea form-control" name="message" id="sidebar-form-message" rows="3" cols="20" data-error="Message field is required" required></textarea>
+                          <div class="help-block with-errors"></div>
+                      </div>
+                      <div class="form-group">
+                          <button type="submit" class="default-full-width-btn">Send</button>
+                      </div>
+                      <div class="form-response"></div>
+                  </fieldset>
+              </form>
+          </div>
+      </div>
+  </div></div></div>';
+  }  
 ?>

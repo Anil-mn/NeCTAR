@@ -8,12 +8,12 @@ $Heading = ' <div class="news-event-area">
             <ul class="news-wrapper">';
 
 function News($newshead,$des1,$date){
-            echo '<li>
+            echo '<li >
 <div class="news-img-holder">
     <a href="#"><img src="img/news/1.jpg" class="img-responsive" alt="news"></a>
 </div>
 <div class="news-content-holder">
-    <h3><a href="single-news.html">'.$newshead.'</a></h3>
+    <h3><a href="single-news.html" >'.$newshead.'</a></h3>
     <div class="post-date">'.$date.'</div>
     <p>'.$des1.'</p>
 </div>
@@ -28,13 +28,11 @@ $NewsEnd = '<div class="news-btn-holder">
 $UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area">
                   <h2 class="title-default-left">Upcoming Events</h2>
                           <ul class="event-wrapper">';
+                          $i=1;
 
-
-                          function upcoming(){
-                              $i=.1;
-                            for ($x = 0; $x <= 1; $x++) {
-                               $i=$i+$i+$i;
-        echo '<li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay="'.$i.'s">
+                          function upcoming($id,$heading,$date,$time,$descpn){
+                          
+        echo '<li class="wow bounceInUp" data-wow-duration="2s" data-wow-delay=".'.$GLOBALS ['i'].'s">
                 <div class="event-calender-wrapper">
                     <div class="event-calender-holder">
                         <h3>26</h3>
@@ -43,16 +41,17 @@ $UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-are
                     </div>
                 </div>
                 <div class="event-content-holder">
-                    <h3><a href="single-event.html">Html MeetUp Conference 2017</a></h3>
-                    <p>Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation process facilitating Knowledge. Pellentese turpis dignissim amet area ducation.</p>
+                    <h3><a href="single-event.html">'.$heading.'</a></h3>
+                    <p>'.$descpn.'</p>
                     <ul>
                         <li>04:00 PM - 06:00 PM</li>
-                        <li>Australia , Melborn</li>
+                        <li>NCREC , KERALA</li>
                     </ul>
                 </div>
                 </li>';
+                $GLOBALS ['i']=$GLOBALS ['i']+6;
             }
-                          }
+                          
  $upComingEnd =' </ul>
                     <div class="event-btn-holder">
                         <a href="#" class="view-all-primary-btn">View All</a>
