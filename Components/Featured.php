@@ -27,7 +27,7 @@ function test1($name,$id){
         </div>
         <div class="courses-content-wrapper">
             <h3 class="item-title"><a href="#">'.$name.'</a></h3>
-           <!-- <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p> -->
+           <p class="item-content">Rmply dummy text printing setting industry it’s free demo.</p> 
           
         </div>
     </div>
