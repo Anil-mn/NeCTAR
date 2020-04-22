@@ -32,7 +32,7 @@ if(isset($_POST['user']))
          echo "File is not an image.";
          $uploadOk = 0;
      }
- }
+ 
  // Check if file already exists
  if (file_exists($target_file)) {
      echo "Sorry, file already exists.";
@@ -62,11 +62,11 @@ if(isset($_POST['user']))
          echo "Sorry, there was an error uploading your file.";
      }
      
+    }
 
 }
 
-
-
+//-----Paper insertion------------------
 
 
 
@@ -79,18 +79,24 @@ if(isset($_POST['paper']))
     $Ylink=$_POST['Youtube'];
     $section=$_POST['Section'];
 
-   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_ID`, `User_ID`, `Link_ID`) VALUES ('$heading','$descp','$section','$phno','$Ylink')");
-}
+   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`phoneNumber`,`Link_ID`) VALUES ('$heading','$descp','$section','$phno','$Ylink')");
+//    if($PaperInsertion==true)
+//    {
+//       $innsertphoto=mysqli_query($con,"SELECT * from `paper` order by  `Paper_ID` desc limit 1");
+//       while($row=mysqli_fetch_array($innsertphoto))
+//       {
+//          $id=$row[0];
+//       }
 
 
 
-if(isset($_POST['paper']))
-{
+// if(isset($_POST['paper']))
+// {
  $target_dir = "..\Images/";
  $target_file = $target_dir . basename($_FILES["pdf"]["name"]);
 
  $name = $heading;
-// 
+//
  $newfilename=$name ;
  echo $newfilename;
  $uploadOk = 1;
@@ -107,6 +113,7 @@ if(isset($_POST['paper']))
     //  }
 
  // Check if file already exists
+    
  if (file_exists($target_file)) {
      echo "Sorry, file already exists.";
      $uploadOk = 0;
@@ -133,6 +140,27 @@ if(isset($_POST['paper']))
      } else {
          echo "Sorry, there was an error uploading your file.";
      }
-    }}
+    }
+}
 
+    function Dis()
+    {
+        include('connection.php');
+        $query = mysqli_query($con,"SELECT * from `papers`");
+        while($row = mysqli_fetch_array($query)){
+           $id = $row[0];
+            // echo $id;
+            echo '<tr><form method="POST"><td><input  value="'.$id.'" name="id" hidden> '.$row[0].'</td><td>'.$row[1].'</td><td><button type="submit" name="dele" class="btn btn-danger mr-2">Delete</button></td></form></tr>';
+        }
+    
+    
+    if(isset($_POST['dele']))
+            {
+                $delet=$_POST['id'];
+               // echo $delet;
+                $delpaper=mysqli_query($con,"DELETE from `papers` where `Paper_ID`=' $delet'");
+    
+        }
+    
+    }
 ?>
