@@ -8,6 +8,7 @@ include('components/main.php');
 include('components/form.php');
 include('components/table.php');
 include('model/newsInsertion.php');
+include('model/userInfo.php');
 echo $head.$menus.$mainHead.$row;
 
 
@@ -41,11 +42,22 @@ while($row=mysqli_fetch_array($query)){
 echo $selectEnd;
 upload('pdf');
 Button('paper');
+
 echo $formEnd;
 
-
-
-
-
+Table('Papers');
+tableHead('id');
+tableHead('paper');
+tableHead('delete');
+Dis();
+TabelEnd();
 echo $rowEnd;
+
+
+
+
+
+
+
+// echo $rowEnd;
 echo $footer.$connection;

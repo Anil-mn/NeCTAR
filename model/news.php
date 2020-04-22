@@ -53,7 +53,7 @@ while($row = mysqli_fetch_array($userdetails))
  $email = $row[3];
  $quali = $row[4];
  
- //$UserInsertion = mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$designation','$quali','$email','$phno')");
+ $UserInsertion = mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$designation','$quali','$email','$phno')");
 
 }
 
@@ -66,4 +66,28 @@ while($row = mysqli_fetch_array($eventdetails))
  $time = $row[3];
  $descpn = $row[4];
 }
+
+$feedbackDetails = mysqli_query($con,"SELECT * from `feedback`");
+while($row = mysqli_fetch_array($feedbackDetails))
+{
+ $Fdid = $row[0];
+ $name = $row[1];
+ $email = $row[2];
+ $msg = $row[3];
+ $feedbackInsertion = mysqli_query($con,"INSERT INTO `feedback`( `Name`, `Email_ID`, `Message`) VALUES('$name','$email','$msg')");
+}
+
+$CommentDetails = mysqli_query($con,"SELECT * from `comments`");
+while($row = mysqli_fetch_array($CommentDetails))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $paperid = $row[2];
+ $comment = $row[3];
+ $email = $row[4];
+
+ $CommentInsertion = mysqli_query($con,"INSERT INTO `comments`(`Name`, `Paper_ID`, `Comment`, `Email_ID`) VALUES ('$name','$paperid','$comment','$email')");
+
+}
+
 ?>
