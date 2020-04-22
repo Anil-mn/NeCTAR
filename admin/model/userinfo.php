@@ -76,11 +76,11 @@ if(isset($_POST['paper']))
    
     $heading=$_POST['Heading'];
     $descp=$_POST['Description1'];
-    $phno=$_POST['PhoneNumber'];
+    $email=$_POST['Email'];
     $Ylink=$_POST['Youtube'];
     $section=$_POST['Section'];
 
-   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`phoneNumber`,`Link_ID`) VALUES ('$heading','$descp','$section','$phno','$Ylink')");
+   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`,`Link_ID`) VALUES ('$heading','$descp','$section','$email','$Ylink')");
 //    if($PaperInsertion==true)
 //    {
 //       $innsertphoto=mysqli_query($con,"SELECT * from `paper` order by  `Paper_ID` desc limit 1");
