@@ -88,7 +88,7 @@ while($row = mysqli_fetch_array($CommentDetails))
  $comment = $row[3];
  $email = $row[4];
 
- $CommentInsertion = mysqli_query($con,"INSERT INTO `comments`(`Name`, `Paper_ID`, `Comment`, `Email_ID`) VALUES ('$name','$paperid','$comment','$email')");
+ 
 
 }
 

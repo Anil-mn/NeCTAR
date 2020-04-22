@@ -33,7 +33,7 @@ formHead('paper','model/userInfo.php');
 input('Heading','text');
 textArea('Description1');
 input('Email','text');
-input('Youtube','text');
+//input('Youtube','text');
 select('Section');
 $query = mysqli_query($con,"SELECT * From `Sections`");
 while($row=mysqli_fetch_array($query)){
@@ -42,6 +42,7 @@ while($row=mysqli_fetch_array($query)){
 
 echo $selectEnd;
 upload('pdf');
+upload('file');
 Button('paper');
 
 echo $formEnd;

@@ -64,6 +64,7 @@ if(isset($_POST['submit']))
           echo "Sorry, there was an error uploading your file.";
       }
     }
+    echo "<script>confirm('Succeflly enterd',window.location='../message.php')</script>";
  }
  
  
