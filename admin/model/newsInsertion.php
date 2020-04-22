@@ -68,6 +68,7 @@ if(isset($_POST['name']))
          echo "Sorry, there was an error uploading your file.";
      }
    }
+   echo "<script>confirm('Succeflly enterd',window.location='../news.php')</script>";
 }
 
 
@@ -154,6 +155,7 @@ if(isset($_POST['event']))
          echo "Sorry, there was an error uploading your file.";
      }
    }
+   echo "<script>confirm('Succeflly enterd',window.location='../news.php')</script>";
 }
     //}
 //}
