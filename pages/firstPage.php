@@ -176,7 +176,7 @@ function about(){
     //echo $GLOBALS ['container']; 
     filterActive('patrons');
     filter('associ');
-    echo $GLOBALS['filterEnd'];
+    echo $GLOBALS['container'];
     box('patrons','associ');box('associ','');
     echo $GLOBALS ['lectureareaEnd'];
    
@@ -345,7 +345,7 @@ Function webdet(){
      }
     
     YourComment($paperid);
-    rightDet($paperid.$haeding);
+    rightDet($paperid.'-'.$haeding);
     rel();
     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_ID = '$sectionid'");
     while($row = mysqli_fetch_array($paperdetails))
@@ -373,7 +373,7 @@ function contact(){
 
 
 function viewall(){
-  about3Head('Contact US');
+    about3Head('Contact US');
     echo $GLOBALS['start'];
     
     featured2main();featured2();

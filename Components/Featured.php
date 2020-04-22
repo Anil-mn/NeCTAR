@@ -115,7 +115,7 @@ $features2spe ='</div>
 </div>';
 function featured2End(){
     echo '<div class="view-all-btn-area">
-    <a href="vieall.php" class="ghost-btn-big">View All Corses</a>
+    <a href="viewall.php" class="ghost-btn-big">View All Corses</a>
 </div>
 </div>
 </div>';

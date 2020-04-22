@@ -52,9 +52,12 @@ $lectureareaHead = ' <div class="lecturers-page2-area">
           $filterEnd =' </div>
            </div>
        </div>
-       <div class="row featuredContainer">
+      
       ';
-       
+       $container = '</div>
+       </div>
+   </div>
+   <div class="row featuredContainer">'
        
 
 
