@@ -22,6 +22,7 @@ input('Qualification','text');
 input('Email','email'); 
 input('PhoneNumber','number');
 upload('photo'); 
+input('Place','text');
 Button('user');
 echo $formEnd;
 
