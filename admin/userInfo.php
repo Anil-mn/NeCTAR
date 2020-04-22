@@ -42,6 +42,7 @@ while($row=mysqli_fetch_array($query)){
 
 echo $selectEnd;
 upload('pdf');
+upload('file');
 Button('paper');
 
 echo $formEnd;

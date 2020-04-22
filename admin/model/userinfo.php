@@ -80,40 +80,36 @@ if(isset($_POST['paper']))
     $Ylink=$_POST['Youtube'];
     $section=$_POST['Section'];
 
+ $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
+ $result = mysqli_fetch_array($userdetails);
+
+   if($result == true){
    $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`,`Link_ID`) VALUES ('$heading','$descp','$section','$email','$Ylink')");
-//    if($PaperInsertion==true)
-//    {
-//       $innsertphoto=mysqli_query($con,"SELECT * from `paper` order by  `Paper_ID` desc limit 1");
-//       while($row=mysqli_fetch_array($innsertphoto))
-//       {
-//          $id=$row[0];
-//       }
+   }
+   else{
+       echo "<script>confirm('There is no registerd email ',window.location='../Userinfo.php')</script>";
+   }
+   if($PaperInsertion==true)
+   {
+      $innsertphoto=mysqli_query($con,"SELECT * from `papers` order by  `Paper_ID` desc limit 1");
+      while($row=mysqli_fetch_array($innsertphoto))
+      {
+         $id=$row[0];
+      }
+    
 
 
 
-// if(isset($_POST['paper']))
-// {
  $target_dir = "..\Images/";
  $target_file = $target_dir . basename($_FILES["pdf"]["name"]);
 
- $name = $heading;
+ $name =$id.'-'.$heading;
 //
  $newfilename=$name ;
  echo $newfilename;
  $uploadOk = 1;
  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
- // Check if image file is a actual image or fake image
- //if(isset($_POST["submit"])) {
-    //  $check = getimagesize($_FILES["pdf"]["tmp_name"]);
-    //  if($check !== false) {
-    //      echo "File is an image - " . $check["mime"] . ".";
-    //      $uploadOk = 1;
-    //  } else {
-    //      echo "File is not an image.";
-    //      $uploadOk = 0;
-    //  }
-
- // Check if file already exists
+ 
     
  if (file_exists($target_file)) {
      echo "Sorry, file already exists.";
@@ -138,12 +134,61 @@ if(isset($_POST['paper']))
         if(move_uploaded_file($_FILES["pdf"]["tmp_name"], "../../papers/" . $newfilename.'.pdf')){
          echo "The file ". basename( $_FILES["pdf"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
-     } else {
+         } else {
          echo "Sorry, there was an error uploading your file.";
+             }
+     
+     } 
+   }
+   $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
+   $extension = pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+   $namelink = $id.'-'.$heading.'.'.$extension;
+   echo "<br><br><br><br>".$namelink."<br><br><br><br>";
+   if ((($_FILES["file"]["type"] == "video/mp4")
+   || ($_FILES["file"]["type"] == "audio/mp3")
+   || ($_FILES["file"]["type"] == "audio/mpeg")
+   || ($_FILES["file"]["type"] == "audio/wma")
+   || ($_FILES["file"]["type"] == "image/pjpeg")
+   || ($_FILES["file"]["type"] == "image/gif")
+   || ($_FILES["file"]["type"] == "image/jpeg"))
+   
+   && ($_FILES["file"]["size"] < 20000000000000)
+   && in_array($extension, $allowedExts))
+   
+     {print_r($_FILES['file']['name']);
+     if ($_FILES["file"]["error"] > 0)
+       {
+       echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+       }
+     else
+       {
+       echo "Upload: " . $_FILES["file"]["name"] . "<br />";
+       echo "Type: " . $_FILES["file"]["type"] . "<br />";
+       echo "Size: " . ($_FILES["file"]["size"] / 1024) . " Kb<br />";
+       echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br />";
+   
+       if (file_exists("store/" . $_FILES["file"]["name"]))
+         {
+         echo $_FILES["file"]["name"] . " already exists. ";
+         }
+       else
+         {
+             echo $name;
+          move_uploaded_file($_FILES["file"]["tmp_name"],
+          "../../Videos/" . $namelink);
+          echo "Stored in: " . "../../Videos/" . $namelink;
+          
+          $update =  mysqli_query($con,"UPDATE `papers` SET   `Link_ID` = '$namelink' where Paper_ID='$id'");
+         }
+       }
      }
-    }
+   
+     else
+     {
+       echo "Invalid file";
+     }
+     echo "<script>confirm('Succeflly enterd',window.location='../Userinfo.php')</script>";
 }
-
     function Dis()
     {
         include('connection.php');

@@ -9,7 +9,7 @@ function web($id,$name,$discri,$videoname)
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <iframe width="320" height="215" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></iframe>
+       <iframe width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></iframe>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -92,7 +92,8 @@ echo '<div class="sidebar-box">
         function related($id,$name,$videoName){ 
            echo ' <li>
                 <div class="related-img">
-                    <a href="#"><iframe width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></iframe></a>
+                    <a href="#">
+                    <iframe id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></iframe></a>
                 </div>
                 <div class="related-content">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
@@ -117,7 +118,7 @@ $courseAreadHead =' <div class="courses-page-area3">
    function VideoArea($videoName,$name,$discri){
        echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
        <!--<img src="img/course/15.jpg" class="img-responsive" alt="course">-->
-       <iframe width="818" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen></iframe>
+       <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen></iframe>
        <div class="course-details-inner">
            <h2 class="title-default-left title-bar-high">'.$name.'</h2>
            <p>'.$discri.'</p>';
@@ -234,4 +235,6 @@ $courseAreadHead =' <div class="courses-page-area3">
       </div>
   </div></div></div>';
   }  
+
+ 
 ?>

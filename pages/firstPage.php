@@ -239,7 +239,7 @@ function paper(){
     $Name=$row[1];
     if($idofpage=='' || $idofpage=='10'){
         $i=9;
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $i");
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -254,9 +254,9 @@ function paper(){
     }
     if($idofpage=='20')
     {
-        $i=9;
+        $i=8;
         $j=18;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $j,$i");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -272,7 +272,7 @@ function paper(){
     {
         $i=18;
         $j=27;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $j,$i");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -347,7 +347,7 @@ Function webdet(){
     YourComment($paperid);
     rightDet($paperid.'-'.$haeding);
     rel();
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_ID = '$sectionid'");
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_Name = '$sectionid'");
     while($row = mysqli_fetch_array($paperdetails))
      {
        $pap = $row[0];

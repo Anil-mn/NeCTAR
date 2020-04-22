@@ -89,7 +89,7 @@ function featured2main(){
     echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="600" height="475"  style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="600" height="475" id="iframeId"  style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
             
        
         <div class="featured-content-holder">
@@ -103,7 +103,7 @@ function featured2(){
     echo ' <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="300" height="175"  style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="300" height="175"  id="iframeId" style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
            
         <div class="featured-content-holder">
             <h3><a href="#">Regular MBA</a></h3>
