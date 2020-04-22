@@ -7,8 +7,9 @@ if(isset($_POST['user']))
     $Qualification=$_POST['Qualification'];
     $email=$_POST['Email'];
     $phno=$_POST['PhoneNumber'];
+    $place=$_POST['Place'];
 
-    $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$Designation','$Qualification','$email','$phno')");
+    $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`,`Place`) VALUES('$name','$Designation','$Qualification','$email','$phno','$place')");
 
 
 
@@ -16,7 +17,7 @@ if(isset($_POST['user']))
  $target_dir = "..\Images/";
  $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 
- $name = $phno;
+ $name = $email;
 
  $newfilename=$name ;
  echo $newfilename;
