@@ -12,6 +12,8 @@ include('components/filter.php');
 include('components/webnar.php');
 include('components/Registration.php');
 include('admin/model/connection.php');
+include('components/contactUs.php');
+
 
 //include('model/demo.php');
 
@@ -169,6 +171,16 @@ function testrimo(){
 function about(){
     about3Head('AboutUs');
     echo $GLOBALS['about3'];
+    echo $GLOBALS ['lectureareaHead'];
+    echo $GLOBALS ['filterHead2'];
+    //echo $GLOBALS ['container']; 
+    filterActive('patrons');
+    filter('associ');
+    echo $GLOBALS['filterEnd'];
+    box('patrons','associ');box('associ','');
+    echo $GLOBALS ['lectureareaEnd'];
+   
+
 }
 
 function paper(){
@@ -180,7 +192,7 @@ function paper(){
     faq('Demo','1','Two','dem');
     faq('Demo','1','Three','dem');
     echo '</div>';
-    echo ' <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
+    echo '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
     faq('Demo','1','Four','dem');
     faq('Demo','1','Five','dem');
     faq('Demo','1','Six','dem');
@@ -188,7 +200,15 @@ function paper(){
 
    }
 
+
+
+
+
+
+
    Function webinar(){
+    $filename = basename($_SERVER['REQUEST_URI']);
+    $idofpage =substr($filename,12);
     about3Head('webinars');
     echo $GLOBALS ['webHead'];
     echo $GLOBALS ['filterHead'];
@@ -199,7 +219,7 @@ function paper(){
    $Name=$row[1];
    filterActive($Name);
     }
-    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections` order by Section_ID desc limit 5");
+    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`  limit 1,5 ");
     while($row = mysqli_fetch_array($query))
    {
    $id =$row[0];
@@ -211,21 +231,75 @@ function paper(){
     echo $GLOBALS ['filterEnd'];
     echo $GLOBALS ['webHead'];
     echo $GLOBALS['weba'];
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers`");
-  while($row = mysqli_fetch_array($paperdetails))
-  {  
-    $paperid = $row[0];
-    $haeding = $row[1];
-    $descpt = $row[2];
-    $sectionid = $row[3];
-    $userid = $row[4];
-    $linkid = $row[5];
+    
+    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
+    while($row = mysqli_fetch_array($query))
+   {
+    $id =$row[0];
+    $Name=$row[1];
+    if($idofpage=='' || $idofpage=='10'){
+        $i=9;
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $i");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
      web($paperid,$sectionid,$haeding,$linkid);
-}
-     
+   }
+        
+    }
+    if($idofpage=='20')
+    {
+        $i=9;
+        $j=18;
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $j,$i");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
+     web($paperid,$sectionid,$haeding,$linkid);
+   }
+    }
+    if($idofpage=='30')
+    {
+        $i=18;
+        $j=27;
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_ID`='$Name' limit $j,$i");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
+     web($paperid,$sectionid,$haeding,$linkid);
+   }
+    }
+    
+} 
     // web('Demo','demo');web('Demo','demo');
     echo $GLOBALS['webaEnd'];
     echo $GLOBALS ['webEnd'];
+    if($idofpage=='' || $idofpage=='10'){
+        links(10,1);ink(20,2);ink(30,3); 
+    }
+    if($idofpage=='20'){
+        ink(10,1);links(20,2);ink(30,3); 
+    }
+    if($idofpage=='30'){
+        ink(10,1);ink(20,2);links(30,3); 
+    }
+    
+    echo $GLOBALS['wenENd'];
    }
    
 
@@ -243,8 +317,8 @@ Function webdet(){
       $linkid = $row[5];
    }
    $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info` where `PhoneNumber` = '$userid'");
- while($row = mysqli_fetch_array($userdetails))
- {
+  while($row = mysqli_fetch_array($userdetails))
+{
  $userid = $row[0];
  $name = $row[1];
  $designation = $row[2];
@@ -267,35 +341,46 @@ Function webdet(){
       $paperid = $row[2];
       $comment = $row[3];
       $email = $row[4];
-     
-      
       comments($name,$comment);
      }
     
     YourComment($paperid);
     rightDet($paperid.$haeding);
+    rel();
     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_ID = '$sectionid'");
     while($row = mysqli_fetch_array($paperdetails))
      {
-       $paperid = $row[0];
+       $pap = $row[0];
        $haeding = $row[1];
        $descpt = $row[2];
        $sectionid = $row[3];
        $userid = $row[4];
        $linkid = $row[5];
-       related($paperid,$haeding,$linkid);
+       related($pap,$haeding,$linkid);
     }
-    
-    feedback();
+    relEnd();
+    feedback($paperid);
     echo $GLOBALS['webDetailsEnd'];
 }
 
 
 
 
+function contact(){
+  about3Head('Contact US');
+  echo $GLOBALS ['contact'];
+}
 
 
-
+function viewall(){
+  about3Head('Contact US');
+    echo $GLOBALS['start'];
+    
+    featured2main();featured2main();featured2main();featured2main();
+    echo $GLOBALS ['features2spe'];
+    echo $GLOBALS['end'];
+}
+    
 
 
 ?>

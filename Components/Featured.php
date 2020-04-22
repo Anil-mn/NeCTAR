@@ -88,11 +88,8 @@ function featured2Head(){
 function featured2main(){
     echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="featured-box">
-        <div class="featured-img-holder hvr-bounce-to-right">
-            <img src="img/featured/1.jpg" class="img-responsive" alt="featured">
-            <a href="img/featured/1.jpg" class="zoom"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
-        </div>
-        <div class="featured-content-holder">
+    <iframe width="800" height="475" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+          <div class="featured-content-holder">
             <h3><a href="#">Basic Philosopphy</a></h3>
             <p>Rimply dummy text of the printing and typesetting industry when an unknown printer took a galley scrambled.</p>
         </div>

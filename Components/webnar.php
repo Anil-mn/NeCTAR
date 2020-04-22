@@ -2,9 +2,10 @@
 $webHead = ' <!-- Research Page 2 Area Start Here -->
 <div class="courses-page-area2" >
 <div class="container" id="inner-isotope">
-    <div class="row " >';
+    <div class="row ">';
 $weba = '<div class="row featuredContainer" >';
-function web($id,$name,$discri,$videoname){
+function web($id,$name,$discri,$videoname)
+{
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
@@ -23,12 +24,16 @@ function web($id,$name,$discri,$videoname){
 $webaEnd = '</div></div>';
 
  $webEnd =' <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
- <ul class="pagination-center">
-     <li class="active"><a href="#1">1</a></li>
-     <li><a href="#2">2</a></li>
-     <li><a href="#3">3</a></li>
-     <li><a href="#4">4</a></li>
- </ul>
+ <ul class="pagination-center">';
+ function links($id,$count){
+     echo '<li class="active"><a href="webinar.php?'.$id.'" >'.$count.'</a></li>
+     ';
+ }
+ function ink($id,$count){
+    echo '<li ><a href="webinar.php?'.$id.'" >'.$count.'</a></li>
+    ';
+}
+ $wenENd='</ul>
 </div>
 </div>
 </div>
@@ -77,14 +82,15 @@ function rightDet($papername) {
     ';
 }
 
-function related($id,$name,$videoName){
+function rel(){
 echo '<div class="sidebar-box">
 <div class="sidebar-box-inner">
     <h3 class="sidebar-title">Related Courses</h3>
     <div class="sidebar-related-area">
-        <ul>
-           
-            <li>
+        <ul>';
+    }
+        function related($id,$name,$videoName){ 
+           echo ' <li>
                 <div class="related-img">
                     <a href="#"><iframe width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></iframe></a>
                 </div>
@@ -92,8 +98,9 @@ echo '<div class="sidebar-box">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
                     <p></p>
                 </div>
-            </li>
-        </ul>
+            </li>';}
+            function relEnd(){
+                echo'    </ul>
     </div>
 </div>
 </div>';
@@ -106,7 +113,7 @@ $courseAreadHead =' <div class="courses-page-area3">
     <div class="row">
         <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
             ';
-            
+           
    function VideoArea($videoName,$name,$discri){
        echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
        <!--<img src="img/course/15.jpg" class="img-responsive" alt="course">-->
@@ -197,27 +204,28 @@ $courseAreadHead =' <div class="courses-page-area3">
     }
 
 
-  function feedback(){
+  function feedback($paper){
       echo '       <div class="sidebar-box">
       <div class="sidebar-box-inner">
           <h3 class="sidebar-title">Your FeedBack</h3>
           <div class="sidebar-question-form">
-              <form id="question-form">
+              <form id="question-form" action="model/insertions.php" METHOD="POST">
                   <fieldset>
                       <div class="form-group">
-                          <input type="text" placeholder="Name*" class="form-control" name="name" id="form-name" data-error="Name field is required" required>
+                          <input type="text" placeholder="Name*" name="name" class="form-control" name="name" id="form-name" data-error="Name field is required" required>
                           <div class="help-block with-errors"></div>
                       </div>
                       <div class="form-group">
-                          <input type="email" placeholder="Email*" class="form-control" name="email" id="form-email" data-error="Email field is required" required>
+                          <input type="email" placeholder="Email*" name="email" class="form-control" name="email" id="form-email" data-error="Email field is required" required>
                           <div class="help-block with-errors"></div>
                       </div>
                       <div class="form-group">
-                          <textarea placeholder="Message*" class="textarea form-control" name="message" id="sidebar-form-message" rows="3" cols="20" data-error="Message field is required" required></textarea>
+                          <textarea placeholder="Message*" name="feedback" class="textarea form-control" name="message" id="sidebar-form-message" rows="3" cols="20" data-error="Message field is required" required></textarea>
                           <div class="help-block with-errors"></div>
                       </div>
+                      <input type="text" name="paper"  value='.$paper.' hidden>
                       <div class="form-group">
-                          <button type="submit" class="default-full-width-btn">Send</button>
+                          <button type="submit" name="feed" class="default-full-width-btn">Send</button>
                       </div>
                       <div class="form-response"></div>
                   </fieldset>
