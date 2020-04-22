@@ -3,11 +3,12 @@ include('admin/model/connection.php');
 
 
 //function set(){
-$query = mysqli_query($con,"SELECT * from `Sections`");
-while($row = mysqli_fetch_array($query))
+$SectionDetails = mysqli_query($con,"SELECT * from `Sections`");
+while($row = mysqli_fetch_array($SectionDetails))
   {
    $id =$row[0];
    $Name=$row[1];
+   $subname=$row[2];
    echo '<option>'.$row[1].'<option>';
    //echo $id.$Name;
   }
@@ -37,8 +38,8 @@ while($row = mysqli_fetch_array($paperdetails))
  $paperid = $row[0];
  $heading = $row[1];
  $descpt = $row[2];
- $sectionid = $row[3];
- $userid = $row[4];
+ $sectionname = $row[3];
+ $email = $row[4];
  $linkid = $row[5];
 
 }
@@ -52,8 +53,9 @@ while($row = mysqli_fetch_array($userdetails))
  $phno = $row[5];
  $email = $row[3];
  $quali = $row[4];
+ $place = $row[6];
  
- $UserInsertion = mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`) VALUES('$name','$designation','$quali','$email','$phno')");
+ $UserInsertion = mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`,`Place`) VALUES('$name','$designation','$quali','$email','$phno','$place')");
 
 }
 
