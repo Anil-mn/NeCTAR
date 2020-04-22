@@ -376,7 +376,10 @@ function viewall(){
   about3Head('Contact US');
     echo $GLOBALS['start'];
     
-    featured2main();featured2main();featured2main();featured2main();
+    featured2main();featured2();
+    featured2();featured2();
+    featured2();
+    
     echo $GLOBALS ['features2spe'];
     echo $GLOBALS['end'];
 }
