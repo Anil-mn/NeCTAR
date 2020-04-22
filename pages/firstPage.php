@@ -123,7 +123,7 @@ function headlines(){
                 
                 
                 $firstPage_4=$NewsEnd.$UpcomingHead;
-                $firstPage_5=$upComingEnd.$messageHead;
+                $firstPage_5=$upComingEnd;
                 
  function Message()
                  {
@@ -151,6 +151,16 @@ while($row = mysqli_fetch_array($eventdetails))
  $descpn = $row[4];
  upcoming($eventid,$heading,$date,$time,$descpn);
 }
+}
+
+
+
+function testrimo(){
+    featured2Head();
+    featured2main();
+    featured2();featured2();featured2();featured2();
+    echo $GLOBALS ['features2spe'];
+    featured2End();
 }
  
 

@@ -70,6 +70,56 @@ $end = '
 </div>
 </div>';
 
-$end2='</div></div></div>'
+$end2='</div></div></div>';
+
+
+
+
+$image = 'img/featured/back.jpg';
+ 
+function featured2Head(){
+    echo '<div class="featured-area bg-common-style" style="background-image: url('.$GLOBALS['image'].');">
+    <div class="container">
+        <h2 class="title-default-textPrimary-left">Featured Courses</h2>
+    </div>
+    <div class="container">
+        <div class="row featured-wrapper" id="gallery-wrapper">';
+}
+function featured2main(){
+    echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+    <div class="featured-box">
+        <div class="featured-img-holder hvr-bounce-to-right">
+            <img src="img/featured/1.jpg" class="img-responsive" alt="featured">
+            <a href="img/featured/1.jpg" class="zoom"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+        </div>
+        <div class="featured-content-holder">
+            <h3><a href="#">Basic Philosopphy</a></h3>
+            <p>Rimply dummy text of the printing and typesetting industry when an unknown printer took a galley scrambled.</p>
+        </div>
+    </div>
+</div>';
+}
+function featured2(){
+    echo ' <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
+    <div class="featured-box">
+        <div class="featured-img-holder hvr-bounce-to-right">
+            <img src="img/featured/4.jpg" class="img-responsive" alt="featured">
+            <a href="img/featured/4.jpg" class="zoom"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+        </div>
+        <div class="featured-content-holder">
+            <h3><a href="#">Regular MBA</a></h3>
+            <p>Rmply dummy printing ypesetting industry it’s free demo.</p>
+        </div>
+    </div></div>';
+}
+$features2spe ='</div>
+</div>';
+function featured2End(){
+    echo '<div class="view-all-btn-area">
+    <a href="#" class="ghost-btn-big">View All Corses</a>
+</div>
+</div>
+</div>';
+}
 
 ?>
