@@ -9,7 +9,7 @@ function web($id,$name,$discri,$videoname)
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <iframe width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></iframe>
+       <video width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></video>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
@@ -74,8 +74,8 @@ function rightDet($papername) {
             <h3 class="sidebar-title">Article</h3>
             <div class="sidebar-course-price">
                 <span>Download paper</span>
-                <a href="viewpdf.php?download_file='.$papername.'" target="_blank" class="enroll-btn">View Pdf</a>
-                <a href="/papers/'.$papername.'" class="download-btn" download>Download PDF</a>
+                <a href="viewpdf.php?download_file='.$papername.'.pdf" target="_blank" class="enroll-btn">View Pdf</a>
+                <a href="papers/'.$papername.'" class="download-btn" download>Download PDF</a>
             </div>
         </div>
     </div>
@@ -93,7 +93,7 @@ echo '<div class="sidebar-box">
            echo ' <li>
                 <div class="related-img">
                     <a href="#">
-                    <iframe id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></iframe></a>
+                    <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></video></a>
                 </div>
                 <div class="related-content">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>

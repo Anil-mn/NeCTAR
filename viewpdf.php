@@ -5,6 +5,7 @@
 $path = "papers/"; // change the path to fit your websites document structure
 $fullPath = $path.$_GET['download_file'];
 
+
 if ($fd = fopen ($fullPath, "r")) {
 $fsize = filesize($fullPath);
 $path_parts = pathinfo($fullPath);

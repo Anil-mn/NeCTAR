@@ -316,7 +316,7 @@ Function webdet(){
       $userid = $row[4];
       $linkid = $row[5];
    }
-   $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info` where `PhoneNumber` = '$userid'");
+   $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info` where `Email_ID` = '$userid'");
   while($row = mysqli_fetch_array($userdetails))
 {
  $userid = $row[0];
