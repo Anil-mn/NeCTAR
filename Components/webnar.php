@@ -130,44 +130,39 @@ $courseAreadHead =' <div class="courses-page-area3">
     <div class="course-details-inner">
         <div class="course-details-comments">
             <h3 class="sidebar-title">Comments</h3>';
-    function comments(){
+    function comments($name,$comment){
+
         echo '<div class="media">
         <a href="#" class="pull-left">
             <img alt="Comments" src="img/course/16.jpg" class="media-object">
         </a>
         <div class="media-body">
-            <h3><a href="#">Greg Christman</a></h3>
-            <h4>Excellent course!</h4>
-            <p>Rimply dummy text of the printinwhen an unknown printer took eype and scramb relofeletog and typesetting industry. Lorem </p>
-            <div class="replay-area">
-                <ul>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                    <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                </ul>
-            </div>
+            <h3><a href="#">'.$name.'</a></h3>
+            <h4>My review</h4>
+            <p>'.$comment.' </p>
+            
         </div>
     </div>';
     } 
 
-    function YourComment(){
+    function YourComment($paper){
         echo '<div class="leave-comments">
         <h3 class="sidebar-title">Leave A Comment</h3>
         <div class="row">
             <div class="contact-form" id="review-form">
-                <form>
+                <form action="model/insertions.php" method="POST">
                     <fieldset>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="text" placeholder="Name" class="form-control">
+                                <input type="text" name="name" placeholder="Name" class="form-control">
+                                
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
+                        <input type="text" name="paper"  value='.$paper.' hidden>
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <input type="email" placeholder="Email" class="form-control">
+                                <input type="email" name="email" placeholder="Email" class="form-control">
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
@@ -175,25 +170,19 @@ $courseAreadHead =' <div class="courses-page-area3">
                             <div class="form-group">
                                 <div class="rate-wrapper">
                                     <div class="rate-label">Your Rating:</div>
-                                    <div class="rate">
-                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                        <div class="rate-item"><i class="fa fa-star" aria-hidden="true"></i></div>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <textarea placeholder="Comment" class="textarea form-control" id="form-message" rows="8" cols="20"></textarea>
+                                <textarea placeholder="Comment" name="com" class="textarea form-control" id="form-message" rows="8" cols="20"></textarea>
                                 <div class="help-block with-errors"></div>
                             </div>
                         </div>
                         <div class="col-sm-12">
                             <div class="form-group">
-                                <button type="submit" class="view-all-accent-btn">Post Comment</button>
+                                <button type="submit" name="Comment" class="view-all-accent-btn">Post Comment</button>
                             </div>
                         </div>
                     </fieldset>

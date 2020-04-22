@@ -12,6 +12,7 @@ include('components/filter.php');
 include('components/webnar.php');
 include('components/Registration.php');
 include('admin/model/connection.php');
+
 //include('model/demo.php');
 
 
@@ -258,8 +259,20 @@ Function webdet(){
     details($sectionid,$name,$designation);
     echo $GLOBALS['commentHead'];
 
-    comments();comments();comments();
-    YourComment();
+    $CommentDetails = mysqli_query($GLOBALS['con'],"SELECT * from `comments` where `Paper_ID`='$paperid' order by Comment_ID  Desc limit 3");
+     while($row = mysqli_fetch_array($CommentDetails))
+     {
+      $id = $row[0];
+      $name = $row[1];
+      $paperid = $row[2];
+      $comment = $row[3];
+      $email = $row[4];
+     
+      
+      comments($name,$comment);
+     }
+    
+    YourComment($paperid);
     rightDet($paperid.$haeding);
     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_ID = '$sectionid'");
     while($row = mysqli_fetch_array($paperdetails))
