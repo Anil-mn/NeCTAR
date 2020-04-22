@@ -12,6 +12,9 @@ include('components/filter.php');
 include('components/webnar.php');
 include('components/Registration.php');
 include('admin/model/connection.php');
+include('components/contactUs.php');
+
+
 //include('model/demo.php');
 
 
@@ -101,14 +104,14 @@ $firstPage_1 = $Slider
                      {
                       $id =$row[0];
                       $Name=$row[1];
-                      test1($Name);
+                      test1($Name,$id);
                       //echo $id.$Name;
                      }
                  }
 
 
 function headlines(){
-             $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news`");
+             $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news` order by  `News_ID` desc limit 3");
              while($row1 = mysqli_fetch_array($newsQuery))
              {
               $newsid =$row1[0];
@@ -123,7 +126,7 @@ function headlines(){
                 
                 
                 $firstPage_4=$NewsEnd.$UpcomingHead;
-                $firstPage_5=$upComingEnd.$messageHead;
+                $firstPage_5=$upComingEnd;
                 
  function Message()
                  {
@@ -134,19 +137,50 @@ function headlines(){
                      $name1=$row2[1];
                      $designation=$row2[2];
                      $message=$row2[3];
-                     Mesg($name1,$designation,$message);
+                     Mesg($name1,$designation,$message,$Messageid);
                     }
                     
                 }
                 $firstPage_6=$messageEnd;
                 
+function event(){
+    $eventdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `event` order by Event_ID desc limit 2");
+while($row = mysqli_fetch_array($eventdetails))
+{
+ $eventid = $row[0];
+ $heading = $row[1];
+ $date = $row[2];
+ $time = $row[3];
+ $descpn = $row[4];
+ upcoming($eventid,$heading,$date,$time,$descpn);
+}
+}
 
+
+
+function testrimo(){
+    featured2Head();
+    featured2main();
+    featured2();featured2();featured2();featured2();
+    echo $GLOBALS ['features2spe'];
+    featured2End();
+}
  
 
 
 function about(){
     about3Head('AboutUs');
     echo $GLOBALS['about3'];
+    echo $GLOBALS ['lectureareaHead'];
+    echo $GLOBALS ['filterHead2'];
+    //echo $GLOBALS ['container']; 
+    filterActive('patrons');
+    filter('associ');
+    echo $GLOBALS['container'];
+    box('patrons','associ');box('associ','');
+    echo $GLOBALS ['lectureareaEnd'];
+   
+
 }
 
 function paper(){
@@ -158,7 +192,7 @@ function paper(){
     faq('Demo','1','Two','dem');
     faq('Demo','1','Three','dem');
     echo '</div>';
-    echo ' <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
+    echo '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
     faq('Demo','1','Four','dem');
     faq('Demo','1','Five','dem');
     faq('Demo','1','Six','dem');
@@ -166,39 +200,190 @@ function paper(){
 
    }
 
+
+
+
+
+
+
    Function webinar(){
+    $filename = basename($_SERVER['REQUEST_URI']);
+    $idofpage =substr($filename,12);
     about3Head('webinars');
     echo $GLOBALS ['webHead'];
     echo $GLOBALS ['filterHead'];
-    filterActive('All');
-    filter('Demo');
+    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections` limit 1");
+    while($row = mysqli_fetch_array($query))
+   {
+   $id =$row[0];
+   $Name=$row[1];
+   filterActive($Name);
+    }
+    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`  limit 1,5 ");
+    while($row = mysqli_fetch_array($query))
+   {
+   $id =$row[0];
+   $Name=$row[1];
+   filter($Name);
+    }
+    
+
     echo $GLOBALS ['filterEnd'];
     echo $GLOBALS ['webHead'];
     echo $GLOBALS['weba'];
-    web('All','sf asdasd asda sd dasdasd');
-    web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');web('Demo','demo');
     
+    $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
+    while($row = mysqli_fetch_array($query))
+   {
+    $id =$row[0];
+    $Name=$row[1];
+    if($idofpage=='' || $idofpage=='10'){
+        $i=9;
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
+     web($paperid,$sectionid,$haeding,$linkid);
+   }
+        
+    }
+    if($idofpage=='20')
+    {
+        $i=8;
+        $j=18;
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
+     web($paperid,$sectionid,$haeding,$linkid);
+   }
+    }
+    if($idofpage=='30')
+    {
+        $i=18;
+        $j=27;
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+    while($row = mysqli_fetch_array($paperdetails))
+   {  
+     $paperid = $row[0];
+     $haeding = $row[1];
+     $descpt = $row[2];
+     $sectionid = $row[3];
+     $userid = $row[4];
+     $linkid = $row[5];
+     web($paperid,$sectionid,$haeding,$linkid);
+   }
+    }
     
+} 
+    // web('Demo','demo');web('Demo','demo');
     echo $GLOBALS['webaEnd'];
     echo $GLOBALS ['webEnd'];
+    if($idofpage=='' || $idofpage=='10'){
+        links(10,1);ink(20,2);ink(30,3); 
+    }
+    if($idofpage=='20'){
+        ink(10,1);links(20,2);ink(30,3); 
+    }
+    if($idofpage=='30'){
+        ink(10,1);ink(20,2);links(30,3); 
+    }
+    
+    echo $GLOBALS['wenENd'];
    }
    
 
 Function webdet(){
-    about3Head('webinarDetails');
-    echo $GLOBALS['webDetailsHead'];
-    webDetails();
-    echo $GLOBALS['rightDet'];
-    echo $GLOBALS['related'];
+     $filename = basename($_SERVER['REQUEST_URI']);
+     $paperIDS =substr($filename,15);
+     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where paper_ID = '$paperIDS'");
+   while($row = mysqli_fetch_array($paperdetails))
+    {
+      $paperid = $row[0];
+      $haeding = $row[1];
+      $descpt = $row[2];
+      $sectionid = $row[3];
+      $userid = $row[4];
+      $linkid = $row[5];
+   }
+   $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info` where `Email_ID` = '$userid'");
+  while($row = mysqli_fetch_array($userdetails))
+{
+ $userid = $row[0];
+ $name = $row[1];
+ $designation = $row[2];
+ $phno = $row[5];
+ $email = $row[3];
+ $quali = $row[4];
+}
+   about3Head($haeding);
+   echo $GLOBALS['courseAreadHead'];
+
+     VideoArea($linkid,$haeding,$descpt);
+    details($sectionid,$name,$designation);
+    echo $GLOBALS['commentHead'];
+
+    $CommentDetails = mysqli_query($GLOBALS['con'],"SELECT * from `comments` where `Paper_ID`='$paperid' order by Comment_ID  Desc limit 3");
+     while($row = mysqli_fetch_array($CommentDetails))
+     {
+      $id = $row[0];
+      $name = $row[1];
+      $paperid = $row[2];
+      $comment = $row[3];
+      $email = $row[4];
+      comments($name,$comment);
+     }
+    
+    YourComment($paperid);
+    rightDet($paperid.'-'.$haeding);
+    rel();
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_Name = '$sectionid'");
+    while($row = mysqli_fetch_array($paperdetails))
+     {
+       $pap = $row[0];
+       $haeding = $row[1];
+       $descpt = $row[2];
+       $sectionid = $row[3];
+       $userid = $row[4];
+       $linkid = $row[5];
+       related($pap,$haeding,$linkid);
+    }
+    relEnd();
+    feedback($paperid);
     echo $GLOBALS['webDetailsEnd'];
 }
 
 
 
 
+function contact(){
+  about3Head('Contact US');
+  echo $GLOBALS ['contact'];
+}
 
 
-
+function viewall(){
+    about3Head('Contact US');
+    echo $GLOBALS['start'];
+    
+    featured2main();featured2();
+    featured2();featured2();
+    featured2();
+    
+    echo $GLOBALS ['features2spe'];
+    echo $GLOBALS['end'];
+}
+    
 
 
 ?>
