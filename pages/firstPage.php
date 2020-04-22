@@ -111,7 +111,7 @@ $firstPage_1 = $Slider
 
 
 function headlines(){
-             $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news`");
+             $newsQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `news` order by  `News_ID` desc limit 3");
              while($row1 = mysqli_fetch_array($newsQuery))
              {
               $newsid =$row1[0];
