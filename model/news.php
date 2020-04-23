@@ -119,7 +119,7 @@ while($row = mysqli_fetch_array($Details))
  $desc1 = $row[5];
  $desc2 = $row[6];
 
- $infos = mysqli_query($con,"INSERT INTO `introvideos`(`Name`, `Designation`,`Status`, `Video_name`, `d1`, `d2`) VALUES('$name','$desig','$status','$sectionName','$Videoname','$desc1','$desc2')");
+ $infos = mysqli_query($con,"INSERT INTO `introvideos`(`Person_Name`, `Designation`,`Status`, `Video_name`, `d1`, `d2`) VALUES('$name','$desig','$status','$sectionName','$Videoname','$desc1','$desc2')");
 }
 
 $WebinarDetails = mysqli_query($con,"SELECT * from `webinar`");
