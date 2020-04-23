@@ -3,13 +3,15 @@ include('admin/model/connection.php');
 
 
 //function set(){
-$SectionDetails = mysqli_query($con,"SELECT * from `Sections`");
+$SectionDetails = mysqli_query($con,"SELECT * from `sections`");
 while($row = mysqli_fetch_array($SectionDetails))
   {
    $id =$row[0];
    $Name=$row[1];
    $subname=$row[2];
-   echo '<option>'.$row[1].'<option>';
+   $despn=$row[3];
+   $despn1=$row[4];
+   //echo '<option>'.$row[1].'<option>';
    //echo $id.$Name;
   }
 //}
