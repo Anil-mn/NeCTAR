@@ -63,3 +63,5 @@ echo $rowEnd;
 
 // echo $rowEnd;
 echo $footer.$connection;
+?>
+</html>
