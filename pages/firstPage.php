@@ -324,16 +324,28 @@ function paper(){
     // web('Demo','demo');web('Demo','demo');
     echo $GLOBALS['webaEnd'];
     echo $GLOBALS ['webEnd'];
-    if($idofpage=='' || $idofpage=='10'){
-        links(10,1);ink(20,2);ink(30,3); 
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT  count(`Paper_ID`) from `papers`");
+    while($row = mysqli_fetch_array($paperdetails))
+    {  
+      $count = $row[0];
     }
-    if($idofpage=='20'){
-        ink(10,1);links(20,2);ink(30,3); 
-    }
-    if($idofpage=='30'){
+
+    if($count > 9)
+    {
+       if($idofpage=='' || $idofpage=='10'){
+           links(10,1);ink(20,2);
+       }
+  }
+    if($count > 18)
+    {
+       if($idofpage=='20'){
+        ink(10,1);links(20,2);ink(30,3); }
+      }
+    if($count > 27){
+         if($idofpage=='30'){
         ink(10,1);ink(20,2);links(30,3); 
     }
-    
+  }
     echo $GLOBALS['wenENd'];
    }
    

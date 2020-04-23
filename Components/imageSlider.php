@@ -1,6 +1,6 @@
 <?php
 
-$titles = ['Nehru E-Conference On Technologies Annexing Reality','B','C'];
+$titles = ['Nehru E-Conference On Technologies Annexing Reality','Nehru College of Engineering and Research Centre','Nehru Group Of institutions'];
 
 $Slider = '<!-- Slider 1 Area Start Here -->
 <div class="slider1-area overlay-default index1">
@@ -25,7 +25,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                <div id="slider-direction-2" class="t-cn slider-direction">
                    <div class="slider-content s-tb slide-2">
                        <div class="title-container s-tb-c">
-                           <div class="title1">Best Education For HTML Template</div>
+                           <div class="title1">'.$titles[1].'</div>
                            <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industrys standard
                                <br>dummy text ever sinceprinting and typesetting industry. </p>
                            <div class="slider-btn-area">
@@ -37,7 +37,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                <div id="slider-direction-3" class="t-cn slider-direction">
                    <div class="slider-content s-tb slide-3">
                        <div class="title-container s-tb-c">
-                           <div class="title1">Best Education Into PHP</div>
+                           <div class="title1">'.$titles[2].'</div>
                            <p>Emply dummy text of the printing and typesetting industry orem Ipsum has been the industry s standard
                                <br>dummy text ever sinceprinting and typesetting industry. </p>
                            <div class="slider-btn-area">

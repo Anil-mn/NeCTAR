@@ -10,9 +10,16 @@ include('pages/firstPage.php');
 echo $head
     .$header;
     
-
+    $paperdetails=mysqli_query($con,"SELECT * from `papers`");
+    $result = mysqli_fetch_array($paperdetails);
+    if($result == true)
+    {
     webinar();
-
+    }
+    else{
+        about3Head('404error');
+        h404('site is under maintaince');
+    }
 
 echo $footer
     .$connection;
