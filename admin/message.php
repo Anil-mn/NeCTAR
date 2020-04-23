@@ -11,6 +11,7 @@ echo $head.$menus.$mainHead.$row;
 formHead('news','model/messageInsertion.php');
 input('name','text'); 
 input('designation','text'); 
+input('Email','text'); 
 textArea('message');
 upload('msg');
 Button('submit');

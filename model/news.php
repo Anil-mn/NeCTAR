@@ -98,10 +98,12 @@ while($row = mysqli_fetch_array($PatronsDetails))
  $id = $row[0];
  $name = $row[1];
  $designation = $row[2];
- $descpn = $row[3];
- $descpn2 = $row[4];
+ $descpn = $row[5];
+ $descpn2 = $row[6];
+ $role1 = $row[3];
+ $role2 = $row[4];
 
-$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Description`, `Description1`) VALUES ('$name','$designation','$descpn','$descpn2')");
+$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
 }
 
 $Details = mysqli_query($con,"SELECT * from `patrons`");
@@ -115,5 +117,17 @@ while($row = mysqli_fetch_array($Details))
  $desc2 = $row[5];
 
  $infos = mysqli_query($con,"INSERT INTO `details`(`Name`, `Section_Name`, `Video_name`, `d1`, `d2`) VALUES('$name','$sectionName','$Videoname','$desc1','$desc2')");
+}
+
+$WebinarDetails = mysqli_query($con,"SELECT * from `webinar`");
+while($row = mysqli_fetch_array($Details))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $sectionName = $row[4];
+ $Videoname = $row[3];
+ $videoLength = $row[5];
+ $desig = $row[2];
+ $WebinarInsertion = mysqli_query($con,"INSERT INTO `webinar`( `Name`, `Designation`, `Video_Name`, `Section_Name`, `Video_Length`) VALUES ('$name','$desig','$Videoname','$sectionName','$videoLength')");
 }
 ?>

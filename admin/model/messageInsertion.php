@@ -5,7 +5,8 @@ if(isset($_POST['submit']))
     $name=$_POST['name'];
     $desig=$_POST['designation'];
     $message=$_POST['message'];
-    $messageInsertion=mysqli_query($con,"INSERT INTO `message`(`Name`, `Designation`, `Message`) VALUES ('$name','$desig','$message')");
+    $email=$_POST['Email'];
+    $messageInsertion=mysqli_query($con,"INSERT INTO `message`(`Name`, `Designation`, `Message`,`Email_ID`) VALUES ('$name','$desig','$message','$email')");
 
     if($messageInsertion==true)
     {
