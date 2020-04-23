@@ -133,7 +133,8 @@ if(isset($_POST['paper']))
  $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
  $result = mysqli_fetch_array($userdetails);
 
-   if($result == true){
+   if($result == true)
+   {
    $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`,`Link_ID`) VALUES ('$heading','$descp','$section','$email','$Ylink')");
    }
    else{

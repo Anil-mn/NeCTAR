@@ -42,7 +42,7 @@ input('Email','text');
 select('Section');
 $query = mysqli_query($con,"SELECT * From `Sections`");
 while($row=mysqli_fetch_array($query)){
-    echo '<option>'.$row[1].'';
+    echo '<option value='.$row[2].'>'.$row[1].'';
 }
 
 echo $selectEnd;

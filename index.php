@@ -19,7 +19,13 @@ echo $head
    
   
 echo $firstPage_2;
+
+$WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `webinar`");
+$roesult2 = mysqli_fetch_array($WebinarDetails);
+if($roesult2 == true)
+{
 webinarsVideo();
+}
 compus();
 echo $firstPage_3;
 
@@ -30,10 +36,10 @@ event();
 
 echo $firstPage_5;
 
-$Details = mysqli_query($con,"SELECT * from `details`");
-$resut1 = mysqli_fetch_array($Details);
-if($resut1 == false)
-{
+ 
+$Details = mysqli_query($GLOBALS ['con'],"SELECT * from `introvideos`");
+$result3 = mysqli_fetch_array($Details);
+if($result3==true){
 testrimo();
 }
 

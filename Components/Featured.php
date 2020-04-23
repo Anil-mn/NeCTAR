@@ -86,29 +86,29 @@ function featured2Head(){
     <div class="container">
         <div class="row featured-wrapper" id="gallery-wrapper">';
 }
-function featured2main(){
+function featured2main($name,$eoname,$desc1){
     echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="600" height="475" id="iframeId"  style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="550" height="475" id="iframeId"  style="position:centre;"  src="videos/intro/'.$eoname.'" frameborder="0" allowfullscreen></iframe>
             
        
         <div class="featured-content-holder">
-            <h3><a href="#">Basic Philosopphy</a></h3>
-            <p>Rimply dummy text of the printing and typesetting industry when an unknown printer took a galley scrambled.</p>
+            <h3><a href="#">'.$name.'</a></h3>
+            <p>'.$desc1.'</p>
         </div>
     </div>
 </div>';
 }
-function featured2(){
+function featured2($name,$eoname,$desc1){
     echo ' <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="300" height="175"  id="iframeId" style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="280" height="175"  id="iframeId" style="position:centre;" src="videos/intro/'.$eoname.'" frameborder="0" allowfullscreen></iframe>
            
         <div class="featured-content-holder">
-            <h3><a href="#">Regular MBA</a></h3>
-            <p>Rmply dummy printing ypesetting industry it’s free demo.</p>
+            <h3><a href="#">'.$name.'</a></h3>
+            <p>'.$desc1.'</p>
         </div>
     </div></div>';
 }
@@ -131,23 +131,22 @@ $featured3Head = ' <div class="courses2-area bg-common-style" style="background-
 <div class="container courses-list-wrapper">
     <div class="row courses-wrapper courses-list">';
 
-    function featured3(){
+    function featured3($name,$videoname,$videolength,$sectionName){
         echo ' <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 courses-item" >
         <div class="courses-box2">
             <div class="single-item-wrapper">
            
-                    <iframe width="300" height="195"  id="iframeId" style="position:centre;" src="videos/t_video6172442589371826309.mp4" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="300" height="195"  id="iframeId" style="position:centre;" src="videos/webinars/'.$videoname.'.mp4" frameborder="0" allowfullscreen></iframe>
                    
             
                 <div class="courses-content-wrapper">
-                    <h3 class="item-title"><a href="#">Evining MBA</a></h3>
-                    <p class="item-content">Rimply dummy texthe prinetting indus known printer galley scrambled.</p>
+                    <h3 class="item-title"><a href="#">'.$videoname.'</a></h3>
+                    <p class="item-content">'.$name.'</p>
                     <ul class="courses-info">
-                        <li>1 Year
-                            <br><span> Course</span></li>
-                        <li>70
-                            <br><span> Classes</span></li>
-                        <li>7 pm - 10 pm
+                        <li>1 '.$sectionName.'
+                            <br><span> </span></li>
+                       
+                        <li>'.$videolength.'
                             <br><span> Time</span></li>
                     </ul>
                 </div>
