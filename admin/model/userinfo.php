@@ -3,12 +3,20 @@ include('connection.php');
 if(isset($_POST['user']))
 {
     $name=$_POST['Name'];
+    $name=ucfirst($name);
     $Designation=$_POST['Designation'];
     $Qualification=$_POST['Qualification'];
     $email=$_POST['Email'];
     $phno=$_POST['PhoneNumber'];
     $place=$_POST['Place'];
-
+    $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
+   $result = mysqli_fetch_array($userdetails);
+   if($result == true)
+   {
+    echo "<script>confirm('There is email is already exisit,window.location='userinfo.php')</script>";
+   }
+   else
+   {
     $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`,`Place`) VALUES('$name','$Designation','$Qualification','$email','$phno','$place')");
 
 
@@ -64,7 +72,49 @@ if(isset($_POST['user']))
      }
      
     }
+    //..........abstract....
+    $target_dir = "..\Images/";
+    $target_file = $target_dir . basename($_FILES["Abstract"]["name"]);
+   
+    $name =$email;
+   //
+    $newfilename=$name ;
+    echo $newfilename;
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+       
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check file size
+    if ($_FILES["Abstract"]["size"] > 5000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if( $imageFileType != "pdf" ) {
+        echo "Sorry, only pdf files are allowed.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+           if(move_uploaded_file($_FILES["Abstract"]["tmp_name"], "../../Abstract/" . $newfilename.'.pdf')){
+            echo "The file ". basename( $_FILES["Abstract"]["name"]). " has been uploaded.";
+            $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$newfilename' where `Email_ID`='$name' ");
 
+            } else {
+            echo "Sorry, there was an error uploading your file.";
+                }
+        
+        } 
+   
+    }
 }
 
 //-----Paper insertion------------------

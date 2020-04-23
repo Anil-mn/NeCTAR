@@ -1,8 +1,10 @@
 <?php
 include('connection.php');
 if(isset($_POST['submit']))
+
 {
     $name=$_POST['name'];
+    $name=ucfirst($name);
     $desig=$_POST['designation'];
     $message=$_POST['message'];
     $email=$_POST['Email'];

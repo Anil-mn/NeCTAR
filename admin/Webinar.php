@@ -1,6 +1,11 @@
 <html>
 
 <?php
+
+SESSION_START();
+if(!isset($_SESSION['admin'])){
+   header('location:index.html');
+}
 include('model/connection.php');
 include('components/head.php');
 include('components/sidemenus.php');

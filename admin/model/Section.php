@@ -3,8 +3,11 @@ include('connection.php');
 if(isset($_POST['InserSection']))
 {
     $name=$_POST['Name'];
+    $name=ucfirst($name);
     $sub=$_POST['SubSection'];
-    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`,`SubSection`) VALUES ('$name','$sub')");
+    $descp = $_POST['Description1'];
+    $descp2 = $_POST['Description2'];
+    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`,`SubSection`,`Description1`,`Description1`) VALUES ('$name','$sub','$descp','$descp2')");
     if($sectionInsertion==true)
     {
        $innsertphoto=mysqli_query($con,"SELECT * from `sections` order by  `Section_ID` desc limit 1");

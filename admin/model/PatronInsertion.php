@@ -3,6 +3,7 @@ include('connection.php');
 if(isset($_POST['patron']))
 {
  $name = $_POST['Name'];
+ $name=ucfirst($name);
  $designation = $_POST['Designation'];
  $descpn = $_POST['Role1'];
  $descpn2 =$_POST['Role2'];
