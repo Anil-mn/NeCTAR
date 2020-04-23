@@ -37,7 +37,7 @@ $head = '<head>
 <link rel="stylesheet" href="style.css">
 <!-- Modernizr Js -->
 <script src="js/modernizr-2.8.3.min.js"></script>
-<script src="script.js"></script>
+
 </head>
 
 

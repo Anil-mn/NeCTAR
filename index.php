@@ -26,7 +26,14 @@ event();
 
 echo $firstPage_5;
 
+$Details = mysqli_query($con,"SELECT * from `details`");
+$resut1 = mysqli_fetch_array($Details);
+if($resut1 == true)
+{
 testrimo();
+}
+
+
 echo $messageHead;
 Message();
 

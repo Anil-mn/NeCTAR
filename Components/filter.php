@@ -22,15 +22,15 @@ $lectureareaHead = ' <div class="lecturers-page2-area">
      echo  '<a href="#" data-filter=".'.$filter.'">'.$filter.'</a>';
     }
         $container = '<div class="row featuredContainer">';
-        function box($desi1,$desi2){
-            echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$desi1.' '.$desi2.'">
+        function box($roll1,$name,$designation,$image,$about){
+            echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$roll1.' ">
             <div class="single-item">
                 <div class="lecturers-item-wrapper">
-                    <a href="#"><img class="img-responsive" src="img/students/chairman.jpg" alt="team"></a>
+                    <a href="#"><img class="img-responsive" src="img/students/'.$image.'.jpg" alt="team"></a>
                     <div class="lecturers-content-wrapper">
-                        <h3><a href="#">Adv. Dr. Krishnadas</a></h3>
-                        <span>Chairman and Mg.Trustee NGI</span>
-                        <p>Eimply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industummy text.</p>
+                        <h3><a href="#">'.$name.'</a></h3>
+                        <span>'.$designation.'</span>
+                        <p>'.$about.'</p>
                         <ul class="lecturers-social">
                             <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>

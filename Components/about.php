@@ -34,7 +34,7 @@ Audience involvement accomplished with live Q&A.']
 
 
 
-$about = '<!-- About Page 2 Area Start Here -->
+$aboutHead = '<!-- About Page 2 Area Start Here -->
 <div class="about-page2-area">
     <div class="container">
         <div class="row about-page2-inner">
@@ -47,15 +47,15 @@ $about = '<!-- About Page 2 Area Start Here -->
                     <li><a href="#">Experience Design (XD)</a></li>
                     <li><a href="#">Sound Design; Social Media and SEO</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            </div>';
+     $aboutVideo ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="video-area2 overlay-video bg-common-style video-margin-top" style="background-image: url("img/banner/6.jpg");">
                     <div class="video-content">
                         <a class="play-btn popup-youtube" href="http://www.youtube.com/watch?v=1iIZeIy7TqM"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>';
+       $aboutEnd ='</div>
     </div>
 </div>
 <!-- About Page 2 Area End Here -->';
