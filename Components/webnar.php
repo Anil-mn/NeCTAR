@@ -5,11 +5,12 @@ $webHead = ' <!-- Research Page 2 Area Start Here -->
     <div class="row ">';
 $weba = '<div class="row featuredContainer" >';
 function web($id,$name,$discri,$videoname)
-{
+{   
+    
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
         <div class="research-img-holder"> 
-       <video width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></video>
+       <video width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen ></video>
         <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
             <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>

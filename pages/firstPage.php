@@ -252,17 +252,19 @@ function paper(){
    {
    $id =$row[0];
    $Name=$row[1];
-   filterActive($Name);
+   $shortName =$row[2];
+   filterActive($shortName);
     }
     $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`  limit 1,5 ");
     while($row = mysqli_fetch_array($query))
    {
    $id =$row[0];
    $Name=$row[1];
-   $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name'");
+   $shortName =$row[2];
+   $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName'");
    $result2 = mysqli_fetch_array($paperdetails);
    if($result2 == true){
-   filter($Name);
+   filter($shortName);
   }
     }
     
@@ -276,9 +278,10 @@ function paper(){
    {
     $id =$row[0];
     $Name=$row[1];
+    $shortName=$row[2];
     if($idofpage=='' || $idofpage=='10'){
         $i=9;
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i");
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -295,7 +298,7 @@ function paper(){
     {
         $i=8;
         $j=18;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -311,7 +314,7 @@ function paper(){
     {
         $i=18;
         $j=27;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
