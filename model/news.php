@@ -106,7 +106,7 @@ while($row = mysqli_fetch_array($PatronsDetails))
 $PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
 }
 
-$Details = mysqli_query($con,"SELECT * from `patrons`");
+$Details = mysqli_query($con,"SELECT * from `details`");
 while($row = mysqli_fetch_array($Details))
 {
  $id = $row[0];
