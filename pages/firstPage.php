@@ -13,6 +13,7 @@ include('components/webnar.php');
 include('components/Registration.php');
 include('admin/model/connection.php');
 include('components/contactUs.php');
+include('components/imagesDisplay.php');
 
 
 //include('model/demo.php');
@@ -350,6 +351,17 @@ function paper(){
    }
    
 
+
+
+
+
+
+
+
+
+
+
+
 Function webdet(){
      $filename = basename($_SERVER['REQUEST_URI']);
      $paperIDS =substr($filename,15);
@@ -431,6 +443,15 @@ function viewall(){
     echo $GLOBALS['end'];
 }
     
-
+function img(){
+  echo $GLOBALS['imageHead'];
+  $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info`");
+  while($row = mysqli_fetch_array($userdetails))
+    {
+      $idname = $row[0];
+      image($idname);
+    }
+  echo $GLOBALS['imageEnd'];
+}
 
 ?>

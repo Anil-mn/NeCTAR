@@ -39,12 +39,14 @@ testrimo();
 
 
 echo $messageHead;
+
 Message();
 
 
  
- echo $firstPage_6
-    .$footer
+ echo $firstPage_6;
+ //img();
+   echo  $footer
     .$connection;
 
  ?>
