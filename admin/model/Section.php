@@ -3,7 +3,8 @@ include('connection.php');
 if(isset($_POST['InserSection']))
 {
     $name=$_POST['Name'];
-    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`) VALUES ('$name')");
+    $sub=$_POST['SubSection'];
+    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`,`SubSection`) VALUES ('$name','$sub')");
     if($sectionInsertion==true)
     {
        $innsertphoto=mysqli_query($con,"SELECT * from `sections` order by  `Section_ID` desc limit 1");
@@ -62,7 +63,7 @@ if(isset($_POST['InserSection']))
         } else {
             echo "Sorry, there was an error uploading your file.";
         }
-      }
+      } echo "<script>confirm('Succeflly enterd',window.location='../section.php')</script>";
     }
 
 

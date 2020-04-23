@@ -12,6 +12,7 @@ echo $head.$menus.$mainHead.$row;
 
 formHead('Sections','model/section.php');
 input('Name','text');
+input('SubSection','text');
 upload('photo');
 Button('InserSection');
 echo $formEnd;
