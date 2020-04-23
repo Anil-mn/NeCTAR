@@ -58,7 +58,7 @@ if(isset($_POST['patron']))
             } else {
             echo "Sorry, there was an error uploading your file.";
                 }
-        
+                echo "<script>confirm('Succeflly enterd',window.location='../patron.php')</script>";
         } 
 
 

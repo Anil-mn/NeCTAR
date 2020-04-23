@@ -123,7 +123,29 @@ $firstPage_1 = $Slider
                   }
                   echo $GLOBALS['end2'];
               }
-                $firstPage_2= $counter;
+
+
+                function coun(){
+                  $SectionDetails = mysqli_query($GLOBALS ['con'],"SELECT count(`Section_ID`) from `sections`");
+while($row = mysqli_fetch_array($SectionDetails))
+  {
+   $sid =$row[0];
+  }
+  $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT count(`Paper_ID`) from `papers`");
+while($row = mysqli_fetch_array($paperdetails))
+{
+ $paperid = $row[0];
+}
+$WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT count('Webinar_ID') from `webinar`");
+while($row = mysqli_fetch_array($WebinarDetails))
+{
+ $wid = $row[0];}
+ $eventdetails = mysqli_query($GLOBALS ['con'],"SELECT count('Event_ID') from `event`");
+while($row = mysqli_fetch_array($eventdetails))
+{
+ $eventid = $row[0];}
+                  counter($wid,$paperid,$sid,$eventid);
+                }
 
                 $firstPage_3= $Heading;
                 

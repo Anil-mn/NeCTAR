@@ -9,7 +9,7 @@
      <div class="container courses-list-wrapper">
          <div class="row courses-wrapper courses-list">';
 
-$start2 =' <div class="courses1-area">
+$start2 =' <div class="courses1-area" id="section">
 <div class="container">
     <h2 class="title-default-left">Paper Sections</h2>
 </div>

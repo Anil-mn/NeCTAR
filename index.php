@@ -18,7 +18,7 @@ echo $head
    //echo $query;
    
   
-echo $firstPage_2;
+   coun();
 
 $WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `webinar`");
 $roesult2 = mysqli_fetch_array($WebinarDetails);
