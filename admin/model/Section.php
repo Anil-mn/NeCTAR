@@ -3,6 +3,7 @@ include('connection.php');
 if(isset($_POST['InserSection']))
 {
     $name=$_POST['Name'];
+    $name=ucfirst($name);
     $sub=$_POST['SubSection'];
     $descp = $_POST['Description1'];
     $descp2 = $_POST['Description2'];

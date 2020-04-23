@@ -3,6 +3,7 @@ include('connection.php');
 if(isset($_POST['webinar']))
 {
     $name=$_POST['Name'];
+    $name=ucfirst($name);
     $desig=$_POST['Designation'];
     $sectionName = $_POST['SectionName'];
     $videoLength = $_POST['VideoLength'];

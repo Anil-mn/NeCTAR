@@ -1,6 +1,10 @@
 <html>
 
 <?php
+ SESSION_START();
+ if(!isset($_SESSION['admin'])){
+    header('location:index.html');
+ }
 include('model/connection.php');
 include('components/head.php');
 include('components/sidemenus.php');
@@ -22,6 +26,7 @@ input('Qualification','text');
 input('Email','email'); 
 input('PhoneNumber','number');
 upload('photo'); 
+upload('Abstract');
 input('Place','text');
 Button('user');
 echo $formEnd;
