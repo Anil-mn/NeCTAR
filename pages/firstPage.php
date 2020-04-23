@@ -87,11 +87,30 @@ include('components/contactUs.php');
 $firstPage_1 = $Slider
               .$aboutHead
               .$aboutVideo
-              .$aboutEnd 
-              .$whyThis
-              .$start2;
- 
-                $firstPage_2= $end2.$counter;
+              .$aboutEnd;
+            function webinarsVideo(){
+              echo $GLOBALS ['featured3Head'];
+              featured3();featured3();
+              featured3();featured3();
+             
+              echo $GLOBALS['fea3End'];
+            }
+
+              function Featured()
+              {
+                echo $GLOBALS ['start2'];
+                $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
+                while($row = mysqli_fetch_array($query))
+                  {
+                   $id =$row[0];
+                   $Name=$row[1];
+                   $shortName = $row[2];
+                   test1($Name,$id,$shortName);
+                   //echo $id.$Name;
+                  }
+                  echo $GLOBALS['end2'];
+              }
+                $firstPage_2= $counter;
 
                 $firstPage_3= $Heading;
                 
@@ -99,18 +118,9 @@ $firstPage_1 = $Slider
                  
                 // echo $id.$Name;
                       
-                 function Featured()
-                 {
-                   $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`");
-                   while($row = mysqli_fetch_array($query))
-                     {
-                      $id =$row[0];
-                      $Name=$row[1];
-                      $shortName = $row[2];
-                      test1($Name,$id,$shortName);
-                      //echo $id.$Name;
-                     }
-                 }
+              function compus(){
+                echo $GLOBALS['capusVi'];
+              }
 
 
 function headlines(){

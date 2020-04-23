@@ -11,13 +11,17 @@ include('pages/firstPage.php');
 
 echo $head
      .$header
-    .$firstPage_1;
-    Featured();
+     .$firstPage_1;
+   
+     Featured();
+    
    //echo $query;
    
   
-echo $firstPage_2
-    .$firstPage_3;
+echo $firstPage_2;
+webinarsVideo();
+compus();
+echo $firstPage_3;
 
     headlines();
 
@@ -28,7 +32,7 @@ echo $firstPage_5;
 
 $Details = mysqli_query($con,"SELECT * from `details`");
 $resut1 = mysqli_fetch_array($Details);
-if($resut1 == true)
+if($resut1 == false)
 {
 testrimo();
 }
