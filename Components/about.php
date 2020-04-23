@@ -5,9 +5,7 @@ $neharu = '<a href="https://ncerc.ac.in/">Nehru Group of Institutions</a>';
 $content = [['The Motive',
 ', is organizing a fully online e-conference on Technologies AnnexingReality.
 Technological annexations have provided our world with new environments and keeps the human horizons to grow.
-Technology.. it’s everywhere, it’s been growing like human population.. We see technological
-advancements everywhere like in entertainment, healthcare, education, agriculture,
-photography, business, defense and many more..'],
+Technology.. it’s everywhere, it’s been growing like human population..'],
 ['The Concept',
 'NeCTAR2020: is a virtual conference.. an online event that includes a series of large sessions
 run by thought leaders in the industry who present to and interact with attendees. This would
@@ -34,7 +32,7 @@ Audience involvement accomplished with live Q&A.']
 
 
 
-$about = '<!-- About Page 2 Area Start Here -->
+$aboutHead = '<!-- About Page 2 Area Start Here -->
 <div class="about-page2-area">
     <div class="container">
         <div class="row about-page2-inner">
@@ -42,20 +40,20 @@ $about = '<!-- About Page 2 Area Start Here -->
                 <h2 class="title-default-left">'.$content[0][0].'</h2>
                 <p>'.$neharu.$content[0][1].'.</p>
                 <ul>
-                    <li><a href="#">Materiality & Interpretation</a></li>
-                    <li><a href="#">Design Management and Cultural Enterprise</a></li>
-                    <li><a href="#">Experience Design (XD)</a></li>
-                    <li><a href="#">Sound Design; Social Media and SEO</a></li>
+                    <li><a href="#">Entertainment</a></li>
+                    <li><a href="#">Healthcare</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Defense and many more</a></li>
                 </ul>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            </div>';
+     $aboutVideo ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="video-area2 overlay-video bg-common-style video-margin-top" style="background-image: url("img/banner/6.jpg");">
                     <div class="video-content">
                         <a class="play-btn popup-youtube" href="http://www.youtube.com/watch?v=1iIZeIy7TqM"><i class="fa fa-play" aria-hidden="true"></i></a>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div>';
+       $aboutEnd ='</div>
     </div>
 </div>
 <!-- About Page 2 Area End Here -->';
