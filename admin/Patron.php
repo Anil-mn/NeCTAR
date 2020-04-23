@@ -24,7 +24,7 @@ input('Role1','text');
 input('Role2','text');
 input('Description1','text');
 input('Description2','text');
-
+upload('patron');
 Button('patron');
 echo $formEnd;
 

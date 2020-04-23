@@ -5,6 +5,9 @@
  if(!isset($_SESSION['admin'])){
     header('location:index.html');
  }
+ else{
+     
+ }
 include('model/connection.php');
 include('components/head.php');
 include('components/sidemenus.php');

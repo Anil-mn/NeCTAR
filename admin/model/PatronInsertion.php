@@ -10,7 +10,7 @@ if(isset($_POST['patron']))
  $role1 = $_POST['Description1'];
  $role2 = $_POST['Description2'];
 
-$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
+//$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
 
     // if($WebinarInsertion==true)
     // {
@@ -20,6 +20,51 @@ $PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designatio
     //        $Id=$row[0];
         
     //    }
+    $target_dir = "..\Images/";
+    $target_file = $target_dir . basename($_FILES["patron"]["name"]);
+   
+    $name =$name.'-'.$role1;
+   //
+    $newfilename=$name ;
+    echo $newfilename;
+    $uploadOk = 1;
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    
+       
+    if (file_exists($target_file)) {
+        echo "Sorry, file already exists.";
+        $uploadOk = 0;
+    }
+    // Check file size
+    if ($_FILES["patron"]["size"] > 5000000) {
+        echo "Sorry, your file is too large.";
+        $uploadOk = 0;
+    }
+    // Allow certain file formats
+    if( $imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+ && $imageFileType != "gif" ) {
+        echo "Sorry, only image files are allowed.";
+        $uploadOk = 0;
+    }
+    // Check if $uploadOk is set to 0 by an error
+    if ($uploadOk == 0) {
+        echo "Sorry, your file was not uploaded.";
+    // if everything is ok, try to upload file
+    } else {
+        //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+           if(move_uploaded_file($_FILES["patron"]["tmp_name"], "../../images/patrons/" . $newfilename.'.jpg')){
+            echo "The file ". basename( $_FILES["patron"]["name"]). " has been uploaded.";
+            //header('Location:../Shop_CategorieInsertion.php');
+            } else {
+            echo "Sorry, there was an error uploading your file.";
+                }
+        
+        } 
+
+
+
+
+
 }
     function Patron()
 {
