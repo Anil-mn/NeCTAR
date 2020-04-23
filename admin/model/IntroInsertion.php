@@ -3,22 +3,22 @@ include('connection.php');
 if(isset($_POST['de']))
 
 {
-    $name=$_POST['name'];
+    $name=$_POST['Name'];
     $name=ucfirst($name);
-    $desig=$_POST['designation'];
+    $desig=$_POST['Designation'];
     $status = $_POST['Status'];
  $Videoname = $_POST['VideoName'];
  $desc1 = $_POST['Description1'];
  $desc2 = $_POST['Description2']; 
 
- $infos = mysqli_query($con,"INSERT INTO `introvideos`(`Name`, `Designation`,`Status`, `Video_name`, `d1`, `d2`) VALUES('$name','$desig','$status','$sectionName','$Videoname','$desc1','$desc2')");
+ $infos = mysqli_query($con,"INSERT INTO `introvideos`(`Person_Name`, `Designation`,`Status`, `Video_name`, `d1`, `d2`) VALUES('$name','$desig','$status','$Videoname','$desc1','$desc2')");
 }
 
 
 function Intro()
 {
     include('connection.php');
-    $query = mysqli_query($con,"SELECT * from `intovideos`");
+    $query = mysqli_query($con,"SELECT * from `introvideos`");
     while($row = mysqli_fetch_array($query)){
        $id =$row[0];
         echo '<tr><form method="POST"><td><input  value="'.$id.'" name="id" hidden> '.$row[0].'</td><td>'.$row[1].'</td><td>'.$row[5].'</td><td><button type="submit" name="dele" class="btn btn-danger mr-2">Delete</button></td></form></tr>';
