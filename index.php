@@ -45,7 +45,7 @@ Message();
 
  
  echo $firstPage_6;
- //img();
+ img();
    echo  $footer
     .$connection;
 

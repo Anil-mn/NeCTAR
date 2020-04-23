@@ -10,13 +10,19 @@ $imageHead ='  <!-- Students Join 1 Area Start Here -->
                     function image($name){
                    
                         echo ' <li>
-                        <a href="#"><img src="image/profile/'.$name.'.jpg" alt=""></a>
+                        <a href="#"><img style="height:10px width:10px" src="images/profile/'.$name.'.jpg" alt=""></a>
                     </li>';
                     }
                         
                   $imageEnd =' </ul>
                 </div>
             </div>
+            <div class="students-join1-right">
+                        <div>
+                            <h2>Join<span></span> people</h2>
+                            <a href="registration.php" class="join-now-btn">Join Now</a>
+                        </div>
+                    </div>
             </div>
             </div>  </div>
             
