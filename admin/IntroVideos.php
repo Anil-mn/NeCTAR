@@ -13,26 +13,27 @@ include('components/main.php');
 include('components/form.php');
 include('components/table.php');
 //include('model/newsInsertion.php');
-include('model/PatronInsertion.php');
+include('model/IntroInsertion.php');
 
 echo $head.$menus.$mainHead.$row;
 
-formHead('Patrons','model/PatronInsertion.php');
+formHead('Intro','model/IntroInsertion.php');
 input('Name','text'); 
 input('Designation','text');
-input('Role1','text');
-input('Role2','text');
+input('Status','text');
+input('VideoName','text');
 input('Description1','text');
 input('Description2','text');
+upload('xxx');
 
-Button('patron');
+Button('de');
 echo $formEnd;
 
-Table('Patrons');
+Table('IntroVideos');
 tableHead('id');
 tableHead('Name');
 tableHead('delete');
-Patron();
+Intro();
 TabelEnd();
 echo $rowEnd;
 
