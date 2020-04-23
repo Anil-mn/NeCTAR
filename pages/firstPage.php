@@ -133,7 +133,7 @@ function headlines(){
               $des1=$row1[2];
               $des2=$row1[3];
               $date=$row1[4];
-              News($newshead,$des1,$date);
+              News($newsid,$newshead,$des1,$date);
              // echo $newsid.$newshead.$des1.$des2.$date;
              }
 }
@@ -204,8 +204,10 @@ function paper(){
     
     about3Head('Call For papers');
     //echo $GLOBALS['about3'];
-    echo $GLOBALS['aboutHead'];
+    echo $GLOBALS['aboutHead123'];
+    
     echo $GLOBALS['faqHead'];
+    
     $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections` limit 6");
     $arry =['One','Two','Three','Four','Five','Six','Seven'];
     $i=0;
@@ -228,6 +230,7 @@ function paper(){
     // faq('Demo','1','Five','dem');
     // faq('Demo','1','Six','dem');
     echo $GLOBALS ['faqEnd'];
+    echo $GLOBALS['aboutVideo'];
     echo $GLOBALS['aboutEnd'];
 
    }

@@ -562,3 +562,9 @@
     }
 
 })(jQuery);
+
+
+function view(proid){
+    
+    window.location="callforpaper.php?"+proid;
+ }

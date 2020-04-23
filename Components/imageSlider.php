@@ -56,29 +56,29 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                    <div class="row service1-wrapper">
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#">Scholarship Facility</a></h3>
+                               <h3><a href="#">Scholarly Prestation</a></h3>
                                <p>Eimply dummy text printing ypese tting industry.</p>
                            </div>
                            <div class="service-box-icon">
-                               <i class="fa fa-youtube" aria-hidden="true"></i>
+                               <i class="fa fa-play" aria-hidden="true"></i>
                            </div>
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#">Skilled Lecturers</a></h3>
-                               <p>Eimply dummy text printing ypese tting industry.</p>
-                           </div>
-                           <div class="service-box-icon">
-                               <i class="fa fa-instagram" aria-hidden="true"></i>
-                           </div>
-                       </div>
-                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
-                           <div class="service-box-content">
-                               <h3><a href="#">Book Library & Store</a></h3>
+                               <h3><a href="#">Expert Lecturers</a></h3>
                                <p>Eimply dummy text printing ypese tting industry.</p>
                            </div>
                            <div class="service-box-icon">
                                <i class="fa fa-book" aria-hidden="true"></i>
+                           </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
+                           <div class="service-box-content">
+                               <h3><a href="#">Conference & Events</a></h3>
+                               <p>Eimply dummy text printing ypese tting industry.</p>
+                           </div>
+                           <div class="service-box-icon">
+                               <i class="fa fa-university" aria-hidden="true"></i>
                            </div>
                        </div>
                    </div>
