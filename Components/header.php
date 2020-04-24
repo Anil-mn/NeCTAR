@@ -38,16 +38,16 @@ $header3=' <header>
                                     </div>
                                 </li>-->
                                 
-                                <li>
+                              <!--  <li>
                                     <div class="apply-btn-area">
                                         <a href="registration.php" class="apply-now-btn">Register Now</a>
                                     </div>
-                                </li>
+                                </li> 
                                 <li>
                                     <div class="apply-btn-area">
                                         <a href="upv.php" class="apply-now-btn">Upload paper</a>
                                     </div>
-                                </li>
+                                </li>-->
                             </ul>
                         </div>
                     </div>
@@ -79,7 +79,11 @@ $header3=' <header>
                 </div>
                 <div class="col-lg-1 col-md-1 hidden-sm">
                     <div class="header-search">
-                        
+                   
+                  
+                        <a href="registration.php" class="apply-now-btn">Register Now</a>
+                   
+               
                     </div>
                 </div>
             </div>
@@ -129,7 +133,7 @@ $footer ='  <!-- Footer Area Start Here -->
                                     <li><a href="#">AU</a></li>
                                     <li><a href="#">EC</a></li>
                                     <li><a href="#">EEE </a></li>
-                                    <li><a href="#">Areo</a></li>
+                                    <li><a href="#">AERO</a></li>
                                 </ul>
                             </li>
                         </ul>

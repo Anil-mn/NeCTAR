@@ -3,17 +3,17 @@
 
 
 $faqHead= ' <div class="faq-page-area">
-<div class="container">
+
     <div class="row panel-group" id="faq-accordian">
-        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
-        
+        <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+        <h3>Steps for uploading papers</h3>';
         $col = '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
         $col2 ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
         <div class="about-page-img-holder">
             <img src="img/about/2.jpg" class="img-responsive" alt="about">
         </div>';
 
-        Function faq($heading,$count,$num,$dis){
+        Function faq($heading,$count,$num,$dis,$link){
            echo '<div class="faq-box-wrapper">
             <div class="faq-box-item panel panel-default">
                 <div class="panel-heading">

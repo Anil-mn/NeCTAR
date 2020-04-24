@@ -29,13 +29,8 @@ Audience involvement accomplished with live Q&A.'],
 and Futuristic Solutions that the Tech-domains can device so as to make the Realistic world to be more
 influential. It is with great pleasure that we announce the 1st International e-Conference of NGIK
 themed Technologies Annexing Reality.</br></br></br>
-NeCTAR2020, and also the future series, aim to publish a collective compendium of assessments on the
-state-of-the-art of current technologies and their known problems, and to present novel ideas
-concerning the exploitation of new sources or the better use of the existing ones. We are looking for a
-response of the technology community commensurable with the importance of this goal, and are sure
-that the e-Proceedings of the conference will constitute an important reference for the next generation
-of scholars, industrialists and energy strategists.
-</br></br></br></br>
+
+
 
 The conference will address research topics concerned with “present trends, current problems and
 futuric solutions on various Tech-domains”, and it will include topical sessions focusing on: ']
@@ -60,15 +55,21 @@ $aboutHead = '<!-- About Page 2 Area Start Here -->
                     <li><a href="#">Defense and many more</a></li>
                 </ul>
             </div>';
-            $aboutHead123 = '<!-- About Page 2 Area Start Here -->
+         $aboutHead123 = '<!-- About Page 2 Area Start Here -->
             <div class="about-page2-area">
                 <div class="container">
                     <div class="row about-page2-inner">
                         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                             <h2 class="title-default-left">'.$content[4][0].'</h2>
-                            <p>'.$neharu.$content[4][1].'.</p>
-                            
+                            <p>'.$neharu.$content[4][1].'.</p> 
+                            <ul>';
+                            $aboutHead123End='    </ul> 
                         </div>';
+    
+function aboutul($section){
+    echo '<li><a href="#">'.$section.'</a></li>';
+}
+
 
      $aboutVideo ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                 <div class="video-area2 overlay-video bg-common-style video-margin-top" style="background-image: url("img/banner/6.jpg");">

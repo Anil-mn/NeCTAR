@@ -284,32 +284,34 @@ function paper(){
     about3Head('Call For papers');
     //echo $GLOBALS['about3'];
     echo $GLOBALS['aboutHead123'];
-    
-    echo $GLOBALS['faqHead'];
-    
     $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections` limit 6");
     $arry =['One','Two','Three','Four','Five','Six','Seven'];
-    $i=0;
+   
     while($row = mysqli_fetch_array($query))
       {
-        
        $id =$row[0];
        $Name=$row[1];
        $shortName = $row[2];
-       faq($shortName,$id,$arry[$i],$Name);
-       $i=$i+1;
-       //echo $id.$Name;
-      }
-    // faq('Demo','1','One','dem');
-    // faq('Demo','1','Two','dem');
-    // faq('Demo','1','Three','dem');
-    // echo '</div>';
-    // echo '<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">';
-    // faq('Demo','1','Four','dem');
-    // faq('Demo','1','Five','dem');
-    // faq('Demo','1','Six','dem');
+       aboutul($Name);
+       }
+    //aboutul();
+    $arra=['You can register by  clicking
+     <a herf="registration.php">Register Now</a> or send your details to <b>paper@nectar2020.in</b>',
+    'Upload your <b>Abstract of Your paper</b> or send to <b>paper@nectar2020.in</b> in pdf file format',
+    'Upload your presentation video and paper .video length should not exceed 10 minutes.',
+    'stay connected for furthur updates'
+    ];
+    echo $GLOBALS['aboutHead123End'];
+    echo $GLOBALS['faqHead'];
+    faq($arra[0],'1','One','Register','');
+    faq($arra[1],'2','Two','Upload Abstract','r');
+    faq($arra[2],'3','Three','Upload your presentation video and paper','');
+    faq($arra[3],'4','Four','Follow us for new updates','');
+    
+  
     echo $GLOBALS ['faqEnd'];
-    echo $GLOBALS['aboutVideo'];
+    echo "</div>";
+    
     echo $GLOBALS['aboutEnd'];
 
    }

@@ -17,7 +17,7 @@ function News($newsid,$newshead,$des1,$date){
     <a href="#"><img style="height:120px; width:150px;" src="images/News/'.$newsid.'.jpg" class="img-responsive" alt="news"></a>
 </div>
 <div class="news-content-holder">
-    <h3><a href="single-news.html" >'.$newshead.'</a></h3>
+    <h3><a href="" >'.$newshead.'</a></h3>
     <div class="post-date">'.$formattedDate.'</div>
     <p>'.$des1.'</p>
 </div>
@@ -50,7 +50,7 @@ $UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-are
                     </div>
                 </div>
                 <div class="event-content-holder">
-                    <h3><a href="single-event.html">'.$heading.'</a></h3>
+                    <h3><a href="">'.$heading.'</a></h3>
                     <p>'.$descpn.'</p>
                     <ul>
                         <li>'.$time.'</li>

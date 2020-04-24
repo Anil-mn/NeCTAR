@@ -19,7 +19,7 @@ $imageHead ='  <!-- Students Join 1 Area Start Here -->
             </div>
             <div class="students-join1-right">
                         <div>
-                            <h2>Join<span></span> people</h2>
+                            <h2>Registred <span></span> peoples</h2>
                             <a href="registration.php" class="join-now-btn">Join Now</a>
                         </div>
                     </div>

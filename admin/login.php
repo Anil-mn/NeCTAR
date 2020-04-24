@@ -1,33 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Nectar2020</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="../../node_modules/mdi/css/materialdesignicons.min.css">
-  <link rel="stylesheet" href="../../node_modules/simple-line-icons/css/simple-line-icons.css">
-  <!-- endinject -->
-  <!-- plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="css/style.css">
-  <!-- endinject -->
-  <link rel="shortcut icon" href="../img/452 white .png" />
-</head>
-
-<body>
-  <div class="container-scroller">
-    <div class="container-fluid page-body-wrapper full-page-wrapper">
-      <div class="content-wrapper d-flex align-items-center auth " style="background-image: url('../img/slider/ncerc1.jpg'); background-size: cover;">
+<?php
+SESSION_START();
+if(!isset($_SESSION['admin'])){
+   header('location:index.html');
+}
+include('model/connection.php');
+include('components/head.php');
+echo $head;
+?>
+<body >
+  <div class="container-scroller" >
+    <div class="container-fluid page-body-wrapper full-page-wrapper" >
+      <div class="content-wrapper d-flex align-items-center auth" style="background-image: url('../img/slider/kapila.jpg'); background-size: cover;">
         <div class="row w-100">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-dark text-left p-5">
               <h2>Login</h2>
               <h4 class="font-weight-light">Hello! let's get started</h4>
-              <form class="pt-5" action="login/login.php" method='POST'>
+              <form class="pt-5" action="login/login2.php" method='POST'>
                 <form>
                   <div class="form-group">
                     <label for="exampleInputEmail1">Username</label>
@@ -67,4 +57,7 @@
   <!-- endinject -->
 </body>
 
-</html>
+
+<?php
+echo $footer.$connection;
+?>

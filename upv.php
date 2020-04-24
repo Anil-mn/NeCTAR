@@ -11,9 +11,9 @@ echo $head
     .$header3;
      
        about3Head('upload your paper');
-       //h404('this page can only access after may 3','upload soon');
+       h404('this page can only access after may 3','upload soon');
 
-     pandV();
+     //pandV();
     if(isset($_POST['pandv'])){
 
 
