@@ -158,5 +158,10 @@ echo $head
     }
 
 
+
+
+    
+
+
 echo $footer
     .$connection;

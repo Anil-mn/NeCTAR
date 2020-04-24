@@ -42,7 +42,24 @@ function absss(){
   echo $GLOBALS['rowEnd'];
   echo $GLOBALS['RegEnd'];   
 }
-
+function pandV(){ 
+  reghead('2','Paper and video');
+  echo $GLOBALS['rowStart'];
+  input('Email','email','required','Email');
+  input('Heading','text','required','PaperName');
+  input('Description','text','required','Description');
+  selectHead('Section');
+  $query = mysqli_query($GLOBALS ['con'],"SELECT * From `Sections`");
+  while($row=mysqli_fetch_array($query)){
+      echo '<option value='.$row[2].'>'.$row[1].'';
+  }
+  selectEnd();
+  uploadR('paper'); 
+  uploadR('video');
+  button('pandv');
+  echo $GLOBALS['rowEnd'];
+  echo $GLOBALS['RegEnd'];   
+}
 
 
   //  $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");

@@ -138,11 +138,16 @@ if(isset($_POST['paper']))
 
    if($result == true)
    {
-   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`,`Link_ID`) VALUES ('$heading','$descp','$section','$email','$Ylink')");
+    $query = mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
+    $row6 = mysqli_fetch_array($query);
+    if($row6 ==true){
+      echo "<script>confirm('You already uploaded paper ',window.location='')</script>";
    }
-   else{
-       echo "<script>confirm('There is no registerd email ',window.location='../Userinfo.php')</script>";
+    else 
+    {
+   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`) VALUES ('$heading','$descp','$section','$email')");
    }
+}
    if($PaperInsertion==true)
    {
       $innsertphoto=mysqli_query($con,"SELECT * from `papers` order by  `Paper_ID` desc limit 1");
@@ -200,8 +205,8 @@ if(isset($_POST['paper']))
    echo "<br><br><br><br>".$namelink."<br><br><br><br>";
    if ((($_FILES["file"]["type"] == "video/mp4")
    || ($_FILES["file"]["type"] == "audio/mp3")
-   || ($_FILES["file"]["type"] == "audio/jpg")
-   || ($_FILES["file"]["type"] == "audio/png")
+   || ($_FILES["file"]["type"] == "image/jpg")
+   || ($_FILES["file"]["type"] == "image/png")
    || ($_FILES["file"]["type"] == "audio/mpeg")
    || ($_FILES["file"]["type"] == "audio/wma")
    || ($_FILES["file"]["type"] == "image/pjpeg")
