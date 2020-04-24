@@ -1,20 +1,20 @@
 <?php
 
-$Heading = ' <div class="news-event-area">
+$Heading = ' <div class="news-event-area" id="eve">
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-inner-area">
             <h2 class="title-default-left">Latest News</h2>
             <ul class="news-wrapper">';
 
-function News($newshead,$des1,$date){
+function News($newsid,$newshead,$des1,$date){
     $timestamp = strtotime($date);
     $date1= date('d', $timestamp);
     $formattedDate = date('F d, Y', $timestamp);
     //echo $formattedDate;
             echo '<li >
 <div class="news-img-holder">
-    <a href="#"><img src="img/news/1.jpg" class="img-responsive" alt="news"></a>
+    <a href="#"><img style="height:120px; width:150px;" src="images/News/'.$newsid.'.jpg" class="img-responsive" alt="news"></a>
 </div>
 <div class="news-content-holder">
     <h3><a href="single-news.html" >'.$newshead.'</a></h3>
@@ -25,11 +25,11 @@ function News($newshead,$des1,$date){
 }
 
 $NewsEnd = '<div class="news-btn-holder">
-<a href="#" class="view-all-accent-btn">View All</a>
+
 </div>
 </div>';
 
-$UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area">
+$UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area" >
                   <h2 class="title-default-left">Upcoming Events</h2>
                           <ul class="event-wrapper">';
                           $i=1;
@@ -63,7 +63,7 @@ $UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-are
                           
  $upComingEnd =' </ul>
                     <div class="event-btn-holder">
-                        <a href="#" class="view-all-primary-btn">View All</a>
+                       
                     </div>
                    </div>
                    </div>

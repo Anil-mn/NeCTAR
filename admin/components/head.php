@@ -3,7 +3,7 @@ $head='<head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Star Admin Free Bootstrap-4 Admin Dashboard Template</title>
+<title>Nectar2020 Admin</title>
 <!-- plugins:css -->
 <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
@@ -13,14 +13,14 @@ $head='<head>
 <!-- inject:css -->
 <link rel="stylesheet" href="css/style.css">
 <!-- endinject -->
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="../img/1234.png" />
 </head>';
 
 
 $footer=' <footer class="footer">
 <div class="container-fluid clearfix">
-  <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2018 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i></span>
+  <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © NECTAR2020  All rights reserved.</span>
+  <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"> <i class="mdi mdi-heart text-danger"></i></span>
 </div>
 </footer>
 <!-- partial -->

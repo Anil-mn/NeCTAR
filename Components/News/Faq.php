@@ -19,14 +19,14 @@ $faqHead= ' <div class="faq-page-area">
                 <div class="panel-heading">
                     <div class="panel-title faq-box-title">
                         <h3>
-                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$num.'"><span class="faq-box-count">'.$count.'</span>'.$heading.'
+                                <a aria-expanded="false" class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse'.$num.'"><span class="faq-box-count">'.$count.'</span>'.$dis.'
                                 </a>
                             </h3>
                     </div>
                 </div>
                 <div aria-expanded="false" id="collapse'.$num.'" role="tabpanel" class="panel-collapse collapse">
                     <div class="panel-body faq-box-body">
-                        <p>'.$dis.'</p>
+                        <p>'.$heading.'</p>
                     </div>
                 </div>
             </div>

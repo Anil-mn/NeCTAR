@@ -5,12 +5,17 @@ $webHead = ' <!-- Research Page 2 Area Start Here -->
     <div class="row ">';
 $weba = '<div class="row featuredContainer" >';
 function web($id,$name,$discri,$videoname)
-{
+{   
+    $ext = pathinfo($videoname, PATHINFO_EXTENSION);
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
-        <div class="research-img-holder"> 
-       <video width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" allowfullscreen></video>
-        <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
+        <div class="research-img-holder"> ';
+        if($ext=='mp4'){
+            echo '<iframe width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" volume="0" allowfullscreen ></iframe>';
+        }
+        else{
+     echo '
+       <img src="videos/'.$videoname.'"   width="320" height="215" alt="research" class="img-responsive">
             <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
@@ -19,7 +24,7 @@ function web($id,$name,$discri,$videoname)
     </div>
 </div>';
 
-} 
+} }
 
 $webaEnd = '</div></div>';
 
@@ -93,7 +98,7 @@ echo '<div class="sidebar-box">
            echo ' <li>
                 <div class="related-img">
                     <a href="#">
-                    <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0"></video></a>
+                    <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0" volume="0" allow-scripts></video></a>
                 </div>
                 <div class="related-content">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
@@ -118,7 +123,7 @@ $courseAreadHead =' <div class="courses-page-area3">
    function VideoArea($videoName,$name,$discri){
        echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
        <!--<img src="img/course/15.jpg" class="img-responsive" alt="course">-->
-       <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen></iframe>
+       <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>
        <div class="course-details-inner">
            <h2 class="title-default-left title-bar-high">'.$name.'</h2>
            <p>'.$discri.'</p>';

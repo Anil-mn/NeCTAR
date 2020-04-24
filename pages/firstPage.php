@@ -13,6 +13,7 @@ include('components/webnar.php');
 include('components/Registration.php');
 include('admin/model/connection.php');
 include('components/contactUs.php');
+include('components/imagesDisplay.php');
 
 
 //include('model/demo.php');
@@ -84,14 +85,27 @@ include('components/contactUs.php');
 
 
 
-$firstPage_1 = $Slider
+$firstPage_1 = $slider2
+             .$service
               .$aboutHead
               .$aboutVideo
               .$aboutEnd;
-            function webinarsVideo(){
+
+
+            function webinarsVideo()
+            {
               echo $GLOBALS ['featured3Head'];
-              featured3();featured3();
-              featured3();featured3();
+              $WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `webinar`");
+               while($row = mysqli_fetch_array($WebinarDetails))
+               {
+                $id = $row[0];
+                $name = $row[1];
+                $sectionName = $row[4];
+                $Videoname = $row[3];
+                $videoLength = $row[5];
+                $desig = $row[2];
+              featured3($name,$Videoname,$videoLength,$sectionName);
+            }
              
               echo $GLOBALS['fea3End'];
             }
@@ -110,7 +124,29 @@ $firstPage_1 = $Slider
                   }
                   echo $GLOBALS['end2'];
               }
-                $firstPage_2= $counter;
+
+
+                function coun(){
+                  $SectionDetails = mysqli_query($GLOBALS ['con'],"SELECT count(`Section_ID`) from `sections`");
+while($row = mysqli_fetch_array($SectionDetails))
+  {
+   $sid =$row[0];
+  }
+  $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT count(`Paper_ID`) from `papers`");
+while($row = mysqli_fetch_array($paperdetails))
+{
+ $paperid = $row[0];
+}
+$WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT count('Webinar_ID') from `webinar`");
+while($row = mysqli_fetch_array($WebinarDetails))
+{
+ $wid = $row[0];}
+ $eventdetails = mysqli_query($GLOBALS ['con'],"SELECT count('Event_ID') from `event`");
+while($row = mysqli_fetch_array($eventdetails))
+{
+ $eventid = $row[0];}
+                  counter($wid,$paperid,$sid,$eventid);
+                }
 
                 $firstPage_3= $Heading;
                 
@@ -132,7 +168,7 @@ function headlines(){
               $des1=$row1[2];
               $des2=$row1[3];
               $date=$row1[4];
-              News($newshead,$des1,$date);
+              News($newsid,$newshead,$des1,$date);
              // echo $newsid.$newshead.$des1.$des2.$date;
              }
 }
@@ -172,9 +208,34 @@ while($row = mysqli_fetch_array($eventdetails))
 
 
 function testrimo(){
-    featured2Head();
-    featured2main();
-    featured2();featured2();featured2();featured2();
+  featured2Head();
+  $Details = mysqli_query($GLOBALS ['con'],"SELECT * from `introvideos` limit 1");
+while($row = mysqli_fetch_array($Details))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $desig = $row[2];
+ $status = $row[3];
+ $eoname = $row[4];
+ $desc1 = $row[5];
+ $desc2 = $row[6];
+ featured2main($name,$eoname,$desc1);
+}
+$Details = mysqli_query($GLOBALS ['con'],"SELECT * from `introvideos` limit 1,5");
+while($row = mysqli_fetch_array($Details))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $desig = $row[2];
+ $status = $row[3];
+ $eoname = $row[4];
+ $desc1 = $row[5];
+ $desc2 = $row[6];
+ featured2($name,$eoname,$desc1);
+}
+    
+    // featured2main();
+    // featured2();featured2();featured2();featured2();
     echo $GLOBALS ['features2spe'];
     featured2End();
 }
@@ -184,6 +245,10 @@ function testrimo(){
 function about(){
     about3Head('AboutUs');
     echo $GLOBALS['about3'];
+    
+    $PatronsDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `patrons`");
+   $row23 = mysqli_fetch_array($PatronsDetails);
+   if($row23 == true){
     about3Head('patrons');
     echo $GLOBALS ['lectureareaHead'];
     echo $GLOBALS ['filterHead2'];
@@ -192,8 +257,22 @@ function about(){
     filter('associ');
     filter('tecnical');
     echo $GLOBALS['container'];
-    box('patrons','Adv. Dr. Krishnadas','Chairman and Mg.Trustee NGI','chairman','demo');
-    box('patrons'.' '.'associ','Adv. Dr. Krishnadas','Chairman and Mg.Trustee NGI','chairman','demo');
+    $PatronsDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `patrons`");
+   while($row = mysqli_fetch_array($PatronsDetails))
+   {
+    $id = $row[0];
+    $name = $row[1];
+   $designation = $row[2];
+   $descpn = $row[5];
+   $descpn2 = $row[6];
+   $role1 = $row[3];
+   $role2 = $row[4];
+   
+    box($role1,$name, $descpn,'chairman',$descpn2);
+   }
+  
+  }
+    //box('patrons'.' '.'associ','Adv. Dr. Krishnadas','Chairman and Mg.Trustee NGI','chairman','demo');
     echo $GLOBALS ['lectureareaEnd'];
    
 
@@ -203,8 +282,10 @@ function paper(){
     
     about3Head('Call For papers');
     //echo $GLOBALS['about3'];
-    echo $GLOBALS['aboutHead'];
+    echo $GLOBALS['aboutHead123'];
+    
     echo $GLOBALS['faqHead'];
+    
     $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections` limit 6");
     $arry =['One','Two','Three','Four','Five','Six','Seven'];
     $i=0;
@@ -227,6 +308,7 @@ function paper(){
     // faq('Demo','1','Five','dem');
     // faq('Demo','1','Six','dem');
     echo $GLOBALS ['faqEnd'];
+    echo $GLOBALS['aboutVideo'];
     echo $GLOBALS['aboutEnd'];
 
    }
@@ -248,17 +330,19 @@ function paper(){
    {
    $id =$row[0];
    $Name=$row[1];
-   filterActive($Name);
+   $shortName =$row[2];
+   filterActive($shortName);
     }
     $query = mysqli_query($GLOBALS ['con'],"SELECT * from `Sections`  limit 1,5 ");
     while($row = mysqli_fetch_array($query))
    {
    $id =$row[0];
    $Name=$row[1];
-   $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name'");
+   $shortName =$row[2];
+   $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName'");
    $result2 = mysqli_fetch_array($paperdetails);
    if($result2 == true){
-   filter($Name);
+   filter($shortName);
   }
     }
     
@@ -272,9 +356,10 @@ function paper(){
    {
     $id =$row[0];
     $Name=$row[1];
+    $shortName=$row[2];
     if($idofpage=='' || $idofpage=='10'){
         $i=9;
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i");
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -291,7 +376,7 @@ function paper(){
     {
         $i=8;
         $j=18;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -307,7 +392,7 @@ function paper(){
     {
         $i=18;
         $j=27;
-        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$Name' limit $i,$j");
+        $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where `Section_Name`='$shortName' limit $i,$j");
     while($row = mysqli_fetch_array($paperdetails))
    {  
      $paperid = $row[0];
@@ -349,6 +434,17 @@ function paper(){
     echo $GLOBALS['wenENd'];
    }
    
+
+
+
+
+
+
+
+
+
+
+
 
 Function webdet(){
      $filename = basename($_SERVER['REQUEST_URI']);
@@ -423,14 +519,53 @@ function viewall(){
     about3Head('Contact US');
     echo $GLOBALS['start'];
     
-    featured2main();featured2();
-    featured2();featured2();
-    featured2();
+    $Details = mysqli_query($GLOBALS ['con'],"SELECT * from `introvideos` limit 1");
+while($row = mysqli_fetch_array($Details))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $desig = $row[2];
+ $status = $row[3];
+ $eoname = $row[4];
+ $desc1 = $row[5];
+ $desc2 = $row[6];
+ featured2main($name,$eoname,$desc1);
+}
+$Details = mysqli_query($GLOBALS ['con'],"SELECT * from `introvideos` ");
+while($row = mysqli_fetch_array($Details))
+{
+ $id = $row[0];
+ $name = $row[1];
+ $desig = $row[2];
+ $status = $row[3];
+ $eoname = $row[4];
+ $desc1 = $row[5];
+ $desc2 = $row[6];
+ featured2($name,$eoname,$desc1);
+}
     
     echo $GLOBALS ['features2spe'];
     echo $GLOBALS['end'];
 }
     
-
+function img(){
+  echo $GLOBALS['imageHead'];
+  $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info`");
+  while($row = mysqli_fetch_array($userdetails))
+    {
+      $idname = $row[4];
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+      image($idname);image($idname);image($idname);
+    }
+  echo $GLOBALS['imageEnd'];
+}
 
 ?>

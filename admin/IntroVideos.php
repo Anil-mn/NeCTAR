@@ -24,7 +24,7 @@ input('Status','text');
 input('VideoName','text');
 input('Description1','text');
 input('Description2','text');
-upload('xxx');
+upload('file');
 
 Button('de');
 echo $formEnd;

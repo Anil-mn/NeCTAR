@@ -23,7 +23,7 @@ input('Designation','text');
 input('SectionName','text');
 input('VideoName','text');
 input('VideoLength','text');
-upload('xxx');
+upload('file');
 Button('webinar');
 echo $formEnd;
 

@@ -8,7 +8,7 @@ include('Components/header.php');
 include('pages/firstPage.php');
 
 echo $head
-    .$header;
+    .$header3;
     viewall();
 
 
