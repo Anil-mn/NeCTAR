@@ -90,7 +90,7 @@ function featured2main($name,$eoname,$desc1){
     echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="550" height="475" id="iframeId"  style="position:centre;"  src="videos/intro/'.$eoname.'" frameborder="0" allowfullscreen></iframe>
+        <iframe width="550" height="475" id="iframeId"  style="position:centre;"  src="videos/intro/'.$eoname.'.mp4" frameborder="0" allowfullscreen></iframe>
             
        
         <div class="featured-content-holder">
@@ -104,7 +104,7 @@ function featured2($name,$eoname,$desc1){
     echo ' <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="280" height="175"  id="iframeId" style="position:centre;" src="videos/intro/'.$eoname.'" frameborder="0" allowfullscreen></iframe>
+        <iframe width="280" height="175"  id="iframeId" style="position:centre;" src="videos/intro/'.$eoname.'.mp4" frameborder="0" allowfullscreen></iframe>
            
         <div class="featured-content-holder">
             <h3><a href="#">'.$name.'</a></h3>
