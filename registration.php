@@ -46,7 +46,7 @@ echo $head
      $name = $email;
     
      $newfilename=$name ;
-     echo $newfilename;
+    // echo $newfilename;
      $uploadOk = 1;
      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
      // Check if image file is a actual image or fake image
@@ -82,7 +82,7 @@ echo $head
      // if everything is ok, try to upload file
      } else {
          //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            if(move_uploaded_file($_FILES["ProfileImage"]["tmp_name"], ".Images/profile/" . $newfilename.'.jpg')){
+            if(move_uploaded_file($_FILES["ProfileImage"]["tmp_name"], "Images/profile/" . $newfilename.'.jpg')){
              echo "The file ". basename( $_FILES["ProfileImage"]["name"]). " has been uploaded.";
              //header('Location:../Shop_CategorieInsertion.php');
              echo "<script>confirm('Registered successfully Add your abstract',window.location='registration.php?#2')</script>";
@@ -114,7 +114,7 @@ echo $head
                 $name =$email;
                //
                 $newfilename=$name ;
-                echo $newfilename;
+                //echo $newfilename;
                 $uploadOk = 1;
                 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
                 

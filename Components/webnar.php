@@ -15,8 +15,8 @@ function web($id,$name,$discri,$videoname)
         }
         else{
      echo '
-       <img src="videos/'.$videoname.'"   width="320" height="215" alt="research" class="img-responsive">
-            <div class="research-details">
+       <img src="videos/'.$videoname.'"   width="320" height="215" alt="research" class="img-responsive">';}
+         echo '  <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -24,7 +24,7 @@ function web($id,$name,$discri,$videoname)
     </div>
 </div>';
 
-} }
+} 
 
 $webaEnd = '</div></div>';
 
@@ -104,14 +104,15 @@ echo '<div class="sidebar-box">
                       echo ' <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0" volume="0" allow-scripts></video></a>';
                     }
                     else{
-                   echo' <img  width="80" height="80" src="videos/'.$videoName.'"></a>
-                </div>
+                   echo  '<img  width="80" height="80" src="videos/'.$videoName.'"></a></img>';
+                }
+              echo ' </div>
                 <div class="related-content">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
                     <p></p>
                 </div>
             </li>';
-        }}
+        }
 
             function relEnd(){
                 echo'    </ul>
@@ -135,11 +136,11 @@ $courseAreadHead =' <div class="courses-page-area3">
        echo ' <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>';
     }
     else {
-      echo '<img src="videos/'.$videoName.'" class="img-responsive" alt="course">
-       <div class="course-details-inner">
+      echo '<img src="videos/'.$videoName.'" class="img-responsive" alt="course">';}
+     echo '<div class="course-details-inner">
            <h2 class="title-default-left title-bar-high">'.$name.'</h2>
            <p>'.$discri.'</p>';
-   }    } 
+      } 
    function details($sectionid,$name,$designation){
        echo '<h3 class="sidebar-title">Course Features</h3>
        <ul class="course-feature">
