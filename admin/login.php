@@ -15,8 +15,8 @@ echo $head;
         <div class="row w-100">
           <div class="col-lg-4 mx-auto">
             <div class="auth-form-dark text-left p-5">
-              <h2>Login</h2>
-              <h4 class="font-weight-light">Hello! let's get started</h4>
+              <h2>Login 2</h2>
+              <h4 class="font-weight-light">Secound Login Form</h4>
               <form class="pt-5" action="login/login2.php" method='POST'>
                 <form>
                   <div class="form-group">

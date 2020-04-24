@@ -15,7 +15,7 @@ if(!isset($_SESSION['admin'])){
         
         
     }
-   elseif ($ShopName=='nectar@2020' and $password=='ncerc@20&nectar20') 
+   elseif ($ShopName=='nectar2020' and $password=='ncerc@20&nectar20') 
   { 
       header('location:../userinfo.php');
       $_SESSION['admin'] = $_POST['name'];

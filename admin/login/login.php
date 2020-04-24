@@ -17,12 +17,14 @@ SESSION_START();
       header('location:../login.php');
       $_SESSION['admin'] = $_POST['name'];
       echo $_SESSION['admin'];
+      header('location:../login.php');
 
     }
     
         
     else{
         echo "<script>alert('wrong Password')</script>";
+        header('location:../index.html');
     }
 
 
