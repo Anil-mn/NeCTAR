@@ -38,7 +38,7 @@ echo $head
    $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`) VALUES ('$heading','$descp','$section','$email')");
    }}
    else{
-       echo "<script>confirm('There is no registerd email ',window.location='../Userinfo.php')</script>";
+       echo "<script>confirm('There is no registerd email ',window.location='')</script>";
    }
    if($PaperInsertion==true)
    {
@@ -63,22 +63,22 @@ echo $head
  
     
  if (file_exists($target_file)) {
-     echo "Sorry, file already exists.";
+     echo "<script>alert('Sorry, file already exists.',window.location='')</script>";
      $uploadOk = 0;
  }
  // Check file size
  if ($_FILES["paper"]["size"] > 5000000) {
-     echo "Sorry, your file is too large.";
+     echo "<script>alert('Sorry, your file is too large.',window.location='')</script>";
      $uploadOk = 0;
  }
  // Allow certain file formats
  if( $imageFileType != "pdf" ) {
-     echo "Sorry, only pdf files are allowed.";
+     echo "<script>alert('Sorry, only pdf files are allowed.',window.location='')</script>";
      $uploadOk = 0;
  }
  // Check if $uploadOk is set to 0 by an error
  if ($uploadOk == 0) {
-     echo "Sorry, your file was not uploaded.";
+     echo "<script>alert('Sorry, your file was not uploaded.',window.location='')</script>";
  // if everything is ok, try to upload file
  } else {
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -86,7 +86,7 @@ echo $head
          echo "The file ". basename( $_FILES["paper"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
          } else {
-         echo "Sorry, there was an error uploading your file.";
+         echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
              }
      
      } 
@@ -115,10 +115,10 @@ echo $head
        }
      else
        {
-       echo "Upload: " . $_FILES["video"]["name"] . "<br />";
-       echo "Type: " . $_FILES["video"]["type"] . "<br />";
-       echo "Size: " . ($_FILES["video"]["size"] / 1024) . " Kb<br />";
-       echo "Temp file: " . $_FILES["video"]["tmp_name"] . "<br />";
+      //  echo "Upload: " . $_FILES["video"]["name"] . "<br />";
+      //  echo "Type: " . $_FILES["video"]["type"] . "<br />";
+      //  echo "Size: " . ($_FILES["video"]["size"] / 1024) . " Kb<br />";
+      //  echo "Temp file: " . $_FILES["video"]["tmp_name"] . "<br />";
    
        if (file_exists("store/" . $_FILES["video"]["name"]))
          {
@@ -126,7 +126,7 @@ echo $head
          }
        else
          {
-             echo $name;
+             echo  $name;
           move_uploaded_file($_FILES["video"]["tmp_name"],
           "Videos/" . $namelink);
           echo "Stored in: " . "Videos/" . $namelink;
@@ -138,9 +138,9 @@ echo $head
    
      else
      {
-       echo "Invalid file";
+       echo "<script>confirm('Invalid file',window.location='./')</script>";
      }
-     echo "<script>confirm('Succeflly enterd',window.location='./')</script>";
+     echo "<script>confirm('Successfully entered',window.location='./')</script>";
 }
 
 
