@@ -51,7 +51,13 @@ Message();
 
  
  echo $firstPage_6;
+
+ $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info`");
+ $row8 = mysqli_fetch_array($userdetails);
+ if($row8==true){
  img();
+ }
+
    echo  $footer
     .$connection;
 
