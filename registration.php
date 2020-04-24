@@ -18,21 +18,21 @@ echo $head
 
 
 
-    if(isset($_POST['submit']))
+    if(isset($_POST['Submit']))
     {
-      
+        //echo "<script>alert('submit')</script>";
        $name  = $_POST['name'];
        $Designation  = $_POST['Designation'];
        $Qualification  = $_POST['Qualification'];
        $email  = $_POST['Email'];
        $PhoneNumber  = $_POST['PhoneNumber'];
        $place = $_POST['place'];
-       echo $name.$Designation.$Qualification.$email.$PhoneNumber.$place;
+       //echo $name.$Designation.$Qualification.$email.$PhoneNumber.$place;
        $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
        $result = mysqli_fetch_array($userdetails);
        if($result == true)
        {
-       // echo "<script>confirm('There is email is already exisit',window.location='../userinfo.php')</script>";
+        echo "<script>confirm('There is email is already exisit',window.location='registration.php')</script>";
         
        }
       else {
@@ -85,7 +85,7 @@ echo $head
             if(move_uploaded_file($_FILES["ProfileImage"]["tmp_name"], ".Images/profile/" . $newfilename.'.jpg')){
              echo "The file ". basename( $_FILES["ProfileImage"]["name"]). " has been uploaded.";
              //header('Location:../Shop_CategorieInsertion.php');
-             //echo "<script>confirm('profile Image Uploaded',window.location='../userinfo.php')</script>";
+             echo "<script>confirm('Registered successfully Add your abstract',window.location='registration.php?#2')</script>";
          } else {
              echo "Sorry, there was an error uploading your file.";
          }
@@ -96,6 +96,7 @@ echo $head
       
 //..........abstract....
         if(isset($_POST['absss'])){
+            //echo "<script>alter('done')</script>";
             $email  = $_POST['Email'];
             $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
             $result = mysqli_fetch_array($userdetails);

@@ -31,7 +31,11 @@ function regi()
     button('Submit');
     echo $GLOBALS['rowEnd'];
     echo $GLOBALS['RegEnd'];   
+    
 }
+
+
+
 
 function absss(){ 
   reghead('2','Adsctract Upload');
@@ -42,6 +46,12 @@ function absss(){
   echo $GLOBALS['rowEnd'];
   echo $GLOBALS['RegEnd'];   
 }
+
+
+
+
+
+
 function pandV(){ 
   reghead('2','Paper and video');
   echo $GLOBALS['rowStart'];

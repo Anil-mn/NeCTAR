@@ -6,12 +6,16 @@ $webHead = ' <!-- Research Page 2 Area Start Here -->
 $weba = '<div class="row featuredContainer" >';
 function web($id,$name,$discri,$videoname)
 {   
-    
+    $ext = pathinfo($videoname, PATHINFO_EXTENSION);
     echo ' <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$name.' ">
     <div class="research-box2">
-        <div class="research-img-holder"> 
-       <iframe width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" volume="0" allowfullscreen ></iframe>
-        <!--  <img src="img/research/14.jpg" alt="research" class="img-responsive"> -->
+        <div class="research-img-holder"> ';
+        if($ext=='mp4'){
+            echo '<iframe width="320" height="215" id="iframeId" src="videos/'.$videoname.'" frameborder="0" volume="0" allowfullscreen ></iframe>';
+        }
+        else{
+     echo '
+       <img src="videos/'.$videoname.'"   width="320" height="215" alt="research" class="img-responsive">
             <div class="research-details">
                 <a href="webdetails.php?'.$id.'">Click<i class="fa fa-angle-right" aria-hidden="true"></i></a>
             </div>
@@ -20,7 +24,7 @@ function web($id,$name,$discri,$videoname)
     </div>
 </div>';
 
-} 
+} }
 
 $webaEnd = '</div></div>';
 
