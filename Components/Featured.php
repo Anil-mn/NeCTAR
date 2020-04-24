@@ -125,7 +125,7 @@ function featured2End(){
 
 $reso ='img/featured/back2.jpg';
 $featured3Head = ' <div class="courses2-area bg-common-style" style="background-image: url('.$reso.');">
-<div class="container">
+<div class="container" id="web">
     <h2 class="title-default-left">Webinars</h2>
 </div>
 <div class="container courses-list-wrapper">
@@ -159,15 +159,15 @@ $featured3Head = ' <div class="courses2-area bg-common-style" style="background-
     </div>
 </div>
 ';
-$tyur = 'img/banner/1.jpg';
+$tyur = 'img/banner/03.jpg';
 $capusVi = '<!-- Video Area Start Here -->
 <div class="video-area overlay-video bg-common-style" style="background-image: url('.$tyur.');">
     <div class="container">
         <div class="video-content">
-            <h2 class="video-title">Watch Campus Life Video Tour</h2>
-            <p class="video-sub-title">Vmply dummy text of the printing and typesetting industryorem
-                <br>Ipsum industrys standard dum an unknowramble.</p>
-            <a class="play-btn popup-youtube wow bounceInUp" data-wow-duration="2s" data-wow-delay=".1s" href="http://www.youtube.com/watch?v=1iIZeIy7TqM"><i class="fa fa-play" aria-hidden="true"></i></a>
+            <h2 class="video-title">NCERC Campus Life </h2>
+            <p class="video-sub-title">Nehru College of Engineering and Research Centre
+                <br>NGI.</p>
+            <a class="play-btn popup-youtube wow bounceInUp" data-wow-duration="2s" data-wow-delay=".1s" href="https://www.youtube.com/watch?v=mDWLeftFCq8"><i class="fa fa-play" aria-hidden="true"></i></a>
         </div>
     </div>
 </div>

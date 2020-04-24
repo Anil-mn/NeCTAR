@@ -1,5 +1,5 @@
 <?php
-$images =  'img/banner/4.jpg';
+$images =  'img/banner/04.jpg';
 function counter($c1,$c2,$c3,$c4) {
 echo '<!-- Counter Area Start Here -->
 <div class="counter-area bg-primary-deep" style="background-image: url('.$GLOBALS ['images'].');">

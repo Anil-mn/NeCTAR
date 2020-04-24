@@ -8,8 +8,10 @@ $head = '<head>
 <!-- Favicon -->
 <link rel="shortcut icon" type="image/x-icon" href="img/logo2.png">
 <!-- Normalize CSS -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 <link rel="stylesheet" href="css/normalize.css">
 <!-- Main CSS -->
+
 <link rel="stylesheet" href="css/main.css">
 <!-- Bootstrap CSS -->
 <link rel="stylesheet" href="css/bootstrap.min.css">

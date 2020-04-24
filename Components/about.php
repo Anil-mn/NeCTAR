@@ -84,7 +84,7 @@ $aboutHead = '<!-- About Page 2 Area Start Here -->
 
 
 
-$images='img/banner/5.jpg';
+$images='img/banner/04.jpg';
 
 $about1Head =' <div class="inner-page-banner-area" style="background-image: url('.$images.');">
 <div class="container">

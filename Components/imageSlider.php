@@ -58,17 +58,8 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                    <div class="row service1-wrapper">
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#">Scholarly Prestation</a></h3>
-                               <p>Eimply dummy text printing ypese tting industry.</p>
-                           </div>
-                           <div class="service-box-icon">
-                               <i class="fa fa-play" aria-hidden="true"></i>
-                           </div>
-                       </div>
-                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
-                           <div class="service-box-content">
-                               <h3><a href="#">Expert Lecturers</a></h3>
-                               <p>Eimply dummy text printing ypese tting industry.</p>
+                               <h3><a href="callforpaper.php">Scholarly Prestation</a></h3>
+                               <p>Technical content  devised by participants.</p>
                            </div>
                            <div class="service-box-icon">
                                <i class="fa fa-book" aria-hidden="true"></i>
@@ -76,11 +67,20 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#">Conference & Events</a></h3>
-                               <p>Eimply dummy text printing ypese tting industry.</p>
+                               <h3><a href="#web">Expert Lecturers</a></h3>
+                               <p>Webinars -Learned Gurus convey their ideas.</p>
                            </div>
                            <div class="service-box-icon">
-                               <i class="fa fa-university" aria-hidden="true"></i>
+                               <i class="fas fa-chalkboard-teacher" aria-hidden="true"></i>
+                           </div>
+                       </div>
+                       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
+                           <div class="service-box-content">
+                               <h3><a href="#eve">Conference & Events</a></h3>
+                               <p>Calendar activities</p>
+                           </div>
+                           <div class="service-box-icon">
+                               <i class="fa fa-calendar" aria-hidden="true"></i>
                            </div>
                        </div>
                    </div>
@@ -95,7 +95,7 @@ $slider2 ='<!-- Slider 1 Area Start Here -->
     <div class="bend niceties preview-1">
         <div id="ensign-nivoslider-3" class="slides">
         <img src="img/slider/ncerc1.jpg" alt="slider" title="#slider-direction-1" />
-        <img src="img/slider/1-2.jpg" alt="slider" title="#slider-direction-2" />
+        <img src="img/slider/kapila.jpg" alt="slider" title="#slider-direction-2" />
         <img src="img/slider/speaker.jpg" alt="slider" title="#slider-direction-3" />
     </div>
         <div id="slider-direction-1" class="t-cn slider-direction">

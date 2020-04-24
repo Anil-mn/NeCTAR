@@ -1,6 +1,6 @@
 <?php
 
-$Heading = ' <div class="news-event-area">
+$Heading = ' <div class="news-event-area" id="eve">
 <div class="container">
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 news-inner-area">
@@ -29,7 +29,7 @@ $NewsEnd = '<div class="news-btn-holder">
 </div>
 </div>';
 
-$UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area">
+$UpcomingHead ='<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 event-inner-area" >
                   <h2 class="title-default-left">Upcoming Events</h2>
                           <ul class="event-wrapper">';
                           $i=1;
