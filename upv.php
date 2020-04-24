@@ -8,7 +8,7 @@ include('Components/header.php');
 include('pages/registrationPage.php');
 
 echo $head
-    .$header;
+    .$header3;
      
       about3Head('upload your paper');
       h404('this page can only access after may 3','upload soon');

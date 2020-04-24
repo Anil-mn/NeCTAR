@@ -8,7 +8,7 @@ include('Components/header.php');
 include('pages/firstPage.php');
 
 echo $head
-    .$header;
+    .$header3;
     $filename = basename($_SERVER['REQUEST_URI']);
     $paperIDS =substr($filename,15);
     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where paper_ID = '$paperIDS'");

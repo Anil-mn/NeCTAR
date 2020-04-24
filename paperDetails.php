@@ -20,7 +20,7 @@ include('admin/model/connection.php');
 //include('model/news.php');
 
 echo $head
-    .$header;
+    .$header3;
   
     about3Head('Submit Paper');
     echo $GLOBALS['REGHEAD'];

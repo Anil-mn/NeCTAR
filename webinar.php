@@ -8,7 +8,7 @@ include('Components/header.php');
 include('pages/firstPage.php');
 
 echo $head
-    .$header;
+    .$header3;
     
     $paperdetails=mysqli_query($con,"SELECT * from `papers`");
     $result = mysqli_fetch_array($paperdetails);

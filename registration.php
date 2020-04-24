@@ -10,7 +10,7 @@ include('pages/registrationPage.php');
 
 
 echo $head
-    .$header;
+    .$header3;
    
     regi();
 

@@ -132,7 +132,7 @@ $slider2 ='<!-- Slider 1 Area Start Here -->
                 </div>
             </div>
         </div>
-    </div>
+    </div></div>
 </div>
 <!-- Slider 1 Area End Here -->';
 
