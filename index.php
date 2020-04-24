@@ -10,7 +10,7 @@ include('pages/firstPage.php');
 
 
 echo $head
-     .$header
+     .$header3
      .$firstPage_1;
    
      Featured();

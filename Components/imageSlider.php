@@ -3,7 +3,7 @@
 $titles = ['Nehru E-Conference On Technologies Annexing Reality','Nehru College of Engineering and Research Centre','Nehru Group Of institutions'];
 
 $Slider = '<!-- Slider 1 Area Start Here -->
-<div class="slider1-area overlay-default index1">
+<div class="slider3-area overlay-default index1">
            <div class="bend niceties preview-1">
                <div id="ensign-nivoslider-3" class="slides">
                    <img src="img/slider/ncerc1.jpg" alt="slider" title="#slider-direction-1" />
