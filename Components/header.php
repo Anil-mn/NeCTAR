@@ -395,14 +395,14 @@ $footer ='  <!-- Footer Area Start Here -->
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="footer-box">
-                        <h3>Departments</h3>
+                        <h3>Sponsors and Partners</h3>
                         <ul class="featured-links">
                             <li>
                                 <ul>
-                                    <li><a href="#">MCA</a></li>
-                                    <li><a href="#">MBA</a></li>
-                                    <li><a href="">CSE</a></li>
-                                    <li><a href="#">MEC</a></li>
+                                    <li><a href="#">Sponsor 1</a></li>
+                                    <li><a href="#">Sponsor 2</a></li>
+                                    <li><a href="">Sponsor 3</a></li>
+                                    <li><a href="#">Sponsor 4</a></li>
                                 </ul>
                             </li>
                             <li>

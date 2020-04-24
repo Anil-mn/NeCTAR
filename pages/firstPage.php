@@ -85,7 +85,8 @@ include('components/imagesDisplay.php');
 
 
 
-$firstPage_1 = $Slider
+$firstPage_1 = $slider2
+             .$service
               .$aboutHead
               .$aboutVideo
               .$aboutEnd;
