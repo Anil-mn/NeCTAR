@@ -17,7 +17,7 @@ echo $head
         webdet();
     }
     else {
-        about3Head('404error');
+        about3Head('404error','404');
         h404('this file is missing');
     }
 

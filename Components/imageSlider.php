@@ -67,7 +67,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#web">Expert Lecturers</a></h3>
+                               <h3><a id="scrollDown" href="#web">Expert Lecturers</a></h3>
                                <p>Webinars -Learned Gurus convey their ideas.</p>
                            </div>
                            <div class="service-box-icon">
@@ -76,7 +76,7 @@ $Slider = '<!-- Slider 1 Area Start Here -->
                        </div>
                        <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 service-box1">
                            <div class="service-box-content">
-                               <h3><a href="#eve">Conference & Events</a></h3>
+                               <h3><a id="scrollDown" href="#eve">Conference & Events</a></h3>
                                <p>Calendar activities and News about NECTAR</p>
                            </div>
                            <div class="service-box-icon">

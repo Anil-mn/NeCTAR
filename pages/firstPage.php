@@ -253,9 +253,10 @@ function about(){
     echo $GLOBALS ['lectureareaHead'];
     echo $GLOBALS ['filterHead2'];
     //echo $GLOBALS ['container']; 
-    filterActive('patrons');
-    filter('associ');
-    filter('tecnical');
+    filterActive('Patrons');
+    filter('Advisory');
+    filter('Technical');
+    filter('Session chairs');
     echo $GLOBALS['container'];
     $PatronsDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `patrons`");
    while($row = mysqli_fetch_array($PatronsDetails))
@@ -447,6 +448,7 @@ function paper(){
 
 
 Function webdet(){
+  
      $filename = basename($_SERVER['REQUEST_URI']);
      $paperIDS =substr($filename,15);
      $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where paper_ID = '$paperIDS'");
@@ -470,6 +472,7 @@ Function webdet(){
  $quali = $row[4];
 }
    about3Head($haeding);
+   
    echo $GLOBALS['courseAreadHead'];
 
      VideoArea($linkid,$haeding,$descpt);
@@ -503,7 +506,10 @@ Function webdet(){
     }
     relEnd();
     feedback($paperid);
+    
     echo $GLOBALS['webDetailsEnd'];
+    
+    
 }
 
 

@@ -95,16 +95,24 @@ echo '<div class="sidebar-box">
         <ul>';
     }
         function related($id,$name,$videoName){ 
+            $ext = pathinfo($videoName, PATHINFO_EXTENSION);
            echo ' <li>
                 <div class="related-img">
-                    <a href="#">
-                    <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0" volume="0" allow-scripts></video></a>
+                    <a href="#">';
+                    if($ext=="mp4")
+                    {
+                      echo ' <video id="iframeId" width="80" height="80" src="videos/'.$videoName.'" frameborder="0" volume="0" allow-scripts></video></a>';
+                    }
+                    else{
+                   echo' <img  width="80" height="80" src="videos/'.$videoName.'"></a>
                 </div>
                 <div class="related-content">
                     <h4><a href="webdetails.php?'.$id.'">'.$name.'</a></h4>
                     <p></p>
                 </div>
-            </li>';}
+            </li>';
+        }}
+
             function relEnd(){
                 echo'    </ul>
     </div>
@@ -121,13 +129,17 @@ $courseAreadHead =' <div class="courses-page-area3">
             ';
            
    function VideoArea($videoName,$name,$discri){
-       echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-       <!--<img src="img/course/15.jpg" class="img-responsive" alt="course">-->
-       <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>
+    $ext = pathinfo($videoName, PATHINFO_EXTENSION);
+       echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
+       if($ext=='mp4'){
+       echo ' <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>';
+    }
+    else {
+      echo '<img src="videos/'.$videoName.'" class="img-responsive" alt="course">
        <div class="course-details-inner">
            <h2 class="title-default-left title-bar-high">'.$name.'</h2>
            <p>'.$discri.'</p>';
-   }     
+   }    } 
    function details($sectionid,$name,$designation){
        echo '<h3 class="sidebar-title">Course Features</h3>
        <ul class="course-feature">

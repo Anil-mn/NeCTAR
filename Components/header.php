@@ -67,12 +67,13 @@ $header3=' <header>
                 <nav id="desktop-nav">
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li><a href="#web">webinars</a></li>
-                    <li><a href="#">Articles</a> </li>
-                    <li><a href="callforpaper.php">call 4 paper</a></li>
-                    <li><a href="aboutus.php">about us</a></li>
+                    <li><a href="#web">Webinars</a></li>
+                    <li><a href="#sec">Sections</a></li>
+                    <li><a href="callforpaper.php">Papers</a> </li>
+                   
+                    <li><a href="aboutus.php">About us</a></li>
                     
-                    <li><a href="contactUs.php">Contact</a>  </li> 
+                    <li><a href="countactus.php">Contact</a>  </li> 
                 </ul>
             </nav>
                 </div>
@@ -99,7 +100,7 @@ $footer ='  <!-- Footer Area Start Here -->
                     <div class="footer-box">
                         <a href="./"><img class="img-responsive" src="img/1234.png" alt="logo"></a>
                         <div class="footer-about">
-                            <p>Praesent vel rutrum purus. Nam vel dui eu sus duis dignissim dignissim. Suspenetey disse at ros tecongueconsequat.Fusce sit amet rna feugiat.</p>
+                            <p></p>
                         </div>
                         <ul class="footer-social">
                             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -113,22 +114,22 @@ $footer ='  <!-- Footer Area Start Here -->
                 </div>
                 <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
                     <div class="footer-box">
-                        <h3>Sponsors and Partners</h3>
+                        <h3>Departments</h3>
                         <ul class="featured-links">
                             <li>
                                 <ul>
-                                    <li><a href="#">Sponsor 1</a></li>
-                                    <li><a href="#">Sponsor 2</a></li>
-                                    <li><a href="">Sponsor 3</a></li>
-                                    <li><a href="#">Sponsor 4</a></li>
+                                    <li><a href="#">MCA</a></li>
+                                    <li><a href="#">MBA</a></li>
+                                    <li><a href="">CSE</a></li>
+                                    <li><a href="#">MEC</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <ul>
-                                    <li><a href="#">Sponsor 5</a></li>
-                                    <li><a href="#">Sponsor 6</a></li>
-                                    <li><a href="#">Sponsor 7 </a></li>
-                                    <li><a href="#">Sponsor 8</a></li>
+                                    <li><a href="#">AU</a></li>
+                                    <li><a href="#">EC</a></li>
+                                    <li><a href="#">EEE </a></li>
+                                    <li><a href="#">Areo</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -138,17 +139,15 @@ $footer ='  <!-- Footer Area Start Here -->
                     <div class="footer-box">
                         <h3>Information</h3>
                         <ul class="corporate-address">
-                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="Phone(01)800433633.html"> (+91) 04884-284000 </a></li>
-                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i>office@ncerc.ac.in</li>
+                            <li><i class="fa fa-phone" aria-hidden="true"></i><a href="Phone(01)800433633.html"> (+91) 9556335444 </a></li>
+                            <li><i class="fa fa-envelope-o" aria-hidden="true"></i>info@nectar2020.in</li>
                         </ul>
                         <div class="newsletter-area">
-                            <h3>Newsletter</h3>
+                            <h3></h3>
                             <div class="input-group stylish-input-group">
-                                <input type="text" placeholder="Enter your e-mail here" class="form-control">
+                               
                                 <span class="input-group-addon">
-                                        <button type="submit">
-                                            <i class="fa fa-paper-plane" aria-hidden="true"></i>
-                                        </button>  
+                                      
                                     </span>
                             </div>
                         </div>
@@ -186,7 +185,7 @@ $footer ='  <!-- Footer Area Start Here -->
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-                    <p>&copy;Anil MN</p>
+                    <p>&copy;NECTAR2020</p>
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
                     <ul class="payment-method">
