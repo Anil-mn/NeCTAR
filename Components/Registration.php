@@ -42,10 +42,10 @@ echo '<div class="row">
 </div>';
 }
 
-function textArea($name){
+function textArea($name,$msg){
     echo '<div class="form-group">
-    <label for="exampleTextarea1">'.$name.'</label>
-    <textarea class="form-control" name="'.$name.'" id="exampleTextarea1" rows="2"></textarea>
+    <label for="exampleTextarea1">'.$name.'</label><br>
+    <textarea  name="'.$name.'" id="exampleTextarea1" placeholder="'.$msg.'" rows="5" cols="70"></textarea>
   </div>';
 }
 function selectHead($name){

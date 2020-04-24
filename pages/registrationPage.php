@@ -57,7 +57,7 @@ function pandV(){
   echo $GLOBALS['rowStart'];
   input('Email','email','required','Email');
   input('Heading','text','required','PaperName');
-  input('Description','text','required','Description');
+  
   selectHead('Section');
   $query = mysqli_query($GLOBALS ['con'],"SELECT * From `Sections`");
   while($row=mysqli_fetch_array($query)){
@@ -66,6 +66,7 @@ function pandV(){
   selectEnd();
   uploadR('paper'); 
   uploadR('video');
+  textarea('Description','Description');
   button('pandv');
   echo $GLOBALS['rowEnd'];
   echo $GLOBALS['RegEnd'];   

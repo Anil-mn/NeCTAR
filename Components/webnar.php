@@ -160,7 +160,7 @@ $courseAreadHead =' <div class="courses-page-area3">
 
         echo '<div class="media">
         <a href="#" class="pull-left">
-            <img alt="Comments" src="img/course/16.jpg" class="media-object">
+            <img alt="Comments" src="img/students/comment.png" style="height:50px" class="media-object">
         </a>
         <div class="media-body">
             <h3><a href="#">'.$name.'</a></h3>

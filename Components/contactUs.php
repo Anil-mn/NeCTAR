@@ -9,17 +9,17 @@ $contact = '<!-- Contact Us Page 1 Area Start Here -->
                         <li>
                             <i class="fa fa-phone" aria-hidden="true"></i>
                             <h3>Phone</h3>
-                            <p>+61 3 8376 6284</p>
+                            <p>+91 9656335444</p>
                         </li>
                         <li>
                             <i class="fa fa-map-marker" aria-hidden="true"></i>
-                            <h3>Address</h3>
-                            <p>PO Box 1212, California, US.</p>
+                            <h3>For papers</h3>
+                            <p>paper@nectar2020.in</p>
                         </li>
                         <li>
                             <i class="fa fa-envelope-o" aria-hidden="true"></i>
                             <h3>E-mail</h3>
-                            <p>academics@gmail.com</p>
+                            <p>info@nectar2020.in</p>
                         </li>
                         <li>
                             <h3>Follow Us</h3>
