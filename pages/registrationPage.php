@@ -18,7 +18,7 @@ include('admin/model/connection.php');
 function regi()
 {    
     about3Head('Submit Paper');
-    echo $GLOBALS['REGHEAD'];
+    reghead('1','Registration');
     echo $GLOBALS['rowStart'];
     input('name','text','required','Name');
     input('Designation','text','','Designation');
@@ -26,34 +26,23 @@ function regi()
     input('Email','email','required','Email');
     input('PhoneNumber','Number','required','PhoneNumber');
     input('place','text','required','place');
-    upload('ProfileImage','required');
-    upload('Abstract','not required');
-    // upload('Pdf');
-    // upload('file');
+    uploadR('ProfileImage');
+    //upload('Abstract');
     button('Submit');
     echo $GLOBALS['rowEnd'];
     echo $GLOBALS['RegEnd'];   
 }
 
-if(isset($_POST['submit']))
-{
-  echo "<script>confirm('There is')</script>";
-   //$ok =1;
-   $name  = $_POST['name'];
-   $Designation  = $_POST['Designation'];
-   $Qualification  = $_POST['Qualification'];
-   $Email  = $_POST['Email'];
-   $PhoneNumber  = $_POST['PhoneNumber'];
-   $place = $_POST['place'];
-   $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$Email'");
-   $result = mysqli_fetch_array($userdetails);
-   if($result == true)
-   {
-    echo "<script>confirm('There is email is already exisit,window.location='registration.php')</script>";
-   }
-  else {
-    $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`,`Place`) VALUES('$name','$Designation','$Qualification','$Email','$PhoneNumber','$place')");
-  }
+function absss(){ 
+  reghead('2','Adsctract Upload');
+  echo $GLOBALS['rowStart'];
+  input('Email','email','required','Email');
+  upload('Abstract');
+  button('absss');
+  echo $GLOBALS['rowEnd'];
+  echo $GLOBALS['RegEnd'];   
+}
+
 
 
   //  $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
@@ -99,9 +88,29 @@ if(isset($_POST['submit']))
   //      echo "Invalid file";
   //    }
 
+//   if(isset($_POST['submit']))
+// {
+  
+//    $name  = $_POST['name'];
+//    $Designation  = $_POST['Designation'];
+//    $Qualification  = $_POST['Qualification'];
+//    $Email  = $_POST['Email'];
+//    $PhoneNumber  = $_POST['PhoneNumber'];
+//    $place = $_POST['place'];
+//    echo $name.$Designation.$Qualification.$email.$PhoneNumber.$place;
+//    $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$Email'");
+//    $result = mysqli_fetch_array($userdetails);
+//    if($result == true)
+//    {
+//    // echo "<script>confirm('emailID  already exisit,window.location='registration.php')</script>";
+//    }
+//   else {
+//     $UserInsertion =mysqli_query($con,"INSERT INTO `user_info`( `Name`, `Designation`, `Qualification`, `Email_ID`, `PhoneNumber`,`Place`) VALUES('$name','$Designation','$Qualification','$Email','$PhoneNumber','$place')");
+//   }
+// }
   
 
-}
+
 function MoreDetails()
 {    
     about3Head('Submit Paper');

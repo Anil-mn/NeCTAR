@@ -4,8 +4,8 @@ $menus='<body>
     <!-- partial:partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
-        <a class="navbar-brand brand-logo" href="index.html"><img src="images/logo.svg" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo" href=""><img src="../img/452.png" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href=""><img src="../img/452.png" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center">
         <ul class="navbar-nav navbar-nav-left header-links d-none d-md-flex">
@@ -36,10 +36,10 @@ $menus='<body>
         <ul class="nav">
           <li class="nav-item nav-profile">
             <div class="nav-link">
-              <div class="profile-image"> <img src="images/faces/face4.jpg" alt="image"/> <span class="online-status online"></span> </div>
+              <div class="profile-image"> <img src="../img/logo1.png" alt="image"/> <span class="online-status online"></span> </div>
               <div class="profile-name">
-                <p class="name">Richard V.Welsh</p>
-                <p class="designation">Manager</p>
+                <p class="name">Admin</p>
+                <p class="designation"></p>
                 <div class="badge badge-teal mx-auto mt-3">Online</div>
               </div>
             </div>

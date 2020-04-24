@@ -90,7 +90,7 @@ function featured2main($name,$eoname,$desc1){
     echo '<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="550" height="475" id="iframeId"  style="position:centre;"  src="videos/intro/'.$eoname.'.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="550" height="475" allow-scripts id="iframeId"  style="position:centre;"  src="videos/intro/'.$eoname.'.mp4" frameborder="0" volume="0" allowfullscreen></iframe>
             
        
         <div class="featured-content-holder">
@@ -104,7 +104,7 @@ function featured2($name,$eoname,$desc1){
     echo ' <div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
     <div class="featured-box">
        
-        <iframe width="280" height="175"  id="iframeId" style="position:centre;" src="videos/intro/'.$eoname.'.mp4" frameborder="0" allowfullscreen></iframe>
+        <iframe width="280" height="175"  allow-scripts id="iframeId" style="position:centre;" src="videos/intro/'.$eoname.'.mp4" frameborder="0" allowfullscreen></iframe>
            
         <div class="featured-content-holder">
             <h3><a href="#">'.$name.'</a></h3>
@@ -136,7 +136,7 @@ $featured3Head = ' <div class="courses2-area bg-common-style" style="background-
         <div class="courses-box2">
             <div class="single-item-wrapper">
            
-                    <iframe width="300" height="195"  id="iframeId" style="position:centre;" src="videos/webinars/'.$videoname.'.mp4" frameborder="0" allowfullscreen></iframe>
+                    <iframe width="300" height="195"  id="iframeId" style="position:centre;" src="videos/webinars/'.$videoname.'.mp4" frameborder="0" allowfullscreen volume="0"></iframe>
                    
             
                 <div class="courses-content-wrapper">

@@ -18,7 +18,7 @@ echo $head
     }
     else{
         about3Head('404error');
-        h404('site is under maintaince');
+        h404('site is under maintaince','404');
     }
 
 echo $footer

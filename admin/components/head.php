@@ -3,7 +3,7 @@ $head='<head>
 <!-- Required meta tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Star Admin Free Bootstrap-4 Admin Dashboard Template</title>
+<title>Nectar2020 Admin</title>
 <!-- plugins:css -->
 <link rel="stylesheet" href="node_modules/mdi/css/materialdesignicons.min.css">
 <link rel="stylesheet" href="node_modules/simple-line-icons/css/simple-line-icons.css">
@@ -13,7 +13,7 @@ $head='<head>
 <!-- inject:css -->
 <link rel="stylesheet" href="css/style.css">
 <!-- endinject -->
-<link rel="shortcut icon" href="images/favicon.png" />
+<link rel="shortcut icon" href="../img/1234.png" />
 </head>';
 
 

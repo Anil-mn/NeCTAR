@@ -89,7 +89,7 @@ function Webinar()
         {
             $delet=$_POST['id'];
             $deletesect=mysqli_query($con,"DELETE from `webinar` where `Webinar_ID`=' $delet'");
-            echo "<script>confirm('deleted',window.location='../Webinar.php')</script>";
+            //echo "<script>confirm('deleted',window.location='../Webinar.php')</script>";
 
     }
 

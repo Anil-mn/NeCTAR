@@ -29,13 +29,13 @@ echo '<!-- Counter Area Start Here -->
 
 
 
-function h404($message)  {
+function h404($message,$image)  {
     echo '<div class="error-page-area">
 <div class="container">
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
             <div class="error-top">
-                <img src="img/404.png" class="img-responsive" alt="404">
+                <img src="img/'.$image.'.png" class="img-responsive" alt="404">
             </div>
         </div>
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
