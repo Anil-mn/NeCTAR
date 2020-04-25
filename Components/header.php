@@ -73,7 +73,7 @@ $header3=' <header>
                    
                     <li><a href="aboutus.php">About us</a></li>
                     
-                    <li><a href="contactUs.php">Contact</a>  </li> 
+                    <li><a href="contactus.php">Contact</a>  </li> 
                 </ul>
             </nav>
                 </div>
