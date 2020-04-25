@@ -31,7 +31,7 @@ echo $head
     $query = mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
     $row6 = mysqli_fetch_array($query);
     if($row6 ==true){
-      echo "<script>confirm('You already uploaded paper ',window.location='../')</script>";
+      echo "<script>confirm('You already uploaded paper ',window.location='index.php')</script>";
 
     }
     else {
@@ -84,7 +84,7 @@ echo $head
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
         if(move_uploaded_file($_FILES["paper"]["tmp_name"], "papers/" . $newfilename.'.pdf')){
          echo "The file ". basename( $_FILES["paper"]["name"]). " has been uploaded.";
-         //header('Location:../Shop_CategorieInsertion.php');
+         //header('Location:index.phpShop_CategorieInsertion.php');
          } else {
          echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
              }
@@ -138,9 +138,9 @@ echo $head
    
      else
      {
-       echo "<script>confirm('Invalid file',window.location='../')</script>";
+       echo "<script>confirm('Invalid file',window.location='index.php')</script>";
      }
-     echo "<script>confirm('Successfully entered',window.location='../')</script>";
+     echo "<script>confirm('Successfully entered',window.location='index.php')</script>";
 }
 
 

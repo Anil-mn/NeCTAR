@@ -84,7 +84,7 @@ echo $head
          //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             if(move_uploaded_file($_FILES["ProfileImage"]["tmp_name"], "Images/profile/" . $newfilename.'.jpg')){
              echo "The file ". basename( $_FILES["ProfileImage"]["name"]). " has been uploaded.";
-             //header('Location:../Shop_CategorieInsertion.php');
+             //header('Location:.index.phpShop_CategorieInsertion.php');
              echo "<script>confirm('Registered successfully Add your abstract',window.location='registration.php?#2')</script>";
          } else {
             echo "<script>confirm('Error in upload',window.location='registration.php')</script>";
@@ -145,7 +145,7 @@ echo $head
                         $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$newfilename' where `Email_ID`='$name' ");
                         echo "<script>confirm('Thank you for uploading abstract',window.location='upv.php')</script>";
                         } else {
-                        echo "<script>confirm('upload error',window.location='../')</script>";
+                        echo "<script>confirm('upload error',window.location='index.php')</script>";
                             
                     
                     } 
