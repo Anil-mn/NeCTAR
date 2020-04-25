@@ -26,7 +26,7 @@ $lectureareaHead = ' <div class="lecturers-page2-area">
             echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$roll1.' ">
             <div class="single-item">
                 <div class="lecturers-item-wrapper">
-                    <a href="#"><img class="img-responsive" src="img/students/'.$image.'.jpg" alt="team"></a>
+                    <a href="#"><img class="img-responsive" style="height:380px;" src="images/patrons/'.$image.'.jpg" alt="team"></a>
                     <div class="lecturers-content-wrapper">
                         <h3><a href="#">'.$name.'</a></h3>
                         <span>'.$designation.'</span>

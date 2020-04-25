@@ -269,7 +269,7 @@ function about(){
    $role1 = $row[3];
    $role2 = $row[4];
    
-    box($role1,$name, $descpn,'chairman',$descpn2);
+    box($role1,$name, $descpn,$name.'-'.$role1,$descpn2);
    }
   
   }

@@ -5,21 +5,21 @@ if(isset($_POST['patron']))
  $name = $_POST['Name'];
  $name=ucfirst($name);
  $designation = $_POST['Designation'];
- $descpn = $_POST['Role1'];
- $descpn2 =$_POST['Role2'];
- $role1 = $_POST['Description1'];
- $role2 = $_POST['Description2'];
+ $role1 = $_POST['Role1'];
+ $role2 =$_POST['Role2'];
+ $descpn = $_POST['Description1'];
+ $descpn2 = $_POST['Description2'];
+ echo $descpn;
+$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
 
-//$PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designation`, `Role1`, `Role2`,`Description`, `Description1`) VALUES ('$name','$designation','$role1','$role2','$descpn','$descpn2')");
-
-    // if($WebinarInsertion==true)
-    // {
-    //    $innsertphoto=mysqli_query($con,"SELECT * from `webinar` order by  `Webinar_ID` desc limit 1");
-    //    while($row=mysqli_fetch_array($innsertphoto))
-    //    {
-    //        $Id=$row[0];
+    if($PatronsInsertion==true)
+    {
+       $innsertphoto=mysqli_query($con,"SELECT * from `webinar` order by  `Webinar_ID` desc limit 1");
+       while($row=mysqli_fetch_array($innsertphoto))
+       {
+           $Id=$row[0];
         
-    //    }
+       }
     $target_dir = "..\Images/";
     $target_file = $target_dir . basename($_FILES["patron"]["name"]);
    
@@ -58,12 +58,12 @@ if(isset($_POST['patron']))
             } else {
             echo "Sorry, there was an error uploading your file.";
                 }
-                echo "<script>confirm('Succeflly enterd',window.location='../patron.php')</script>";
+               echo "<script>confirm('Succeflly enterd',window.location='../patron.php')</script>";
         } 
 
 
 
-
+    }
 
 }
     function Patron()
