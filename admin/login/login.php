@@ -23,7 +23,7 @@ else
     header('location:../login.php');}
 
     else {
-        echo '<script> confirm("Wrog Password",window.location="./")</script>';
+        echo '<script> confirm("Wrog Password",window.location="../login.php")</script>';
       }
     
    }

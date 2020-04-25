@@ -1,19 +1,19 @@
 <?php
 include('Components/head.php');
 include('Components/header.php');
-include('components/imageSlider.php');
-include('components/about.php');
-include('components/Featured.php');
-include('components/Counter.php');
-include('components/Message.php');
-include('components/News/newsMain.php');
-include('components/News/faq.php');
-include('components/filter.php');
-include('components/webnar.php');
-include('components/Registration.php');
+include('Components/imageSlider.php');
+include('Components/about.php');
+include('Components/Featured.php');
+include('Components/counter.php');
+include('Components/Message.php');
+include('Components/News/newsMain.php');
+include('Components/News/faq.php');
+include('Components/filter.php');
+include('Components/webnar.php');
+include('Components/Registration.php');
 include('admin/model/connection.php');
-include('components/contactUs.php');
-include('components/imagesDisplay.php');
+include('Components/contactUs.php');
+include('Components/imagesDisplay.php');
 
 
 //include('model/demo.php');
@@ -86,7 +86,7 @@ include('components/imagesDisplay.php');
 
 
 $firstPage_1 = $slider2
-             .$service
+              .$service
               .$aboutHead
               .$aboutVideo
               .$aboutEnd;
