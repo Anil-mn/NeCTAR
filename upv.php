@@ -5,8 +5,9 @@
 <?php
 include('Components/head.php');
 include('Components/header.php');
-include('pages/registrationPage.php');
-
+include('Components/counter.php');
+//include('pages/registrationPage.php');
+include('Components/about.php');
 echo $head
     .$header3;
      
@@ -14,6 +15,7 @@ echo $head
        h404('this page can only access after may 3','upload soon');
 
      //pandV();
+    // pv();
     if(isset($_POST['pandv'])){
 
 

@@ -27,6 +27,7 @@ function upload($name){
     echo '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
     <div class="form-group">
     <label class="control-label" for="first-name">'.$name.' *</label>
+    <label class="control-label" for="first-name">Should be in pdf format</label>
     <input class="form-control" type="file" name="'.$name.'">
     </div>
     </div>

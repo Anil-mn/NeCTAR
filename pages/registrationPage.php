@@ -38,10 +38,12 @@ function regi()
 
 
 function absss(){ 
-  reghead('2','Adsctract Upload');
+  reghead('2','Abstract Upload');
   echo $GLOBALS['rowStart'];
   input('Email','email','required','Email');
+  
   upload('Abstract');
+
   button('absss');
   echo $GLOBALS['rowEnd'];
   echo $GLOBALS['RegEnd'];   
@@ -162,4 +164,10 @@ function MoreDetails()
     button('Submit');
     echo $GLOBALS['rowEnd'];
     echo $GLOBALS['RegEnd'];   
+}
+
+
+function pv(){
+  about3Head('upload your paper');
+  h404('this page can only access after may 3','upload soon');
 }
