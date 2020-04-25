@@ -60,7 +60,7 @@ if(isset($_POST['InserSection']))
     // if everything is ok, try to upload file
     } else {
         //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-           if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../Images/section/" . $newfilename.'.jpg')){
+           if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../images/section/" . $newfilename.'.jpg')){
             echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
             //header('Location:../Shop_CategorieInsertion.php');
         } else {

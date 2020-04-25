@@ -62,8 +62,8 @@ if(isset($_POST['webinar']))
          {
              echo $name;
           move_uploaded_file($_FILES["file"]["tmp_name"],
-          "../../Videos/webinars/" . $namelink);
-          echo "Stored in: " . "../../Videos/webinars/" . $namelink;
+          "../../videos/webinars/" . $namelink);
+          echo "Stored in: " . "../../videos/webinars/" . $namelink;
           echo "<script>confirm('inserted',window.location='../Webinar.php')</script>";
          
          }

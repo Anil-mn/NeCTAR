@@ -11,7 +11,7 @@ $result = mysqli_query($con, $query);
 if( $check== true)
 {
     $_SESSION['admin'] = $_POST['name'];
-    header('location:../userinfo.php');
+    header('location:../userInfo.php');
 }
 else
 {
@@ -20,7 +20,8 @@ else
  $check = mysqli_fetch_array($result);
  if ($check == true){
     $_SESSION['admin'] = $_POST['name'];
-    header('location:../login.php');}
+    header('location:../login.php');
+}
 
     else {
         echo '<script> confirm("Wrog Password",window.location="../login.php")</script>';

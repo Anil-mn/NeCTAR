@@ -24,7 +24,7 @@ if(isset($_POST['user']))
 
 
 
- $target_dir = "..\Images/";
+ $target_dir = "..\images/";
  $target_file = $target_dir . basename($_FILES["photo"]["name"]);
 
  $name = $email;
@@ -66,7 +66,7 @@ if(isset($_POST['user']))
  // if everything is ok, try to upload file
  } else {
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../Images/profile/" . $newfilename.'.jpg')){
+        if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../images/profile/" . $newfilename.'.jpg')){
          echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
          echo "<script>confirm('profile Image Uploaded',window.location='../userInfo.php')</script>";
@@ -76,7 +76,7 @@ if(isset($_POST['user']))
      
     }
     //..........abstract....
-    $target_dir = "..\Images/";
+    $target_dir = "..\images/";
     $target_file = $target_dir . basename($_FILES["Abstract"]["name"]);
    
     $name =$email;
@@ -231,7 +231,7 @@ if(isset($_POST['paper']))
 
 
 
- $target_dir = "..\Images/";
+ $target_dir = "..\images/";
  $target_file = $target_dir . basename($_FILES["pdf"]["name"]);
 
  $name =$id.'-'.$heading;
@@ -308,8 +308,8 @@ if(isset($_POST['paper']))
          {
              echo $name;
           move_uploaded_file($_FILES["file"]["tmp_name"],
-          "../../Videos/" . $namelink);
-          echo "Stored in: " . "../../Videos/" . $namelink;
+          "../../videos/" . $namelink);
+          echo "Stored in: " . "../../videos/" . $namelink;
           
           $update =  mysqli_query($con,"UPDATE `papers` SET   `Link_ID` = '$namelink' where Paper_ID='$id'");
          }

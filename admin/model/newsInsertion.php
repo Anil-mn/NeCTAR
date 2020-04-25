@@ -19,7 +19,7 @@ if(isset($_POST['name']))
           $NewsId=$row[0];
        
       }
-      $target_dir = "..\Images/";
+      $target_dir = "..\images/";
  $target_file = $target_dir . basename($_FILES["News"]["name"]);
  
  $name = $NewsId;
@@ -61,7 +61,7 @@ if(isset($_POST['name']))
  // if everything is ok, try to upload file
  } else {
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        if(move_uploaded_file($_FILES["News"]["tmp_name"], "../../Images/News/" . $newfilename.'.jpg')){
+        if(move_uploaded_file($_FILES["News"]["tmp_name"], "../../images/News/" . $newfilename.'.jpg')){
          echo "The file ". basename( $_FILES["News"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
      } else {
@@ -106,7 +106,7 @@ if(isset($_POST['event']))
           $EventId=$row[0];
 
       }
-      $target_dir = "..\Images/";
+      $target_dir = "..\images/";
  $target_file = $target_dir . basename($_FILES["event"]["name"]);
  
  $name = $EventId;
@@ -148,7 +148,7 @@ if(isset($_POST['event']))
  // if everything is ok, try to upload file
  } else {
      //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-        if(move_uploaded_file($_FILES["event"]["tmp_name"], "../../Images/Event/" . $newfilename.'.jpg')){
+        if(move_uploaded_file($_FILES["event"]["tmp_name"], "../../images/Event/" . $newfilename.'.jpg')){
          echo "The file ". basename( $_FILES["event"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
      } else {

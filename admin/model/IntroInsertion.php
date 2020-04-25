@@ -56,8 +56,8 @@ else {
        {
            echo $name;
         move_uploaded_file($_FILES["file"]["tmp_name"],
-        "../../Videos/intro/" . $namelink);
-        echo "Stored in: " . "../../Videos/intro/" . $namelink;
+        "../../videos/intro/" . $namelink);
+        echo "Stored in: " . "../../videos/intro/" . $namelink;
         
        
        }

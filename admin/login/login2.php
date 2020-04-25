@@ -17,7 +17,7 @@ $query = "SELECT * from `admin` where `UserName` = '$ShopName' and `Password` = 
     header('location:../userInfo.php');}
 
     else {
-        echo '<script> confirm("Wrog Password",window.location="./")</script>';
+        echo '<script> confirm("Wrog Password",window.location="../login.html")</script>';
       }
 
 
@@ -28,21 +28,21 @@ $query = "SELECT * from `admin` where `UserName` = '$ShopName' and `Password` = 
 
 
 
- if($ShopName=='nectar2020' and $password=='nectar@20&mca#20') 
-    {
-        header('location:../userinfo.php');
-        $_SESSION['admin'] = $_POST['name'];
-        echo $_SESSION['admin'];
+//  if($ShopName=='nectar2020' and $password=='nectar@20&mca#20') 
+//     {
+//         header('location:../userinfo.php');
+//         $_SESSION['admin'] = $_POST['name'];
+//         echo $_SESSION['admin'];
         
         
-    }
-   elseif ($ShopName=='nectar2020' and $password=='ncerc@20&nectar20') 
-  { 
-      header('location:../userinfo.php');
-      $_SESSION['admin'] = $_POST['name'];
-      echo $_SESSION['admin'];
+//     }
+//    elseif ($ShopName=='nectar2020' and $password=='ncerc@20&nectar20') 
+//   { 
+//       header('location:../userinfo.php');
+//       $_SESSION['admin'] = $_POST['name'];
+//       echo $_SESSION['admin'];
 
-    }
-    else{
-        echo "<script>alert('wrong Password')</script>";
-    }
+//     }
+//     else{
+//         echo "<script>alert('wrong Password')</script>";
+//     }
