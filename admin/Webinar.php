@@ -20,7 +20,14 @@ echo $head.$menus.$mainHead.$row;
 formHead('UserInfo','model/WebinarInsertion.php');
 input('Name','text'); 
 input('Designation','text');
-input('SectionName','text');
+//input('SectionName','text');
+select('SectionName');
+$query = mysqli_query($con,"SELECT * From `sections`");
+while($row=mysqli_fetch_array($query)){
+    echo '<option value='.$row[2].'>'.$row[1].'';
+}
+
+echo $selectEnd;
 input('VideoName','text');
 input('VideoLength','text');
 upload('file');

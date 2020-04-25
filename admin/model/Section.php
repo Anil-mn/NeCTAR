@@ -74,7 +74,7 @@ if(isset($_POST['InserSection']))
 function display()
 {
     include('connection.php');
-    $query = mysqli_query($con,"SELECT * from `Sections`");
+    $query = mysqli_query($con,"SELECT * from `sections`");
     while($row = mysqli_fetch_array($query)){
        $id =$row[0];
         echo '<tr><form method="POST"><td><input  value="'.$id.'" name="id" hidden> '.$row[0].'</td><td>'.$row[1].'</td><td><button type="submit" name="dele" class="btn btn-danger mr-2">Delete</button></td></form></tr>';
