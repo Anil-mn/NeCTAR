@@ -14,7 +14,7 @@ if(isset($_POST['user']))
    $result = mysqli_fetch_array($userdetails);
    if($result == true)
    {
-    echo "<script>confirm('There is email is already exisit',window.location='../userinfo.php')</script>";
+    echo "<script>confirm('There is email is already exisit',window.location='../userInfo.php')</script>";
     
    }
    else
@@ -69,7 +69,7 @@ if(isset($_POST['user']))
         if(move_uploaded_file($_FILES["photo"]["tmp_name"], "../../Images/profile/" . $newfilename.'.jpg')){
          echo "The file ". basename( $_FILES["photo"]["name"]). " has been uploaded.";
          //header('Location:../Shop_CategorieInsertion.php');
-         echo "<script>confirm('profile Image Uploaded',window.location='../userinfo.php')</script>";
+         echo "<script>confirm('profile Image Uploaded',window.location='../userInfo.php')</script>";
      } else {
          echo "Sorry, there was an error uploading your file.";
      }
@@ -110,7 +110,7 @@ if(isset($_POST['user']))
            if(move_uploaded_file($_FILES["Abstract"]["tmp_name"], "../../Abstract/" . $newfilename.'.pdf')){
             echo "The file ". basename( $_FILES["Abstract"]["name"]). " has been uploaded.";
             $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$newfilename' where `Email_ID`='$name' ");
-            echo "<script>confirm('Abstract Uploaded',window.location='../userinfo.php')</script>";
+            echo "<script>confirm('Abstract Uploaded',window.location='../userInfo.php')</script>";
             } else {
             echo "Sorry, there was an error uploading your file.";
                 }
@@ -320,7 +320,7 @@ if(isset($_POST['paper']))
      {
        echo "Invalid file";
      }
-     echo "<script>confirm('Succeflly enterd',window.location='../Userinfo.php')</script>";
+     echo "<script>confirm('Succeflly enterd',window.location='../userInfo.php')</script>";
 }
     function Dis()
     {

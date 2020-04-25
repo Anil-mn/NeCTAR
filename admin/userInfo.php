@@ -37,7 +37,7 @@ echo $formEnd;
 
 
 
-formHead('paper','model/userInfo.php');
+formHead('paper','model/userinfo.php');
 input('Heading','text');
 textArea('Description1');
 input('Email','text');

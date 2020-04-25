@@ -15,7 +15,7 @@ include('model/Section.php');
 echo $head.$menus.$mainHead.$row;
 
 
-formHead('Sections','model/section.php');
+formHead('Sections','model/Section.php');
 input('Name','text');
 input('SubSection','text');
 input('Description1','text');

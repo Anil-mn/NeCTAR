@@ -58,7 +58,7 @@ $PatronsInsertion = mysqli_query($con,"INSERT INTO `patrons`(`Name`, `Designatio
             } else {
             echo "Sorry, there was an error uploading your file.";
                 }
-               echo "<script>confirm('Succeflly enterd',window.location='../patron.php')</script>";
+               echo "<script>confirm('Succeflly enterd',window.location='../Patron.php')</script>";
         } 
 
 

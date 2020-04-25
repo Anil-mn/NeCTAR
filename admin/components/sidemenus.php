@@ -44,13 +44,13 @@ $menus='<body>
               </div>
             </div>
           </li>
-          <li class="nav-item"><a class="nav-link" href="userinfo.php"><img class="menu-icon" src="images/menu_icons/01.png" alt="menu icon"><span class="menu-title">User Info</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="webinar.php"><img class="menu-icon" src="images/menu_icons/02.png" alt="menu icon"><span class="menu-title">webinars</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="userInfo.php"><img class="menu-icon" src="images/menu_icons/01.png" alt="menu icon"><span class="menu-title">User Info</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="Webinar.php"><img class="menu-icon" src="images/menu_icons/02.png" alt="menu icon"><span class="menu-title">webinars</span></a></li>
           <li class="nav-item"><a class="nav-link" href="news.php"><img class="menu-icon" src="images/menu_icons/03.png" alt="menu icon"><span class="menu-title">news</span></a></li>
           <li class="nav-item"><a class="nav-link" href="section.php"><img class="menu-icon" src="images/menu_icons/04.png" alt="menu icon"><span class="menu-title">section</span></a></li>
           <li class="nav-item"><a class="nav-link" href="introvideos.php"><img class="menu-icon" src="images/menu_icons/01.png" alt="menu icon"><span class="menu-title">Intro</span></a></li>
           <li class="nav-item"><a class="nav-link" href="patron.php"><img class="menu-icon" src="images/menu_icons/05.png" alt="menu icon"><span class="menu-title">patron</span></a></li>
-          <li class="nav-item"><a class="nav-link" href="comment.php"><img class="menu-icon" src="images/menu_icons/06.png" alt="menu icon"><span class="menu-title">comment</span></a></li>
+          <li class="nav-item"><a class="nav-link" href="Comment.php"><img class="menu-icon" src="images/menu_icons/06.png" alt="menu icon"><span class="menu-title">comment</span></a></li>
           <li class="nav-item"><a class="nav-link" href="message.php"><img class="menu-icon" src="images/menu_icons/07.png" alt="menu icon"> <span class="menu-title">message</span></a></li>
   
           <li class="nav-item purchase-button"><a class="nav-link" href="logout.php" >LogOUt</a></li>
