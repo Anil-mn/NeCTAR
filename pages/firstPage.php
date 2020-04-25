@@ -179,6 +179,7 @@ function headlines(){
                 
  function Message()
                  {
+                  echo $GLOBALS['messageHead'];
                     $MessageQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `message`");
                     while($row2 = mysqli_fetch_array($MessageQuery))
                     {

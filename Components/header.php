@@ -67,8 +67,8 @@ $header3=' <header>
                 <nav id="desktop-nav">
                 <ul>
                     <li><a href="./">Home</a></li>
-                    <li><a href="#web">Webinars</a></li>
-                    <li><a href="#sec">Sections</a></li>
+                    <li><a href="./#web">Webinars</a></li>
+                    <li><a href="./#sec">Sections</a></li>
                     <li><a href="callforpaper.php">Papers</a> </li>
                    
                     <li><a href="aboutus.php">About us</a></li>

@@ -81,7 +81,7 @@ $image = 'img/featured/back.jpg';
 function featured2Head(){
     echo '<div class="featured-area bg-common-style" style="background-image: url('.$GLOBALS['image'].');">
     <div class="container">
-        <h2 class="title-default-textPrimary-left">Featured Courses</h2>
+        <h2 class="title-default-textPrimary-left">....</h2>
     </div>
     <div class="container">
         <div class="row featured-wrapper" id="gallery-wrapper">';

@@ -44,20 +44,24 @@ testrimo();
 }
 
 
-echo $messageHead;
 
+$MessageQuery = mysqli_query($GLOBALS ['con'],"SELECT * from `message`");
+$row56 = mysqli_fetch_array($MessageQuery);
+if($row56 == true){
 Message();
-
+}
 
  
  echo $firstPage_6;
 
- $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info`");
- $row8 = mysqli_fetch_array($userdetails);
- if($row8==true){
+ $userdetails = mysqli_query($GLOBALS ['con'],"SELECT Count(`User_ID`) from `user_info`");
+ while($row8 = mysqli_fetch_array($userdetails));{
+
+ if($row8[0]>15){
+
  img();
  }
-
+}
    echo  $footer
     .$connection;
 

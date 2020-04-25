@@ -13,7 +13,7 @@ $head='<head>
 <!-- inject:css -->
 <link rel="stylesheet" href="css/style.css">
 <!-- endinject -->
-<link rel="shortcut icon" href="../img/1234.png" />
+<link rel="shortcut icon" href="../img/lgo3.png" />
 </head>';
 
 
