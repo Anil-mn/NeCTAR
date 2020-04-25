@@ -11,7 +11,7 @@ echo $head
     .$header3;
     $filename = basename($_SERVER['REQUEST_URI']);
     $paperIDS =substr($filename,15);
-    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where paper_ID = '$paperIDS'");
+    $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Paper_ID = '$paperIDS'");
     $row = mysqli_fetch_array($paperdetails);
     if($row == true){
         webdet();

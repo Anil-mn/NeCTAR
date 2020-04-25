@@ -31,7 +31,7 @@ echo $head
     $query = mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
     $row6 = mysqli_fetch_array($query);
     if($row6 ==true){
-      echo "<script>confirm('You already uploaded paper ',window.location='')</script>";
+      echo "<script>confirm('You already uploaded paper ',window.location='../')</script>";
 
     }
     else {
@@ -128,8 +128,8 @@ echo $head
          {
              echo  $name;
           move_uploaded_file($_FILES["video"]["tmp_name"],
-          "Videos/" . $namelink);
-          echo "Stored in: " . "Videos/" . $namelink;
+          "videos/" . $namelink);
+          echo "Stored in: " . "videos/" . $namelink;
           
           $update =  mysqli_query($con,"UPDATE `papers` SET   `Link_ID` = '$namelink' where Paper_ID='$id'");
          }
@@ -138,9 +138,9 @@ echo $head
    
      else
      {
-       echo "<script>confirm('Invalid file',window.location='./')</script>";
+       echo "<script>confirm('Invalid file',window.location='../')</script>";
      }
-     echo "<script>confirm('Successfully entered',window.location='./')</script>";
+     echo "<script>confirm('Successfully entered',window.location='../')</script>";
 }
 
 

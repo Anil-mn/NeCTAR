@@ -6,7 +6,7 @@
 include('Components/head.php');
 include('Components/header.php');
 include('pages/registrationPage.php');
-include('components/imageSlider.php');
+include('Components/imageSlider.php');
 //include('components/about.php');
 // include('components/Featured.php');
 // include('components/Counter.php');

@@ -53,10 +53,10 @@ echo $head
      //if(isset($_POST["submit"])) {
          $check = getimagesize($_FILES["ProfileImage"]["tmp_name"]);
          if($check !== false) {
-             echo "File is an image - " . $check["mime"] . ".";
+            // echo "File is an image - " . $check["mime"] . ".";
              $uploadOk = 1;
          } else {
-             echo "<script>alert('File is not an image.',window.location='registration.php')</script>";
+             //echo "<script>alert('File is not an image.',window.location='registration.php')</script>";
              $uploadOk = 0;
          }
      
@@ -87,7 +87,7 @@ echo $head
              //header('Location:../Shop_CategorieInsertion.php');
              echo "<script>confirm('Registered successfully Add your abstract',window.location='registration.php?#2')</script>";
          } else {
-             echo '<script> alert("Sorry, there was an error uploading your file.")</script>';
+            echo "<script>confirm('Error in upload',window.location='registration.php')</script>";
          }
          
         }
@@ -105,7 +105,8 @@ echo $head
                 $userdetails1 = mysqli_query($con,"SELECT * from `user_info` where `Abstract`='$email'");
                 $result3 = mysqli_fetch_array($userdetails1);
                 if($result3==true){
-                   echo '<script> alert("You already upload abstract");</script>';
+                   echo "<script>confirm('You already upload abstract',window.location='registration.php')</script>";
+                   
                 }
                 else {
                 $target_dir = "..\Images/";
@@ -120,22 +121,22 @@ echo $head
                 
                    
                 if (file_exists($target_file)) {
-                    echo '<script> alert("Sorry, file already exists.");</script>';
+                    //echo '<script> alert("Sorry, file already exists.");</script>';
                     $uploadOk = 0;
                 }
                 // Check file size
                 if ($_FILES["Abstract"]["size"] > 5000000) {
-                    echo '<script> alert("Sorry, your file is too large.");</script>';
+                   // echo '<script> alert("Sorry, your file is too large.");</script>';
                     $uploadOk = 0;
                 }
                 // Allow certain file formats
                 if( $imageFileType != "pdf" ) {
-                    echo '<script> alert("Sorry, only pdf files are allowed.")</script>';
+                   // echo '<script> alert("Sorry, only pdf files are allowed.")</script>';
                     $uploadOk = 0;
                 }
                 // Check if $uploadOk is set to 0 by an error
                 if ($uploadOk == 0) {
-                    echo '<script> alert("Sorry, your file was not uploaded.")</script>';
+                  // echo '<script> alert("Sorry, your file was not uploaded.")</script>';
                 // if everything is ok, try to upload file
                 } else {
                     //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
@@ -144,7 +145,7 @@ echo $head
                         $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$newfilename' where `Email_ID`='$name' ");
                         echo "<script>confirm('Thank you for uploading abstract',window.location='upv.php')</script>";
                         } else {
-                        echo '<script> alert("Sorry, there was an error uploading your file.)</script>';
+                        echo "<script>confirm('upload error',window.location='../')</script>";
                             
                     
                     } 

@@ -42,7 +42,7 @@ function h404($message,$image)  {
             <div class="error-bottom">
                 <h2>Sorry!!! Page Was Not Found</h2>
                 <p>'.$message.'</p>
-                <a href="./" class="default-white-btn">Go To Home Page</a>
+                <a href="../" class="default-white-btn">Go To Home Page</a>
             </div>
         </div>
     </div>

@@ -66,14 +66,14 @@ $header3=' <header>
                 <div class="col-lg-9 col-md-9 col-sm-9">
                 <nav id="desktop-nav">
                 <ul>
-                    <li><a href="./">Home</a></li>
+                    <li><a href="../">Home</a></li>
                     <li><a href="./#web">Webinars</a></li>
                     <li><a href="./#sec">Sections</a></li>
                     <li><a href="callforpaper.php">Papers</a> </li>
                    
                     <li><a href="aboutus.php">About us</a></li>
                     
-                    <li><a href="countactus.php">Contact</a>  </li> 
+                    <li><a href="contactUs.php">Contact</a>  </li> 
                 </ul>
             </nav>
                 </div>
