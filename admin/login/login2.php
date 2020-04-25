@@ -7,6 +7,27 @@ if(!isset($_SESSION['admin'])){
 
  $ShopName = $_POST ['name'];
  $password = $_POST['password'];
+
+
+$query = "SELECT * from `admin` where `UserName` = '$ShopName' and `Password` = '$password'";
+ $result = mysqli_query($con, $query);
+ $check = mysqli_fetch_array($result);
+ if ($check == true){
+    $_SESSION['admin'] = $_POST['name'];
+    header('location:../userInfo.php');}
+
+    else {
+        echo '<script> confirm("Wrog Password",window.location="./")</script>';
+      }
+
+
+
+
+
+
+
+
+
  if($ShopName=='nectar2020' and $password=='nectar@20&mca#20') 
     {
         header('location:../userinfo.php');
