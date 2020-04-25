@@ -213,7 +213,7 @@ if(isset($_POST['paper']))
     $query = mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
     $row6 = mysqli_fetch_array($query);
     if($row6 ==true){
-      echo "<script>confirm('You already uploaded paper ',window.location='')</script>";
+      echo "<script>confirm('You already uploaded paper ',window.location='../userInfo.php')</script>";
    }
     else 
     {

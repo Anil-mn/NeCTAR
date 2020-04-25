@@ -7,9 +7,11 @@ if(isset($_POST['InserSection']))
     $sub=$_POST['SubSection'];
     $descp = $_POST['Description1'];
     $descp2 = $_POST['Description2'];
-    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`,`SubSection`,`Description1`,`Description1`) VALUES ('$name','$sub','$descp','$descp2')");
+    echo $name.$sub.$descp.$descp2;
+   
+    $sectionInsertion=mysqli_query($con,"INSERT INTO `sections`(`Name`,`SubSection`,`Description`,`Description2`) VALUES ('$name','$sub','$descp','$descp2')");
     if($sectionInsertion==true)
-    {
+    {echo $name;
        $innsertphoto=mysqli_query($con,"SELECT * from `sections` order by  `Section_ID` desc limit 1");
        while($row=mysqli_fetch_array($innsertphoto))
        {
