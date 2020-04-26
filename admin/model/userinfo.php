@@ -342,4 +342,16 @@ if(isset($_POST['paper']))
         }
     
     }
+
+
+    function userfo()
+    {
+        include('connection.php');
+        $query = mysqli_query($con,"SELECT * from `user_info`");
+        while($row = mysqli_fetch_array($query)){
+           $id = $row[0];
+            // echo $id;
+            echo '<tr><td><img style:"height 150px;width 150px" src="../images/profile/'.$row[4].'.jpg"</td><td>'.$row[1].'</td><td>'.$row[2].'</td><td>'.$row[3].'</td><td>'.$row[4].'</td><td>'.$row[5].'</td><td>'.$row[6].'</td><td>'.$row[7].'</td></tr>';
+         }
+        }
 ?>

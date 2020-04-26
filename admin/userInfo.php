@@ -63,6 +63,14 @@ Dis();
 TabelEnd();
 echo $rowEnd;
 
+echo $row;
+
+Table('Papers');
+tableHead('photo');
+tableHead('name');tableHead('designation');tableHead('qualification');tableHead('email');tableHead('phone number');tableHead('place');tableHead('abstract');
+
+userfo();
+TabelEnd();
 
 
 

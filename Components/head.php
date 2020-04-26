@@ -44,7 +44,9 @@ $head = '<head>
 
 
 
-
+<!-- Preloader Start Here -->
+<div id="preloader"></div>
+<!-- Preloader End Here -->
 
 
 <!-- Main Body Area Start Here -->
