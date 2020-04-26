@@ -2654,10 +2654,14 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
   }
 }
 .mobile-menu-area {
+  color:#002147;
+  
   display: none;
 }
 .mean-container .mean-bar {
   float: none;
+  background: #002147;
+
 }
 @media only screen and (max-width: 767px) {
   .mean-container .mean-bar a {
@@ -2685,7 +2689,7 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
   transition: all 0.5s ease-out;
 }
 .mean-container .mean-nav ul li a:hover {
-  color: #002147;
+  color: rgb(133, 133, 133);
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   -ms-transition: all 0.5s ease-out;
@@ -2702,7 +2706,7 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
 }
 .mean-container .mean-bar a.logo-mobile-menu {
   width: 100%;
-  background-color: rgba(255, 255, 255, 0.95);
+  
   box-sizing: border-box;
 }
 .mean-container a.meanmenu-reveal {
@@ -2712,7 +2716,7 @@ nav#desktop-nav li.has-child-menu:hover ul.thired-level {
   padding-top: 53px;
 }
 .mean-container .mean-nav ul li li a {
-  color: #212121;
+  color: white;
   opacity: 1;
 }
 /*=======================================================================

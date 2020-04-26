@@ -91,6 +91,31 @@ $header3=' <header>
     </div>
 </div>
 
+
+<!-- Mobile Menu Area Start -->
+<div class="mobile-menu-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="mobile-menu">
+                    <nav id="dropdown">
+                    <ul>
+                    <li><a href="./">Home</a></li>
+                    <li><a href="./#web">Webinars</a></li>
+                    <li><a href="./#sec">Sections</a></li>
+                    <li><a href="registration.php">Register</a> </li>
+                    <li><a href="contactus.php">Contact</a>  </li> 
+                    <li><a href="aboutus.php">About us</a></li>
+                    <li><a href="contactus.php">Contact</a>  </li> 
+                </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Mobile Menu Area End -->
+
 </header>';
 
 
