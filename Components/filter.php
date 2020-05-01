@@ -22,15 +22,15 @@ $lectureareaHead = ' <div class="lecturers-page2-area">
      echo  '<a href="#" data-filter=".'.$filter.'">'.$filter.'</a>';
     }
         $container = '<div class="row featuredContainer">';
-        function box($roll1,$name,$designation,$image,$about){
-            echo '<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$roll1.' ">
+        function box($roll1,$roll2,$name,$designation,$image,$about){
+            echo '  <div class="col-lg-4 col-md-4 col-sm-6 col-xs-12 '.$roll1.' '.$roll2.'">
             <div class="single-item">
                 <div class="lecturers-item-wrapper">
-                    <a href="#"><img class="img-responsive" style="height:380px;" src="images/patrons/'.$image.'.jpg" alt="team"></a>
+                    <a href="#"><img class="img-responsive" src="images/patrons/'.$image.'.jpg" alt="team"></a>
                     <div class="lecturers-content-wrapper">
-                        <h3><a href="#">'.$name.'</a></h3>
+                        <h3><a href="#">'.$name.'r</a></h3>
                         <span>'.$designation.'</span>
-                        <p>'.$about.'</p>
+                        <p>------------------------------------------------------------------------</p>
                         <ul class="lecturers-social">
                             <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i></a></li>
                             <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
@@ -40,8 +40,9 @@ $lectureareaHead = ' <div class="lecturers-page2-area">
                     </div>
                 </div>
             </div>
-        </div>';
-        
+        </div>
+';
+      
         } 
 
 
