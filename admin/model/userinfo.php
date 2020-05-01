@@ -149,7 +149,7 @@ if(isset($_POST['user']))
  //Username to use for SMTP authentication
  $mail->Username    = "noreplay@nectar2020.in";
  //Password to use for SMTP authentication
- $mail->Password    = "W@mKC7Fy+Ek!";
+ $mail->Password    = "nectar@2020";
  $mail->SMTPSecure  = 'ssl';
  //Set who the message is to be sent from
  $mail->setFrom('noreplay@nectar2020.in', 'First Last');
