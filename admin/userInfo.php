@@ -65,7 +65,7 @@ echo $rowEnd;
 
 echo $row;
 
-Table('Papers');
+Table('userinfo');
 tableHead('photo');
 tableHead('name');tableHead('designation');tableHead('qualification');tableHead('email');tableHead('phone number');tableHead('place');tableHead('abstract');
 
@@ -77,7 +77,7 @@ TabelEnd();
 
 
 
-// echo $rowEnd;
+echo $rowEnd;
 echo $footer.$connection;
 ?>
 </html>

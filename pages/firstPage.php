@@ -430,7 +430,7 @@ Function webdet(){
      }
     
     YourComment($paperid);
-    rightDet($paperid.'-'.$haeding);
+    rightDet($paperid.'-'.$sectionid.' '.$haeding);
     rel();
     $paperdetails=mysqli_query($GLOBALS ['con'],"SELECT * from `papers` where Section_Name = '$sectionid'");
     while($row = mysqli_fetch_array($paperdetails))
@@ -495,21 +495,19 @@ while($row = mysqli_fetch_array($Details))
     
 function img(){
   echo $GLOBALS['imageHead'];
-  $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `user_info`");
+  $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `message`");
   while($row = mysqli_fetch_array($userdetails))
     {
-      $idname = $row[4];
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
-      image($idname);image($idname);image($idname);
+      $idmsg = $row[0];
+      image('images/Message/'.$idmsg.'.jpg'); 
     }
+    $userdetails = mysqli_query($GLOBALS ['con'],"SELECT * from `patrons`");
+    while($row = mysqli_fetch_array($userdetails))
+      {
+        $name = $row[1];
+        $rol = $row[3];
+        image('images/patrons/'.$name.'-'.$rol.'.jpg'); 
+      }
   echo $GLOBALS['imageEnd'];
 }
 

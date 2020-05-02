@@ -14,10 +14,11 @@ function input($name,$type,$required,$msg){
     </div>
 </div>';
 }
-function uploadR($name){
+function uploadR($name,$msg){
    echo '<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
    <div class="form-group">
    <label class="control-label" for="first-name">'.$name.' *</label>
+   <label class="control-label" for="first-name">'.$msg.'</label>
    <input class="form-control" type="file" name="'.$name.'" required = "required">
    </div>
    </div>
@@ -28,10 +29,7 @@ function upload($name){
     <div class="form-group">
     <label class="control-label" for="first-name">'.$name.' *</label>
     <label class="control-label" for="first-name">Should be in pdf format</label>
-    <input class="form-control" type="file" name="'.$name.'">
-    </div>
-    </div>
-    ';
+    <input class="form-control" type="file" name="'.$name.'">';
  }
 function button($name){
 echo '<div class="row">

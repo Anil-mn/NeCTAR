@@ -11,8 +11,10 @@ include('pages/registrationPage.php');
 
 echo $head
     .$header3;
-   
-    regi();
+    // about3Head('upload your paper');
+    //    h404('this page can only access after may 3','System under maintanice');
+
+   regi();
 
     absss();
 
@@ -98,6 +100,7 @@ echo $head
         if(isset($_POST['absss'])){
             //echo "<script>alter('done')</script>";
             $email  = $_POST['Email'];
+            $section=$_POST['Session'];
             $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
             $result = mysqli_fetch_array($userdetails);
             if($result == true)
@@ -112,7 +115,7 @@ echo $head
                 $target_dir = "..\Images/";
                 $target_file = $target_dir . basename($_FILES["Abstract"]["name"]);
                
-                $name =$email;
+                $name =$section.'-'.$email;
                //
                 $newfilename=$name ;
                 //echo $newfilename;
@@ -142,7 +145,7 @@ echo $head
                     //if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
                        if(move_uploaded_file($_FILES["Abstract"]["tmp_name"], "Abstract/" . $newfilename.'.pdf')){
                         //echo "The file ". basename( $_FILES["Abstract"]["name"]). " has been uploaded.";
-                        $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$newfilename' where `Email_ID`='$name' ");
+                        $update=mysqli_query($con,"UPDATE `user_info` SET `Abstract`='$email' ,`Section_Name`='$section' where `Email_ID`='$email' ");
                         echo "<script>confirm('Thank you for uploading abstract',window.location='upv.php')</script>";
                         } else {
                         echo "<script>confirm('upload error',window.location='index.php')</script>";

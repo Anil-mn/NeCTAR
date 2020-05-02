@@ -10,7 +10,7 @@ $imageHead ='  <!-- Students Join 1 Area Start Here -->
                     function image($name){
                    
                         echo ' <li>
-                        <a href="#"><img style="height:10px width:10px" src="images/profile/'.$name.'.jpg" alt=""></a>
+                        <a href="#"><img style="height:10px width:10px" src="'.$name.'" alt=""></a>
                     </li>';
                     }
                         

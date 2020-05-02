@@ -5,17 +5,17 @@
 <?php
 include('Components/head.php');
 include('Components/header.php');
-include('Components/counter.php');
-//include('pages/registrationPage.php');
-include('Components/about.php');
+//include('Components/counter.php');
+include('pages/registrationPage.php');
+//include('Components/about.php');
 echo $head
     .$header3;
      
        about3Head('upload your paper');
-       h404('this page can only access after may 3','upload soon');
+       //h404('this page can only access after may 3','upload soon');
 
-     //pandV();
-    // pv();
+     pandV();
+     //pv();
     if(isset($_POST['pandv'])){
 
 
@@ -23,35 +23,42 @@ echo $head
     $descp=$_POST['Description'];
     $email=$_POST['Email'];
    // $Ylink=$_POST['Youtube'];
-    $section=$_POST['Section'];
+    //$section=$_POST['Section'];
 
    $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
+   while($row78 = mysqli_fetch_array($userdetails))
+   {
+    $section = $row78[8];
+   }
+   $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
    $result = mysqli_fetch_array($userdetails);
+  
 
    if($result == true)
    {
     $query = mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
     $row6 = mysqli_fetch_array($query);
-    if($row6 ==true){
-      echo "<script>confirm('You already uploaded paper ',window.location='index.php')</script>";
-
+          if($row6 ==true){
+         echo "<script>confirm('You already uploaded paper ',window.location='index.php')</script>";
+                 }
+         else {
+        $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`) VALUES ('$heading','$descp','$section','$email')");
+          }
     }
-    else {
-   $PaperInsertion=mysqli_query($con,"INSERT INTO `papers`( `Heading`, `Description`, `Section_Name`,`Email`) VALUES ('$heading','$descp','$section','$email')");
-   }}
    else{
-       echo "<script>confirm('There is no registerd email ',window.location='')</script>";
-   }
+           echo "<script>confirm('There is no registerd email ',window.location='')</script>";
+        }
    if($PaperInsertion==true)
    {
-      $innsertphoto=mysqli_query($con,"SELECT * from `papers` order by  `Paper_ID` desc limit 1");
+      $innsertphoto=mysqli_query($con,"SELECT * from `papers` where `Email`='$email'");
       while($row=mysqli_fetch_array($innsertphoto))
       {
          $id=$row[0];
+         $section1=$row['Section_Name'];
       }
     
 
-
+      $heading=$section1.' '.$heading;
 
  $target_dir = "..\Images/";
  $target_file = $target_dir . basename($_FILES["paper"]["name"]);
@@ -92,7 +99,7 @@ echo $head
              }
      
      } 
-   }
+   
    $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
    $extension = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
    $namelink = $id.'-'.$heading.'.'.$extension;
@@ -143,8 +150,8 @@ echo $head
        echo "<script>confirm('Invalid file',window.location='index.php')</script>";
      }
      echo "<script>confirm('Successfully entered',window.location='index.php')</script>";
-}
-
+  }
+     }
 
 
 

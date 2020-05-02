@@ -26,7 +26,7 @@ function regi()
     input('Email','email','required','Email');
     input('PhoneNumber','Number','required','PhoneNumber');
     input('place','text','required','place');
-    uploadR('ProfileImage');
+    uploadR('ProfileImage','photo in jpg');
     //upload('Abstract');
     button('Submit');
     echo $GLOBALS['rowEnd'];
@@ -41,7 +41,12 @@ function absss(){
   reghead('2','Abstract Upload');
   echo $GLOBALS['rowStart'];
   input('Email','email','required','Email');
-  
+  selectHead('Session');
+  $query = mysqli_query($GLOBALS ['con'],"SELECT * From `Sections`");
+  while($row=mysqli_fetch_array($query)){
+      echo '<option value='.$row[2].'>'.$row[1].'';
+  }
+  selectEnd();
   upload('Abstract');
 
   button('absss');
@@ -60,14 +65,14 @@ function pandV(){
   input('Email','email','required','Email');
   input('Heading','text','required','PaperName');
   
-  selectHead('Section');
-  $query = mysqli_query($GLOBALS ['con'],"SELECT * From `Sections`");
-  while($row=mysqli_fetch_array($query)){
-      echo '<option value='.$row[2].'>'.$row[1].'';
-  }
-  selectEnd();
-  uploadR('paper'); 
-  uploadR('video');
+  // selectHead('Section');
+  // $query = mysqli_query($GLOBALS ['con'],"SELECT * From `Sections`");
+  // while($row=mysqli_fetch_array($query)){
+  //     echo '<option value='.$row[2].'>'.$row[1].'';
+  // }
+  //selectEnd();
+  uploadR('paper','(Should be in pdf format)'); 
+  uploadR('video','(Should be in mp4 format)');
   textarea('Description','Description');
   button('pandv');
   echo $GLOBALS['rowEnd'];
