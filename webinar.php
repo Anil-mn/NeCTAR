@@ -12,7 +12,7 @@ echo $head
     
     $paperdetails=mysqli_query($con,"SELECT * from `papers`");
     $result = mysqli_fetch_array($paperdetails);
-    if($result == true)
+    if($result == false)
     {
     webinar();
     }

@@ -512,5 +512,10 @@ function img(){
 }
 
 
+function cd(){
+  $date = date('Y-m-d');
+  countDown('Registration End Date',$date);
+}
+
 
 ?>

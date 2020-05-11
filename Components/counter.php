@@ -49,4 +49,29 @@ function h404($message,$image)  {
 </div>
 </div>';
 }
+
+$image='img/banner/04.jpg';
+function countDown($name,$date){
+    echo ' <div class="countdown-area bg-primary-deep-fixed" id="counter" style="background-image: url('.$GLOBALS ['images'].');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
+                <div class="countdown-content">
+                    <h1>'.$name.'</h1>
+                    <div class="countdown-date">Last date '.$date.'</div>
+                    <a href="registration.php" class="ghost-btn">Register Now</a>
+                </div>
+            </div>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                <div class="countdown-content">
+                    <div id="countdown"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>';
+}
+
+
+
 ?>

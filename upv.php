@@ -16,7 +16,8 @@ echo $head
 
      pandV();
      //pv();
-    if(isset($_POST['pandv'])){
+    if(isset($_POST['pandv']))
+    {
 
 
     $heading=$_POST['Heading'];
@@ -30,7 +31,7 @@ echo $head
    {
     $section = $row78[8];
    }
-   $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Email_ID`='$email'");
+   $userdetails = mysqli_query($con,"SELECT * from `user_info` where `Abstract`='$email'");
    $result = mysqli_fetch_array($userdetails);
   
 
@@ -46,7 +47,7 @@ echo $head
           }
     }
    else{
-           echo "<script>confirm('There is no registerd email ',window.location='')</script>";
+           echo "<script>confirm('You are not uploaded your abstract ',window.location='')</script>";
         }
    if($PaperInsertion==true)
    {
@@ -72,11 +73,13 @@ echo $head
  
     
  if (file_exists($target_file)) {
+     //$delete =mysqli_query($con,"DELETE FROM `papers` WHERE`Email`='$email'");
      echo "<script>alert('Sorry, file already exists.',window.location='')</script>";
      $uploadOk = 0;
  }
  // Check file size
  if ($_FILES["paper"]["size"] > 5000000) {
+     //$delete =mysqli_query($con,"DELETE FROM `papers` WHERE`Email`='$email'");
      echo "<script>alert('Sorry, your file is too large.',window.location='')</script>";
      $uploadOk = 0;
  }
@@ -87,6 +90,7 @@ echo $head
  }
  // Check if $uploadOk is set to 0 by an error
  if ($uploadOk == 0) {
+     $delete =mysqli_query($con,"DELETE FROM `papers` WHERE `Email`='$email'");
      echo "<script>alert('Sorry, your file was not uploaded.',window.location='')</script>";
  // if everything is ok, try to upload file
  } else {
@@ -94,66 +98,91 @@ echo $head
         if(move_uploaded_file($_FILES["paper"]["tmp_name"], "papers/" . $newfilename.'.pdf')){
          echo "The file ". basename( $_FILES["paper"]["name"]). " has been uploaded.";
          //header('Location:index.phpShop_CategorieInsertion.php');
-         } else {
-         echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
+        
+         }      else 
+          {
+            $delete =mysqli_query($con,"DELETE FROM `papers` WHERE`Email`='$email'");
+           echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
+        
              }
      
      } 
-   
-   $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
-   $extension = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
-   $namelink = $id.'-'.$heading.'.'.$extension;
-   echo "<br><br><br><br>".$namelink."<br><br><br><br>";
-   if ((($_FILES["video"]["type"] == "video/mp4")
-   || ($_FILES["video"]["type"] == "audio/mp3")
-   || ($_FILES["video"]["type"] == "image/jpg")
-   || ($_FILES["video"]["type"] == "image/png")
-   || ($_FILES["video"]["type"] == "audio/mpeg")
-   || ($_FILES["video"]["type"] == "audio/wma")
-   || ($_FILES["video"]["type"] == "image/pjpeg")
-   || ($_FILES["video"]["type"] == "image/gif")
-   || ($_FILES["video"]["type"] == "image/jpeg"))
-   
-   && ($_FILES["video"]["size"] < 200000000000000)
-   && in_array($extension, $allowedExts))
-   
-     {print_r($_FILES['video']['name']);
-     if ($_FILES["video"]["error"] > 0)
-       {
-       echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
-       }
-     else
-       {
-      //  echo "Upload: " . $_FILES["video"]["name"] . "<br />";
-      //  echo "Type: " . $_FILES["video"]["type"] . "<br />";
-      //  echo "Size: " . ($_FILES["video"]["size"] / 1024) . " Kb<br />";
-      //  echo "Temp file: " . $_FILES["video"]["tmp_name"] . "<br />";
-   
-       if (file_exists("store/" . $_FILES["video"]["name"]))
+    }
+    $query3 = mysqli_query($con,"SELECT * from `papers` where `Email`='$email' and `Link_ID` = ''");
+    if($query3 == true)
+    {
+     $allowedExts = array("jpg", "jpeg", "gif", "png", "mp3", "mp4", "wma");
+     $extension = pathinfo($_FILES['video']['name'], PATHINFO_EXTENSION);
+     $namelink = $id.'-'.$heading.'.'.$extension;
+     echo "<br><br><br><br>".$namelink."<br><br><br><br>";
+     if ((($_FILES["video"]["type"] == "video/mp4")
+     || ($_FILES["video"]["type"] == "image/jpg")
+     || ($_FILES["video"]["type"] == "video/mkv")
+     || ($_FILES["video"]["type"] == "image/png")
+     || ($_FILES["video"]["type"] == "video/avi")
+     || ($_FILES["video"]["type"] == "video/3gp")
+     || ($_FILES["video"]["type"] == "image/pjpeg")
+     || ($_FILES["video"]["type"] == "image/gif")
+     || ($_FILES["video"]["type"] == "image/jpeg"))
+     
+     && ($_FILES["video"]["size"] < 70000000)
+     && in_array($extension, $allowedExts))
+     
+       {print_r($_FILES['video']['name']);
+       if ($_FILES["video"]["error"] > 0)
          {
-         echo $_FILES["video"]["name"] . " already exists. ";
+          $delete =mysqli_query($con,"DELETE FROM `papers` WHERE`Email`='$email'");
+          echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
+          //echo "Return Code: " . $_FILES["file"]["error"] . "<br />";
+
          }
        else
          {
-             echo  $name;
-          move_uploaded_file($_FILES["video"]["tmp_name"],
-          "videos/" . $namelink);
-          echo "Stored in: " . "videos/" . $namelink;
-          
-          $update =  mysqli_query($con,"UPDATE `papers` SET   `Link_ID` = '$namelink' where Paper_ID='$id'");
+        //  echo "Upload: " . $_FILES["video"]["name"] . "<br />";
+        //  echo "Type: " . $_FILES["video"]["type"] . "<br />";
+        //  echo "Size: " . ($_FILES["video"]["size"] / 1024) . " Kb<br />";
+        //  echo "Temp file: " . $_FILES["video"]["tmp_name"] . "<br />";
+     
+         if (file_exists("store/" . $_FILES["video"]["name"]))
+           {
+            $delete =mysqli_query($con,"DELETE FROM `papers` WHERE`Email`='$email'");
+            echo "<script>confirm('Sorry, there was an error uploading your file.',window.location='')</script>";
+             ///echo $_FILES["video"]["name"] . " already exists. ";
+           }
+         else
+           {
+               echo  $name;
+            move_uploaded_file($_FILES["video"]["tmp_name"],
+            "videos/" . $namelink);
+            echo "Stored in: " . "videos/" . $namelink;
+            
+            $update =  mysqli_query($con,"UPDATE `papers` SET   `Link_ID` = '$namelink' where Paper_ID='$id'");
+            // echo "<script>confirm('Successfully entered',window.location='index.php')</script>";
+            
+           }
          }
        }
+     
+       else
+       {
+         echo "<script>confirm('Invalid file',window.location='index.php')</script>";
+       }
+     
+      }
+      $query3 = mysqli_query($con,"SELECT * from `papers` where `Email`='$email' and `Link_ID` = '$namelink'");
+      if($query3 == true)
+      {
+        
+        echo "<script>confirm('Successfully entered',window.location='index.php')</script>";
+      }
+      $query3 = mysqli_query($con,"SELECT * from `papers` where `Email`='$email' and `Link_ID` = ''");
+      if($query3 == true)
+      {
+        echo "<script>confirm('Video is not upoloded try again',window.location='index.php')</script>";
+      }
      }
    
-     else
-     {
-       echo "<script>confirm('Invalid file',window.location='index.php')</script>";
-     }
-     echo "<script>confirm('Successfully entered',window.location='index.php')</script>";
-  }
-     }
-
-
+     
 
     echo $footer
     .$connection;

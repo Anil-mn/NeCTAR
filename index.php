@@ -12,21 +12,28 @@ include('pages/firstPage.php');
 echo $head
      .$header3
      .$firstPage_1;
+     $date = date('Y-m-d');
    
+     if($date >= '2020-05-20'){
+   
+     }
+     else{
+     cd();
+    }
      Featured();
     
    //echo $query;
-   
   
    coun();
-
+  
 $WebinarDetails = mysqli_query($GLOBALS ['con'],"SELECT * from `webinar`");
 $roesult2 = mysqli_fetch_array($WebinarDetails);
 if($roesult2 == true)
 {
 webinarsVideo();
 }
-compus();
+
+//compus();
 echo $firstPage_3;
 
     headlines();

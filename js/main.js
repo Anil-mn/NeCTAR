@@ -328,10 +328,10 @@
 
     }
 
-    /*-------------------------------------
+   /*-------------------------------------
      Countdown activation code
      -------------------------------------*/
-    $('#countdown').countdown('2020/04/05', function(e) {
+     $('#countdown').countdown('2020/05/05', function(e) {
 
         $(this).html(e.strftime("<div class='countdown-section'><h3>%D</h3> <p>Day%!D</p> </div><div class='countdown-section'><h3>%H</h3> <p>Hour%!H</p> </div><div class='countdown-section'><h3>%M</h3> <p>Minute%!M</p> </div><div class='countdown-section'><h3>%S</h3> <p>Second%!S</p> </div>"));
 

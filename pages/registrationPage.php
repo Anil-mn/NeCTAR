@@ -72,7 +72,7 @@ function pandV(){
   // }
   //selectEnd();
   uploadR('paper','(Should be in pdf format)'); 
-  uploadR('video','(Should be in mp4 format)');
+  uploadR('video','(Should be in mp4 format ,video size should be less than 350mb)');
   textarea('Description','Description');
   button('pandv');
   echo $GLOBALS['rowEnd'];
