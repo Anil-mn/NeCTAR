@@ -133,7 +133,7 @@ $courseAreadHead =' <div class="courses-page-area3">
     $ext = pathinfo($videoName, PATHINFO_EXTENSION);
        echo '<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">';
        if($ext=='mp4'){
-       echo ' <iframe width="818" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>';
+       echo ' <iframe width="820" id="iframeId" height="475" src="videos/'.$videoName.'" frameborder="0" allowfullscreen allow-scripts></iframe>';
     }
     else {
       echo '<img src="videos/'.$videoName.'" class="img-responsive" alt="course">';}
